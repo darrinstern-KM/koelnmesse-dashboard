@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koelnmesse Inc. — Office Dashboard</title>
+
+<!-- Favicon — Koelnmesse red square with white K mark.
+     Inline SVG data URI = zero network dependency, perfect at any resolution. -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23E2001A'/><path d='M19 13h7v18.5L42 13h9L34.5 31 52 51h-9.5L26 32v19h-7V13z' fill='%23ffffff'/></svg>" />
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23E2001A'/><path d='M19 13h7v18.5L42 13h9L34.5 31 52 51h-9.5L26 32v19h-7V13z' fill='%23ffffff'/></svg>" />
+<meta name="theme-color" content="#68b035" />
+<style>
+  /* ===========================================================
+     KOELNMESSE BRAND PALETTE
+     Primary red is the logo signature (~#68b035).
+     Surfaces stay deep neutral for 24/7 TV ergonomics.
+     =========================================================== */
+  :root {
+    --km-red:         #68b035;
+    --km-red-deep:    #4f8526;
+    --km-red-glow:    #7dcf3e;
+    --km-ink:         #0E0F12;
+    --km-surface:     #15171C;
+    --km-surface-2:   #1E2027;
+    --km-surface-3:   #262830;
+    --km-line:        #2A2D36;
+    --km-text:        #F4F4F0;
+    --km-text-dim:    #9FA1A8;
+    --km-gold:        #F2C744;
+    --km-green:       #2DD46B;
+    --km-blue:        #4DA3E0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%;
+    height: 100vh;
+    background: var(--km-ink);
+    color: var(--km-text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Layout ---------- */
+  .dashboard {
+    display: grid;
+    grid-template-rows: 96px 1fr 206px 52px;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+    /* Subtle drift (~30 min cycle) to prevent burn-in on 75" panel */
+    animation: pixelDrift 1800s ease-in-out infinite alternate;
+  }
+  @keyframes pixelDrift {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(-2px, 1px); }
+    50%  { transform: translate(1px, -2px); }
+    75%  { transform: translate(2px, 2px); }
+    100% { transform: translate(-1px, -1px); }
+  }
+  /* After-hours dim: applied 7pm–7am Chicago time */
+  body.night-mode { filter: brightness(0.7) saturate(0.92); }
+  body { transition: filter 20s linear; }
+
+  /* ---------- Header ---------- */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: linear-gradient(90deg, var(--km-surface) 0%, var(--km-surface-2) 100%);
+    border-left: 6px solid var(--km-red);
+    padding: 0 28px;
+    border-radius: 8px;
+  }
+  .brand { display: flex; align-items: center; gap: 20px; }
+  .logo {
+    height: 54px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+  .brand-divider { width: 3px; height: 44px; background: #742a87; border-radius: 2px; }
+  .brand-text { line-height: 1.15; }
+  .brand-text .title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+  .brand-text .subtitle {
+    font-size: 11px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-top: 4px;
+  }
+  .brand-text .subtitle .accent { color: var(--km-red); font-weight: 700; }
+
+  .clocks { display: flex; gap: 36px; justify-self: end; }
+  .clock { text-align: right; }
+  .clock-label {
+    font-size: 11px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 4px;
+  }
+  .clock-time {
+    font-size: 38px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .clock-date { font-size: 12px; color: var(--km-text-dim); margin-top: 4px; }
+  .clock.cologne .clock-time { color: var(--km-red-glow); }
+
+  /* ---------- Main grid ---------- */
+  .main {
+    display: grid;
+    grid-template-columns: 0.95fr 1.3fr 1.25fr 1.1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .panel {
+    background: var(--km-surface);
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #742a87;
+  }
+  .panel-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .panel-icon { font-size: 16px; color: var(--km-red-glow); }
+  .panel-meta {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* ---------- Weather ---------- */
+  .weather-cities {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+  .weather-city {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: var(--km-surface-2);
+    border-radius: 6px;
+    border-left: 3px solid var(--km-red);
+  }
+  .weather-icon { font-size: 32px; line-height: 1; }
+  .weather-info .city-name {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .weather-info .condition {
+    font-size: 11px;
+    color: var(--km-text-dim);
+    margin-top: 2px;
+  }
+  .weather-info .meta {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    margin-top: 3px;
+  }
+  .weather-temp {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .weather-temp .unit { font-size: 14px; color: var(--km-text-dim); font-weight: 500; }
+
+  /* ---------- Markets ---------- */
+  .markets { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .currency-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--km-surface-2);
+    padding: 10px 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--km-gold);
+  }
+  .currency-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--km-text-dim);
+  }
+  .currency-value {
+    font-size: 19px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .currency-change { font-size: 11px; margin-left: 8px; font-weight: 700; }
+  .pos { color: var(--km-green); }
+  .neg { color: var(--km-red-glow); }
+  .market-meta {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+    text-align: right;
+  }
+
+  /* ---------- Featured Show Spotlight ---------- */
+  /* Cycles every 45s through upcoming shows. Big logo, brand color
+     background, key stats, countdown. Higher signal than a social feed. */
+  .spotlight {
+    margin-top: 14px;
+    flex: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    background: var(--km-surface-2);
+    border-left: 3px solid var(--km-red);
+    transition: border-left-color 0.6s ease-in-out;
+  }
+  .spotlight-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: var(--km-surface-3);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    flex-shrink: 0;
+  }
+  .spotlight-header .pulse {
+    color: var(--km-red-glow);
+    margin-right: 6px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .spotlight-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 14px 12px;
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    transition: background 0.8s ease-in-out;
+  }
+  .spotlight-body::before {
+    /* Dark overlay so text stays readable on any brand color */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+  .spotlight-body > * { position: relative; z-index: 2; }
+  .spotlight-logo {
+    max-width: 78%;
+    max-height: 68px;
+    object-fit: contain;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    animation: spotlightIn 0.6s ease-out;
+  }
+  .spotlight-name {
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #fff;
+    margin-bottom: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  }
+  .spotlight-sub {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .spotlight-date {
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  .spotlight-countdown {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    margin-top: 6px;
+    line-height: 1;
+  }
+  .spotlight-countdown .unit {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1.5px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  @keyframes spotlightIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Bottom Area Grid (Inspiration + News + PIP) ---------- */
+  /* Three-element grid: left column stacks Inspiration row over News row,
+     right column holds the live-news PIP spanning both rows.
+     This stops the PIP from overlapping the four news cards. */
+  .bottom-area {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    grid-template-rows: 92px 104px;   /* shrunk inspiration, grew news row to fit 3-line headlines */
+    gap: 10px;
+    min-height: 0;
+  }
+  .bottom-area .inspiration { grid-column: 1; grid-row: 1; min-height: 0; }
+  .bottom-area .news-row    { grid-column: 1; grid-row: 2; min-height: 0; }
+  .bottom-area .news-pip    { grid-column: 2; grid-row: 1 / span 2; }
+
+  /* ---------- Picture-in-Picture News (bottom-right grid cell) ---------- */
+  /* Cable-news style PIP — Sky News 24/7 live with captions. */
+  .news-pip {
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 2px var(--km-red),
+      0 8px 24px rgba(0,0,0,0.65);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .news-pip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: linear-gradient(90deg, var(--km-red) 0%, var(--km-red-deep) 100%);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    flex-shrink: 0;
+  }
+  .news-pip-header .live-dot {
+    color: white;
+    margin-right: 6px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .news-pip-header .cc-badge {
+    background: #FFFFFF;
+    color: #000;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.35);
+  }
+  .news-pip-frame {
+    flex: 1;
+    width: 100%;
+    border: none;
+    display: block;
+    background: #000;
+  }
+
+  /* ---------- Version Badge ---------- */
+  /* Small v2.0 stamp bottom-left. Sits above the ticker, dim so it doesn't
+     compete for attention. Version + last-sync stamp doubles as an at-a-glance
+     "is the data current?" tell. */
+  .version-badge {
+    position: fixed;
+    bottom: 60px;   /* above the 52px ticker + 8px breathing room */
+    left: 6px;
+    z-index: 40;
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--km-gold);
+    opacity: 0.6;
+    pointer-events: none;
+    background: rgba(0,0,0,0.45);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .version-badge .stamp { color: var(--km-text-dim); margin-left: 6px; }
+
+  /* ---------- Heartbeat (anti-sleep motion pixel) ---------- */
+  /* A 2px dot that hops a few pixels every 30 seconds. Imperceptible
+     to a person, but enough motion to keep TV sleep detection awake. */
+  .heartbeat {
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+    width: 2px;
+    height: 2px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Viewport diagnostic was removed once layout was confirmed.
+     Re-enable by adding back showViewportDiag() to init(). */
+
+  /* ---------- News ---------- */
+  .news-list {
+    list-style: none;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .news-item {
+    padding: 9px 12px;
+    background: var(--km-surface-2);
+    border-radius: 6px;
+    border-left: 3px solid var(--km-red);
+    line-height: 1.35;
+  }
+  .news-item .news-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;        /* prevents long titles from pushing last item off-panel */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .news-item .news-meta {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .news-item .news-source { color: var(--km-red-glow); font-weight: 700; }
+
+  /* ---------- Upcoming Shows ---------- */
+  .shows-grid {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 6px;
+    flex: 1;
+    overflow: hidden;
+  }
+  .show-card {
+    display: grid;
+    grid-template-columns: 104px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    background: var(--km-surface-2);
+    border-radius: 6px;
+    overflow: hidden;
+    border-left: 3px solid var(--km-red);
+    position: relative;
+  }
+  .show-logo {
+    width: 104px;
+    height: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Subtle inner glow to lift logo off the panel color */
+  .show-logo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .show-logo img {
+    max-width: 86%;
+    max-height: 78%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.55));
+    /* Sharper rendering on the Fire Stick / TV — favicons especially */
+    image-rendering: -webkit-optimize-contrast;
+  }
+  .show-logo .wordmark {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 1.05;
+    padding: 0 6px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    text-transform: uppercase;
+    word-break: break-word;
+  }
+  /* Short, single-token wordmarks get the dramatic treatment */
+  .show-logo .wordmark.short { font-size: 17px; letter-spacing: 1px; }
+  .show-logo .wordmark::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.85);
+    margin: 4px auto 0;
+    border-radius: 1px;
+  }
+  .show-info { padding: 4px 0; min-width: 0; }
+  .show-name {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .show-sub {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .show-date-block { text-align: right; padding-right: 12px; }
+  .show-date-range {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--km-red-glow);
+    letter-spacing: 0.5px;
+  }
+  .show-countdown {
+    font-size: 9px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* ---------- Staff Calendar (4 native sections, non-touch) ---------- */
+  .staff-stack {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .staff-block {
+    background: var(--km-surface-2);
+    border-radius: 6px;
+    border-left: 3px solid var(--km-red);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .staff-block-header {
+    padding: 8px 12px;
+    background: var(--km-surface-3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    flex-shrink: 0;
+  }
+  .staff-block-header .label { display: flex; align-items: center; gap: 8px; }
+  .staff-block-header .count {
+    background: var(--km-red);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .staff-block.b1 { border-left-color: var(--km-red); }
+  .staff-block.b2 { border-left-color: #742a87; }
+  .staff-block.b3 { border-left-color: var(--km-gold); }
+  .staff-block.b4 { border-left-color: var(--km-blue); }
+  .staff-block.b1 .staff-block-header .count { background: var(--km-red); }
+  .staff-block.b2 .staff-block-header .count { background: #742a87; }
+  .staff-block.b3 .staff-block-header .count { background: var(--km-gold); color: var(--km-ink); }
+  .staff-block.b4 .staff-block-header .count { background: var(--km-blue); }
+
+  .staff-list {
+    list-style: none;
+    overflow: hidden;
+    flex: 1;
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .staff-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 5px 4px;
+    border-bottom: 1px solid var(--km-line);
+    font-size: 13px;
+  }
+  .staff-row:last-child { border-bottom: none; }
+  .staff-row .who { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 6px; }
+  .staff-row .when {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--km-red-glow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .staff-block.b2 .staff-row .when { color: #742a87; }
+  .staff-block.b3 .staff-row .when { color: var(--km-gold); }
+  .staff-block.b4 .staff-row .when { color: var(--km-blue); }
+
+  /* Milestone celebration rows (5/10/15/20/25/30-yr anniversaries & birthdays today) */
+  .staff-row.milestone {
+    background: linear-gradient(90deg, rgba(242,199,68,0.18) 0%, rgba(242,199,68,0.02) 100%);
+    border-radius: 4px;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--km-line);
+  }
+  .staff-row.milestone .who { color: #FFE89A; font-weight: 800; }
+  .staff-row.milestone .when {
+    color: var(--km-gold) !important;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgba(242,199,68,0.4);
+  }
+  .staff-row.celebrating {
+    background: linear-gradient(90deg, rgba(45,212,107,0.18) 0%, rgba(45,212,107,0.02) 100%);
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+  .staff-row.celebrating .when {
+    color: var(--km-green) !important;
+    font-weight: 800;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .staff-empty {
+    font-size: 11px;
+    color: var(--km-text-dim);
+    text-align: center;
+    padding: 12px 0;
+    font-style: italic;
+  }
+
+  /* ---------- Daily Inspiration Row (Quote + German Word) ---------- */
+  .inspiration {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 10px;
+  }
+  .inspiration-card {
+    background: var(--km-surface);
+    border-radius: 8px;
+    padding: 8px 18px 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .inspiration-card.quote { border-left: 5px solid var(--km-red); }
+  .inspiration-card.word  { border-left: 5px solid #742a87; }
+  .inspiration-card::after {
+    content: '';
+    position: absolute;
+    top: 8px; right: 14px;
+    font-size: 42px;
+    line-height: 1;
+    opacity: 0.07;
+    font-weight: 900;
+  }
+  .inspiration-card.quote::after { content: '"'; color: var(--km-red); font-size: 78px; top: -8px; }
+  .inspiration-card.word::after  { content: 'DE'; color: #742a87; font-size: 28px; opacity: 0.15; }
+  .inspiration-header {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--km-text-dim);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .inspiration-header .accent { color: var(--km-red-glow); font-weight: 700; }
+  .quote-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.28;
+    font-style: italic;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    align-items: center;
+    color: var(--km-text);
+  }
+  .quote-source {
+    font-size: 11px;
+    color: var(--km-red-glow);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+    font-weight: 800;
+  }
+  .word-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 3px; }
+  .word-german {
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.3px;
+    line-height: 1.05;
+  }
+  .word-pron {
+    font-size: 11px;
+    color: var(--km-text-dim);
+    font-style: italic;
+  }
+  .word-meaning {
+    font-size: 12.5px;
+    color: var(--km-text);
+    line-height: 1.28;
+    /* Cap at 3 lines so the meaning always fully renders in the 92px slot */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .word-note {
+    font-size: 9px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    padding-top: 2px;
+  }
+
+  /* Tiny refresh stamp shown in panel headers */
+  .refresh-stamp {
+    font-size: 9px;
+    color: var(--km-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+  }
+  .refresh-stamp.live::before {
+    content: '●';
+    color: var(--km-green);
+    margin-right: 4px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* ---------- News Row ---------- */
+  .news-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+  .news-card {
+    background: var(--km-surface);
+    border-radius: 8px;
+    padding: 7px 14px 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid var(--km-red);
+  }
+  .news-card.world   { border-left-color: var(--km-red); }
+  .news-card.germany { border-left-color: #742a87; }
+  .news-card.chicago { border-left-color: var(--km-blue); }
+  .news-card.sports  { border-left-color: #FFB81C; }
+
+  .news-card-header {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    color: var(--km-text-dim);
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .news-card-header .flag { font-size: 12px; opacity: 0.9; }
+  .news-card-headline {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.22;
+    margin-bottom: 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;        /* was 2 — Iran headline was cutting at "stalle..." */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .news-card-source {
+    font-size: 10px;
+    color: var(--km-text-dim);
+    margin-top: auto;
+    letter-spacing: 0.5px;
+  }
+  .news-card-source .src { color: var(--km-red-glow); font-weight: 700; margin-right: 6px; }
+
+  /* ---------- Ticker ---------- */
+  .ticker {
+    background: var(--km-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .ticker-label {
+    background: var(--km-red);
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 6px 0 12px rgba(0,0,0,0.45);  /* soft fade against scrolling text */
+  }
+  /* Viewport isolates the marquee so it cannot bleed onto the LIVE badge */
+  .ticker-viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    padding-left: 12px;
+  }
+  .ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 110s linear infinite;
+    font-size: 15px;
+    will-change: transform;
+  }
+  .ticker-item { padding: 0 30px; border-right: 1px solid var(--km-line); }
+  .ticker-item strong { color: var(--km-red-glow); margin-right: 8px; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  .status-dot {
+    width: 8px; height: 8px;
+    background: var(--km-green);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  ::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand">
+        <img class="logo"
+             src="https://media.koelnmesse.io/koelnmesse/redaktionell/koelnmesse/img_40/koelnmesse_logo_claim.svg"
+             alt="Koelnmesse" />
+        <div class="brand-divider"></div>
+        <div class="brand-text">
+          <div class="title">Chicago Office</div>
+          <div class="subtitle"><span class="accent">●</span>&nbsp;&nbsp;Live Dashboard · North American Operations</div>
+        </div>
+      </div>
+      <div></div>
+      <div class="clocks">
+        <div class="clock chicago">
+          <div class="clock-label">Chicago</div>
+          <div class="clock-time" id="time-chi">--:--</div>
+          <div class="clock-date" id="date-chi">—</div>
+        </div>
+        <div class="clock cologne">
+          <div class="clock-label">Köln</div>
+          <div class="clock-time" id="time-col">--:--</div>
+          <div class="clock-date" id="date-col">—</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- COL 1: Weather + Markets -->
+      <section class="panel" style="grid-row: span 2;">
+        <div class="panel-header">
+          <div class="panel-title">Weather</div>
+          <div class="panel-icon">⛅</div>
+        </div>
+        <div class="weather-cities">
+          <div class="weather-city" id="weather-chi">
+            <div class="weather-icon">⛅</div>
+            <div class="weather-info">
+              <div class="city-name">Chicago, IL</div>
+              <div class="condition">Loading…</div>
+              <div class="meta"></div>
+            </div>
+            <div class="weather-temp">--<span class="unit">°F</span></div>
+          </div>
+          <div class="weather-city" id="weather-col">
+            <div class="weather-icon">⛅</div>
+            <div class="weather-info">
+              <div class="city-name">Cologne, DE</div>
+              <div class="condition">Loading…</div>
+              <div class="meta"></div>
+            </div>
+            <div class="weather-temp">--<span class="unit">°C</span></div>
+          </div>
+        </div>
+
+        <div class="panel-header" style="margin-top: 18px;">
+          <div class="panel-title">Markets</div>
+          <div class="panel-icon">💱</div>
+        </div>
+        <div class="markets">
+          <div class="currency-box">
+            <div>
+              <div class="currency-label">USD → EUR</div>
+              <div class="currency-value" id="usd-eur">—</div>
+            </div>
+            <div class="currency-change" id="usd-eur-change">—</div>
+          </div>
+          <div class="currency-box" style="border-left-color: var(--km-red-glow);">
+            <div>
+              <div class="currency-label">EUR → USD</div>
+              <div class="currency-value" id="eur-usd">—</div>
+            </div>
+            <div class="currency-change" id="eur-usd-change">—</div>
+          </div>
+          <div class="market-meta" id="market-meta">Refreshes 8:00 AM CT daily</div>
+        </div>
+
+        <!-- Featured Show Spotlight — rotates through upcoming Koelnmesse shows -->
+        <div class="spotlight" id="spotlight">
+          <div class="spotlight-header">
+            <span><span class="pulse">●</span>Featured Show</span>
+            <span style="color: var(--km-text-dim); font-size: 9px; letter-spacing: 1.5px;" id="spotlight-cycle">1 OF 5</span>
+          </div>
+          <div class="spotlight-body" id="spotlight-body">
+            <img class="spotlight-logo" id="spotlight-logo" alt="" />
+            <div class="spotlight-name" id="spotlight-name">Loading…</div>
+            <div class="spotlight-sub" id="spotlight-sub">—</div>
+            <div class="spotlight-date" id="spotlight-date">—</div>
+            <div class="spotlight-countdown" id="spotlight-countdown">
+              <span id="spotlight-days">—</span><span class="unit">DAYS OUT</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COL 2 ROW 1: Industry News -->
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-title">Trade Show Industry News</div>
+          <div class="panel-icon">📰</div>
+        </div>
+        <ul class="news-list" id="industry-news">
+          <li class="news-item"><div class="news-title">Loading…</div></li>
+        </ul>
+      </section>
+
+      <!-- COL 3: Upcoming Shows (spans both rows) -->
+      <section class="panel" style="grid-row: span 2;">
+        <div class="panel-header">
+          <div class="panel-title">Upcoming Koelnmesse Shows</div>
+          <div class="panel-icon">🗓️</div>
+        </div>
+        <div class="shows-grid" id="shows-grid"></div>
+      </section>
+
+      <!-- COL 4: Team Calendar (spans both rows, 3 tabs stacked) -->
+      <section class="panel" style="grid-row: span 2;">
+        <div class="panel-header">
+          <div class="panel-title">Team Calendar</div>
+          <div class="panel-icon">🎉</div>
+        </div>
+        <div class="staff-stack">
+          <div class="staff-block b1">
+            <div class="staff-block-header">
+              <span class="label">🎂 Birthdays</span>
+              <span class="count" id="bday-count">—</span>
+            </div>
+            <ul class="staff-list" id="staff-birthdays">
+              <li class="staff-empty">Loading…</li>
+            </ul>
+          </div>
+          <div class="staff-block b2">
+            <div class="staff-block-header">
+              <span class="label">🏆 Work Anniversaries</span>
+              <span class="count" id="anniv-count">—</span>
+            </div>
+            <ul class="staff-list" id="staff-anniversaries">
+              <li class="staff-empty">Loading…</li>
+            </ul>
+          </div>
+          <div class="staff-block b3">
+            <div class="staff-block-header">
+              <span class="label">🏢 Office Closed</span>
+              <span class="count" id="closed-count">—</span>
+            </div>
+            <ul class="staff-list" id="staff-closures">
+              <li class="staff-empty">Loading…</li>
+            </ul>
+          </div>
+          <div class="staff-block b4">
+            <div class="staff-block-header">
+              <span class="label">✈️ Out of Office</span>
+              <span class="count" id="ooo-count">—</span>
+            </div>
+            <ul class="staff-list" id="staff-ooo">
+              <li class="staff-empty">Loading…</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- COL 2 ROW 2: Koelnmesse News -->
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-title">Koelnmesse News</div>
+          <div class="panel-icon">🏛️</div>
+        </div>
+        <ul class="news-list" id="km-news">
+          <li class="news-item"><div class="news-title">Loading…</div></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- BOTTOM AREA: Inspiration + News + PIP in one grid -->
+    <section class="bottom-area">
+
+    <!-- DAILY INSPIRATION ROW -->
+    <section class="inspiration">
+      <div class="inspiration-card quote">
+        <div class="inspiration-header"><span class="accent">●</span>&nbsp;&nbsp;Quote of the Day</div>
+        <div class="quote-text" id="quote-text">Loading…</div>
+        <div class="quote-source" id="quote-source">—</div>
+      </div>
+      <div class="inspiration-card word">
+        <div class="inspiration-header">Wort des Tages · Word of the Day</div>
+        <div class="word-row">
+          <div class="word-german" id="word-german">—</div>
+          <div class="word-pron" id="word-pron">—</div>
+        </div>
+        <div class="word-meaning" id="word-meaning">—</div>
+        <div class="word-note" id="word-note">From Cologne, with regards</div>
+      </div>
+    </section>
+
+    <!-- NEWS ROW: World / Germany-Cologne / Chicago / Sports -->
+    <section class="news-row">
+      <div class="news-card world">
+        <div class="news-card-header"><span>World</span><span class="flag">🌐</span></div>
+        <div class="news-card-headline" id="news-world-headline">Loading…</div>
+        <div class="news-card-source"><span class="src" id="news-world-src">—</span><span id="news-world-time">—</span></div>
+      </div>
+      <div class="news-card germany">
+        <div class="news-card-header"><span>Germany · Köln</span><span class="flag">🇩🇪</span></div>
+        <div class="news-card-headline" id="news-germany-headline">Loading…</div>
+        <div class="news-card-source"><span class="src" id="news-germany-src">—</span><span id="news-germany-time">—</span></div>
+      </div>
+      <div class="news-card chicago">
+        <div class="news-card-header"><span>Chicago</span><span class="flag">🏙️</span></div>
+        <div class="news-card-headline" id="news-chicago-headline">Loading…</div>
+        <div class="news-card-source"><span class="src" id="news-chicago-src">—</span><span id="news-chicago-time">—</span></div>
+      </div>
+      <div class="news-card sports">
+        <div class="news-card-header"><span id="news-sports-team">Chicago Sports</span><span class="flag">🏆</span></div>
+        <div class="news-card-headline" id="news-sports-headline">Loading…</div>
+        <div class="news-card-source"><span class="src" id="news-sports-src">—</span><span id="news-sports-time">—</span></div>
+      </div>
+    </section>
+
+      <!-- SKY NEWS PIP — most reliable 24/7 YouTube live on the web -->
+      <aside class="news-pip" aria-label="Live news picture-in-picture">
+        <div class="news-pip-header">
+          <span><span class="live-dot">●</span>Sky News · Live</span>
+          <span class="cc-badge">CC</span>
+        </div>
+        <iframe class="news-pip-frame" id="bloomberg-pip"
+          src="https://www.youtube.com/embed/live_stream?channel=UCoMdktPbSTixAyNGwb-UYkQ&autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&cc_load_policy=1&cc_lang_pref=en&hl=en&iv_load_policy=3&fs=0&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Sky News Live"></iframe>
+      </aside>
+
+    </section>
+    <!-- END .bottom-area -->
+
+    <!-- TICKER -->
+    <footer class="ticker">
+      <div class="ticker-label"><span class="status-dot"></span>Live</div>
+      <div class="ticker-viewport">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- VERSION BADGE — bottom-left, shows current app version + last data sync -->
+  <div class="version-badge" id="version-badge">v2.0<span class="stamp" id="version-stamp">· data —</span></div>
+
+  <!-- HEARTBEAT: imperceptible motion pixel to defeat TV sleep timers -->
+  <div class="heartbeat" id="heartbeat"></div>
+
+<script>
+/* ===========================================================
+   CONFIG
+   =========================================================== */
+const CONFIG = {
+  refreshIntervals: {
+    weather: 15 * 60 * 1000,
+    news:    30 * 60 * 1000,
+    fx:      60 * 60 * 1000,
+    shows:   60 * 60 * 1000,
+    clock:   1000
+  },
+
+  /* Daily FX refresh anchored to 8:00 AM Chicago time. */
+  dailyFxHourChicago: 8,
+
+  /* -----------------------------------------------------------
+     Koelnmesse Trade Fair Calendar — verified dates
+     ----------------------------------------------------------- */
+  /* Each show has a `domain` for the favicon fallback. Where available,
+     `logoUrl` points to a high-res brand logo (typically Koelnmesse's
+     own CDN at media.koelnmesse.io) for sharp display on the 75" TV.
+
+     To add a real logo for any show:
+       1. Visit the show's homepage
+       2. View source, find <meta property="og:image" content="...">
+       3. Paste that URL as `logoUrl` below
+     The favicon fallback handles any show where logoUrl is absent. */
+  upcomingShows: [
+    { name: "THE TIRE COLOGNE", sub: "Tyre & wheel industry",         start: "2026-06-09", end: "2026-06-11", loc: "Cologne, DE", color: "#1B1B1B", domain: "thetire-cologne.com", logoUrl: "https://media.koelnmesse.io/tire/redaktionell/the-tire-cologne/img/logo/ttc/ttc_2020_logo_1200x630.jpg" },
+    { name: "spoga+gafa",       sub: "Garden lifestyle & BBQ",        start: "2026-06-22", end: "2026-06-24", loc: "Cologne, DE", color: "#7FB069", domain: "spogagafa.com",      logoUrl: "https://media.koelnmesse.io/spogagafa/redaktionell/spoga-gafa/img/layout_9/open-graph-images/spoga-gafa_open_graph_11_1200x675.jpg" },
+    { name: "gamescom",         sub: "World's largest gaming event",  start: "2026-08-26", end: "2026-08-30", loc: "Cologne, DE", color: "#7B2CBF", domain: "gamescom.global",    logoUrl: "https://eu-central-1-gamescom.graphassets.com/AMwDHZTUSMaIlRlMFLL7Qz/resize=fit:clip,width:1200/PssD8VBzTXq72TP0ISkN" },
+    { name: "Kind + Jugend",    sub: "Baby & infant trade fair",      start: "2026-09-15", end: "2026-09-17", loc: "Cologne, DE", color: "#F4A261", domain: "kindundjugend.com",  logoUrl: "https://media.koelnmesse.io/kindundjugend/redaktionell/kind-jugend/img/layout/teaser/open-graph-images/kind-jugend_open_graph_1.jpg" },
+    { name: "DMEXCO",           sub: "Digital marketing & tech",      start: "2026-09-23", end: "2026-09-24", loc: "Cologne, DE", color: "#FF6B35", domain: "dmexco.com" },
+    { name: "Orgatec",          sub: "Modern workspaces",             start: "2026-10-27", end: "2026-10-30", loc: "Cologne, DE", color: "#264653", domain: "orgatec.com" },
+    { name: "CAIHE",            sub: "Central Asia Hardware Expo",    start: "2026-11-04", end: "2026-11-06", loc: "Tashkent, UZ", color: "#9D4EDD", domain: "koelnmesse.com" },
+    { name: "imm cologne",      sub: "Interior business event",       start: "2027-01-19", end: "2027-01-22", loc: "Cologne, DE", color: "#E76F51", domain: "imm-cologne.com", logoUrl: "https://media.koelnmesse.io/imm2021/redaktionell/imm/img/layout/imm_cologne_840.jpg" },
+    { name: "ISM",              sub: "Sweets & snacks expo",          start: "2027-01-30", end: "2027-02-03", loc: "Cologne, DE", color: "#D62828", domain: "ism-cologne.com", logoUrl: "https://media.koelnmesse.io/ism/redaktionell/ism/img/layout/logos/ism_1200x675.jpg" },
+    { name: "Anuga FoodTec",    sub: "Food processing innovation",    start: "2027-02-23", end: "2027-02-26", loc: "Cologne, DE", color: "#06A77D", domain: "anugafoodtec.com" },
+    { name: "interzum",         sub: "Furniture production",          start: "2027-05-11", end: "2027-05-14", loc: "Cologne, DE", color: "#8B5A3C", domain: "interzum.com" },
+    { name: "Anuga",            sub: "World's leading food fair",     start: "2027-10-09", end: "2027-10-13", loc: "Cologne, DE", color: "#FF8C42", domain: "anuga.com" },
+    { name: "FSB",              sub: "Public space & sports",         start: "2027-10-26", end: "2027-10-29", loc: "Cologne, DE", color: "#1E90FF", domain: "fsb-cologne.com" }
+  ],
+
+  /* -----------------------------------------------------------
+     Staff Calendar — source URL and fallback data
+     The dashboard fetches the URL and parses 3 sections.
+     If CORS or network blocks it, falls back to this data.
+     EDIT the fallback arrays anytime; they always render.
+     ----------------------------------------------------------- */
+  /* -----------------------------------------------------------
+     Staff Roster — birthdays + work anniversaries
+     birthday:  "MM-DD"      startDate: "YYYY-MM-DD"
+     Birthdays and anniversaries are computed live each render.
+     ----------------------------------------------------------- */
+  employees: [
+    { name: "Andrea Abrahamson", birthday: "03-18", startDate: "2026-01-23" },
+    { name: "Jared Auld",        birthday: "",      startDate: "2026-05-18" },
+    { name: "Franz Balve",       birthday: "06-09", startDate: "1995-01-01" },
+    { name: "Jessica Boweak",    birthday: "04-22", startDate: "2021-11-16" },
+    { name: "Robin Estey",       birthday: "07-23", startDate: "2025-12-01" },
+    { name: "Leslie Fleck",      birthday: "03-24", startDate: "2017-02-06" },
+    { name: "Kate Freeman",      birthday: "06-30", startDate: "2016-03-01" },
+    { name: "Marisa Goldberg",   birthday: "10-11", startDate: "2017-08-02" },
+    { name: "Eileen Lynch",      birthday: "04-21", startDate: "2023-03-06" },
+    { name: "Courtney Marino",   birthday: "08-03", startDate: "2025-10-07" },
+    { name: "Saloni Mehta",      birthday: "05-06", startDate: "2025-02-24" },
+    { name: "Kasia Myzia",       birthday: "03-19", startDate: "2013-04-25" },
+    { name: "Kylie Newell",      birthday: "09-12", startDate: "2026-02-02" },
+    { name: "Mette Petersen",    birthday: "07-10", startDate: "2003-09-01" },
+    { name: "Cathy Salatino",    birthday: "09-25", startDate: "2018-12-18" },
+    { name: "Kym Selph",         birthday: "11-10", startDate: "2022-11-28" },
+    { name: "Sophia Simon",      birthday: "09-28", startDate: "2025-12-12" },
+    { name: "Laura Spandre",     birthday: "08-04", startDate: "2025-03-10" },
+    { name: "Darrin Stern",      birthday: "09-04", startDate: "2004-10-04" },
+    { name: "George van Brenk",  birthday: "05-10", startDate: "2004-09-01" },
+    { name: "Veronica Woods",    birthday: "04-25", startDate: "2006-07-11" }
+  ],
+
+  /* Office closures — multi-year. Past entries drop off the
+     display automatically. Review January each year. */
+  holidays: [
+    // 2026
+    { date: "2026-01-01", name: "New Year's Day"   },
+    { date: "2026-01-02", name: "Extra Day Off"    },
+    { date: "2026-04-03", name: "Good Friday"      },
+    { date: "2026-05-25", name: "Memorial Day"     },
+    { date: "2026-07-03", name: "Independence Day" },
+    { date: "2026-09-07", name: "Labor Day"        },
+    { date: "2026-11-26", name: "Thanksgiving"     },
+    { date: "2026-12-25", name: "Christmas"        },
+    // 2027 — federal observed dates; confirm with HR each January
+    { date: "2027-01-01", name: "New Year's Day"   },
+    { date: "2027-03-26", name: "Good Friday"      },
+    { date: "2027-05-31", name: "Memorial Day"     },
+    { date: "2027-07-05", name: "Independence Day" },  // Jul 4 is Sunday → observed Mon
+    { date: "2027-09-06", name: "Labor Day"        },
+    { date: "2027-11-25", name: "Thanksgiving"     },
+    { date: "2027-12-24", name: "Christmas (obs.)" }   // Dec 25 is Saturday → observed Fri
+  ],
+
+  /* -----------------------------------------------------------
+     Curated Koelnmesse headlines (real, sourced) — shown as
+     a permanent baseline so the panel always has substance,
+     even when the live RSS feed is unavailable.
+     ----------------------------------------------------------- */
+  kmNewsBaseline: [
+    { title: "Koelnmesse reports ~€450M turnover for 2025; preparing for cyclically lighter 2026", source: "Koelnmesse", url: "https://www.koelnmesse.com/press-office/for-media-representatives/press-releases/" },
+    { title: "€193M expansion: new building near Messe/Deutz station to break ground post-Anuga 2027", source: "Koelnmesse", url: "https://www.koelnmesse.com/press-office/for-media-representatives/press-releases/" },
+    { title: "h+h americas Fall Edition debuts in Houston, Texas — 2026", source: "h+h americas", url: "https://hh-americas.com/a-new-era-begins-koelnmesse-brings-the-hh-americas-fall-edition-to-houston-in-2026/" },
+    { title: "Central Asia International Hardware Expo (CAIHE) launches November 2026 — first Koelnmesse event in Central Asia", source: "Koelnmesse", url: "https://www.koelnmesse.com/press-office/for-media-representatives/press-releases/" },
+    { title: "New dog supplies trade fair launching 2027 alongside spoga horse", source: "Koelnmesse", url: "https://www.koelnmesse.com/press-office/for-media-representatives/press-releases/" },
+    { title: "Koelnmesse Italy + Collins form European Hardware Trade Fair alliance", source: "Fastener+Fixing", url: "https://fastenerandfixing.com/exhibition-news/koelnmesse-italy-enters-strategic-alliance/" }
+  ],
+
+  /* -----------------------------------------------------------
+     QUOTE OF THE DAY — deterministic by day-of-year so the
+     dashboard shows the same quote all day, rotates at midnight.
+     Mix of trade-show industry, leadership, business, and
+     customer-experience wisdom. 60 entries = ~2 months no repeat.
+     ----------------------------------------------------------- */
+  quotes: [
+    { text: "Trade shows are the only place where the entire industry is in one room at one time.", author: "David Adler, BizBash" },
+    { text: "Face-to-face is still the most powerful sales channel in B2B.", author: "Harvard Business Review" },
+    { text: "The single biggest problem in communication is the illusion that it has taken place.", author: "George Bernard Shaw" },
+    { text: "Quality is never an accident; it is always the result of intelligent effort.", author: "John Ruskin" },
+    { text: "If you do build a great experience, customers tell each other about that. Word of mouth is very powerful.", author: "Jeff Bezos" },
+    { text: "An exhibition is a stage. Every booth is a performance.", author: "Trade Show Executive" },
+    { text: "People don't buy what you do; they buy why you do it.", author: "Simon Sinek" },
+    { text: "Wer rastet, der rostet. — He who rests grows rusty.", author: "German proverb" },
+    { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+    { text: "Customers may forget what you said, but they will never forget how you made them feel.", author: "Maya Angelou" },
+    { text: "Strategy without execution is hallucination.", author: "Thomas Edison" },
+    { text: "In Germany, business is built on trust. Trust is built on showing up — every year, in the same hall.", author: "Anonymous Messe veteran" },
+    { text: "A trade fair is not a transaction. It is a relationship marked by a calendar.", author: "Koelnmesse philosophy" },
+    { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+    { text: "Wer A sagt, muss auch B sagen. — He who says A must also say B.", author: "German saying" },
+    { text: "The customer's perception is your reality.", author: "Kate Zabriskie" },
+    { text: "If you're not embarrassed by the first version of your product, you've launched too late.", author: "Reid Hoffman" },
+    { text: "Discipline equals freedom.", author: "Jocko Willink" },
+    { text: "An expert is someone who has made all the mistakes which can be made in a very narrow field.", author: "Niels Bohr" },
+    { text: "It's not the years in your life that count. It's the life in your years.", author: "Abraham Lincoln" },
+    { text: "Trade shows turn buyers into believers — and believers into evangelists.", author: "Industry adage" },
+    { text: "Erst die Arbeit, dann das Vergnügen. — First the work, then the pleasure.", author: "German proverb" },
+    { text: "Either you run the day or the day runs you.", author: "Jim Rohn" },
+    { text: "The best marketing doesn't feel like marketing.", author: "Tom Fishburne" },
+    { text: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.", author: "Will Durant" },
+    { text: "Großhandel ist Vertrauen. — Wholesale is trust.", author: "German business saying" },
+    { text: "A booth is only as good as the conversation it starts.", author: "Exhibitor's Handbook" },
+    { text: "Hard work beats talent when talent doesn't work hard.", author: "Tim Notke" },
+    { text: "The aim of marketing is to know and understand the customer so well the product or service sells itself.", author: "Peter Drucker" },
+    { text: "Logistics is the lifeblood of trade. Without it, no fair stands.", author: "Logistik Manager" },
+    { text: "Cologne is not just a city. It is a meeting point that has existed for 2,000 years.", author: "Cologne tourism" },
+    { text: "Action is the foundational key to all success.", author: "Pablo Picasso" },
+    { text: "Selling is the art of helping someone make the decision they already wanted to make.", author: "Anonymous" },
+    { text: "Übung macht den Meister. — Practice makes the master.", author: "German proverb" },
+    { text: "Don't find customers for your products, find products for your customers.", author: "Seth Godin" },
+    { text: "The expert in anything was once a beginner.", author: "Helen Hayes" },
+    { text: "Whether you think you can or you think you can't — you're right.", author: "Henry Ford" },
+    { text: "A goal without a plan is just a wish.", author: "Antoine de Saint-Exupéry" },
+    { text: "The fair is the showroom for the entire industry — make it count.", author: "Veteran exhibitor" },
+    { text: "Es ist noch kein Meister vom Himmel gefallen. — No master has ever fallen from the sky.", author: "German proverb" },
+    { text: "Coming together is a beginning, staying together is progress, and working together is success.", author: "Henry Ford" },
+    { text: "Be so good they can't ignore you.", author: "Steve Martin" },
+    { text: "Branding is what people say about you when you're not in the room.", author: "Jeff Bezos" },
+    { text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "Chinese proverb" },
+    { text: "Aller Anfang ist schwer. — Every beginning is hard.", author: "German proverb" },
+    { text: "Make the customer the hero of your story.", author: "Ann Handley" },
+    { text: "Success is walking from failure to failure with no loss of enthusiasm.", author: "Winston Churchill" },
+    { text: "Trade fairs work because eye contact still closes deals.", author: "Industry observation" },
+    { text: "The way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+    { text: "Pünktlichkeit ist die Höflichkeit der Könige. — Punctuality is the politeness of kings.", author: "Louis XVIII" },
+    { text: "Your network is your net worth.", author: "Porter Gale" },
+    { text: "Don't be afraid to give up the good to go for the great.", author: "John D. Rockefeller" },
+    { text: "Quality means doing it right when no one is looking.", author: "Henry Ford" },
+    { text: "A satisfied customer is the best business strategy of all.", author: "Michael LeBoeuf" },
+    { text: "Ohne Fleiß kein Preis. — No reward without effort.", author: "German proverb" },
+    { text: "Sales is not about selling anymore, but about building trust and educating.", author: "Siva Devaki" },
+    { text: "What gets measured gets managed.", author: "Peter Drucker" },
+    { text: "Stay hungry. Stay foolish.", author: "Stewart Brand" },
+    { text: "The harder I work, the luckier I get.", author: "Samuel Goldwyn" },
+    { text: "Kunden sind Könige. — Customers are kings.", author: "German business saying" }
+  ],
+
+  /* -----------------------------------------------------------
+     WORT DES TAGES — German word of the day
+     Pronunciation in IPA-lite; meaning in English.
+     Mix: business/Messe vocabulary, cultural untranslatables,
+     practical phrases, Cologne-specific terms.
+     ----------------------------------------------------------- */
+  germanWords: [
+    { word: "Messe",            pron: "MESS-uh",            meaning: "Trade fair / exhibition. Literally also 'mass' — a gathering of people." },
+    { word: "Geschäft",          pron: "guh-SHEFT",          meaning: "Business, deal, or shop. The everyday word for commerce." },
+    { word: "Kunde",            pron: "KOON-duh",           meaning: "Customer. From Old High German 'kunde' meaning 'knowledge' — the one you know." },
+    { word: "Verhandlung",       pron: "fer-HAND-loong",     meaning: "Negotiation. Literally 'with-action' — the art of acting together." },
+    { word: "Vertrag",          pron: "fer-TRAHK",          meaning: "Contract or agreement. From 'vertragen' — to bear with, to get along." },
+    { word: "Aussteller",       pron: "OWS-shtell-er",      meaning: "Exhibitor. One who 'puts out' for display." },
+    { word: "Besucher",         pron: "buh-ZOO-kher",       meaning: "Visitor or attendee. From 'besuchen' — to visit." },
+    { word: "Stand",            pron: "shtahnt",            meaning: "Booth. Yes, identical to the English word — but used everywhere at Messe." },
+    { word: "Halle",            pron: "HAH-luh",            meaning: "Hall. Koelnmesse has 11 of them, totaling 284,000 sqm." },
+    { word: "Gemütlichkeit",    pron: "guh-MOOT-likh-kite", meaning: "Untranslatable coziness — warmth, belonging, and ease all at once." },
+    { word: "Feierabend",       pron: "FY-er-AH-bent",      meaning: "End of the workday. Literally 'celebration evening' — going home is a small festival." },
+    { word: "Vorfreude",        pron: "FOR-froy-duh",       meaning: "The joy of anticipation. The pleasure of looking forward to something." },
+    { word: "Fernweh",          pron: "FERN-vay",           meaning: "Far-sickness — the ache to travel. The opposite of homesickness." },
+    { word: "Schadenfreude",    pron: "SHAH-den-froy-duh",  meaning: "Pleasure derived from another's misfortune. Yes, only German has a word for it." },
+    { word: "Zeitgeist",        pron: "TSITE-gysed",        meaning: "Spirit of the times. The mood and ideas defining an era." },
+    { word: "Wanderlust",       pron: "VAHN-der-loost",     meaning: "Strong desire to travel. Borrowed into English unchanged." },
+    { word: "Doppelgänger",     pron: "DOH-pel-geng-er",    meaning: "Look-alike. Literally 'double-walker' — a ghostly twin." },
+    { word: "Guten Morgen",     pron: "GOO-ten MOR-gen",    meaning: "Good morning. Until about 10am, then switch to Guten Tag." },
+    { word: "Guten Tag",        pron: "GOO-ten TAHK",       meaning: "Good day. Default daytime greeting in business settings." },
+    { word: "Auf Wiedersehen",  pron: "OWF VEE-der-zayn",   meaning: "Goodbye. Literally 'until we see again.'" },
+    { word: "Tschüss",          pron: "CHOOSS",             meaning: "Bye! Casual goodbye between colleagues." },
+    { word: "Prost!",           pron: "PROHST",             meaning: "Cheers! Always make eye contact when clinking — or risk 7 years of bad luck." },
+    { word: "Danke",            pron: "DAHN-kuh",           meaning: "Thank you. Add 'schön' for warmer thanks." },
+    { word: "Bitte",            pron: "BIT-uh",             meaning: "Please / you're welcome / here you go. The Swiss Army knife of politeness." },
+    { word: "Kölsch",           pron: "KURLSH",             meaning: "(1) The light, top-fermented beer of Cologne. (2) The Cologne dialect. Both born here." },
+    { word: "Dom",              pron: "dohm",               meaning: "Cathedral. Cologne's twin-spired Dom took 632 years to finish." },
+    { word: "Rhein",            pron: "rine",               meaning: "Rhine. The river that made Cologne a trading hub for 2,000 years." },
+    { word: "Karneval",         pron: "KAR-neh-vahl",       meaning: "Carnival. Cologne's most beloved season — Alaaf!" },
+    { word: "Alaaf!",           pron: "ah-LAHF",            meaning: "Cologne's traditional Carnival cheer. Düsseldorf says Helau — never confuse the two." },
+    { word: "Pünktlichkeit",    pron: "PUNKT-likh-kite",    meaning: "Punctuality. Five minutes early is on time; on time is late." },
+    { word: "Verabredung",      pron: "fer-AHB-ray-doong",  meaning: "Appointment. Sacred. Confirm it; do not miss it." },
+    { word: "Genehmigung",      pron: "guh-NAY-mee-goong",  meaning: "Permission or approval. There is one for everything." },
+    { word: "Mittagessen",      pron: "MIT-tahk-ESS-en",    meaning: "Lunch. The main meal of the German workday — protected time." },
+    { word: "Brötchen",         pron: "BRURT-khen",         meaning: "Little bread roll. Breakfast staple, lunch sandwich base." },
+    { word: "Wurst",            pron: "voorst",             meaning: "Sausage. Over 1,500 varieties in Germany. Bratwurst is just the start." },
+    { word: "Frühstück",        pron: "FROO-shtuk",         meaning: "Breakfast. Literally 'early piece.' Often the most generous meal." },
+    { word: "Eingang",          pron: "INE-gahng",          meaning: "Entrance. Look for the sign in any hall." },
+    { word: "Ausgang",          pron: "OWS-gahng",          meaning: "Exit. The opposite of Eingang." },
+    { word: "Notausgang",       pron: "NOHT-ows-gahng",     meaning: "Emergency exit. Worth knowing in any large hall." },
+    { word: "Rechnung",         pron: "REKH-noong",         meaning: "Bill / invoice. In a restaurant, you must ask — they won't bring it." },
+    { word: "Quittung",         pron: "KVIT-toong",         meaning: "Receipt. Always ask for one for expenses." },
+    { word: "Spitzenleistung",  pron: "SHPIT-sen-LICE-toong", meaning: "Peak performance. Literally 'top achievement.'" },
+    { word: "Qualität",         pron: "kvah-lee-TAYT",      meaning: "Quality. Famously non-negotiable in German business." },
+    { word: "Mittelstand",      pron: "MIT-tel-shtahnt",    meaning: "The backbone of the German economy — small-to-medium family firms, often globally dominant." },
+    { word: "Lebensraum",       pron: "LAY-bens-rowm",      meaning: "Living space. In business: room to grow, breathe, operate." },
+    { word: "Heimat",           pron: "HY-maht",            meaning: "Homeland. Deeper than 'home' — where you belong." },
+    { word: "Sehnsucht",        pron: "ZAYN-zookht",        meaning: "Yearning. A wistful longing without object. Untranslatable." },
+    { word: "Torschlusspanik",  pron: "TOR-shloos-PAH-nik", meaning: "'Gate-closing panic' — the fear that time is running out on opportunity." },
+    { word: "Kummerspeck",      pron: "KOO-mer-shpek",      meaning: "'Grief bacon' — weight gained from emotional eating." },
+    { word: "Brückentag",       pron: "BRUK-en-tahk",       meaning: "'Bridge day' — taking off the workday between a holiday and the weekend." },
+    { word: "Geschmackssache",  pron: "guh-SHMAHKS-zah-khuh", meaning: "Matter of taste. The diplomatic answer when you disagree." },
+    { word: "Selbstverständlich", pron: "ZELBST-fer-shtend-likh", meaning: "Of course / it goes without saying. Often the answer to thanks." }
+  ],
+
+  /* -----------------------------------------------------------
+     OUT OF OFFICE — manually maintained roster of who's away.
+     Past entries auto-drop. Each Friday, take 60 seconds to
+     OUT OF OFFICE — two sources, merged & deduped at render time.
+
+       synced[] = auto-overwritten daily at 6am Chicago from
+                  SharedCal@koelnmesse.us (Outlook shared calendar).
+                  DO NOT EDIT — your changes will be lost on next sync.
+
+       manual[] = your additions, overrides, or one-offs that aren't
+                  on the shared calendar. Safe to edit; never overwritten.
+
+     Format for each entry:
+       name:   exactly as it appears on the team list
+       status: short label (PTO, On-Site at Show, Remote, Travel)
+       until:  YYYY-MM-DD (last day they're out, inclusive)
+     ----------------------------------------------------------- */
+  /* -----------------------------------------------------------
+     OOO + NEWS are loaded at runtime from dashboard-data.json
+     (hosted on SharePoint, same folder as this HTML).
+     The 6am Chicago scheduled task updates ONLY the JSON (~3KB),
+     so the dashboard stays current without republishing this file.
+     Values below are FALLBACK defaults if the fetch fails.
+     ----------------------------------------------------------- */
+  dataUrl: "dashboard-data.json",
+
+  outOfOffice: { lastSynced: "—", synced: [], manual: [] },
+  news: {
+    lastSynced: "—",
+    world:   { headline: "Loading latest…",            source: "—", time: "—" },
+    germany: { headline: "Loading latest…",            source: "—", time: "—" },
+    chicago: { headline: "Loading latest…",            source: "—", time: "—" },
+    sports:  { team: "Chicago Sports", headline: "Loading latest…", source: "—", time: "—" }
+  }
+};
+
+/* ===========================================================
+   DYNAMIC DATA LOADER
+   Pulls dashboard-data.json at boot. On failure, the baked-in
+   defaults above keep the page useable (degraded but stable).
+   =========================================================== */
+function updateVersionStamp() {
+  const el = document.getElementById('version-stamp');
+  if (!el) return;
+  if (!CONFIG.lastSyncStamp) { el.textContent = '· data —'; return; }
+  try {
+    const d = new Date(CONFIG.lastSyncStamp);
+    const chi = d.toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit', hour12: true
+    });
+    el.textContent = `· synced ${chi} CT`;
+  } catch (e) {
+    el.textContent = '· data ' + CONFIG.lastSyncStamp;
+  }
+}
+
+async function loadDynamicData() {
+  try {
+    const res = await fetch(CONFIG.dataUrl, { cache: 'no-store' });
+    if (!res.ok) throw new Error('fetch ' + res.status);
+    const data = await res.json();
+
+    // v2.0: accept BOTH old and new JSON shapes — sync task schema evolved
+    //   OOO:  old = { outOfOffice: { synced: [], manual: [] } }
+    //         new = { ooo: [ {name,status,until}, ... ] }
+    //   News: old = { news: { world, germany, chicago, sports } }
+    //         new = { topNews: { world, germany, chicago, sports } }
+    //   Stamp: old = lastSynced; new = lastUpdated (or generatedAt)
+    if (Array.isArray(data.ooo)) {
+      CONFIG.outOfOffice = { synced: data.ooo, manual: [] };
+    } else if (data.outOfOffice) {
+      CONFIG.outOfOffice = data.outOfOffice;
+    }
+
+    if (data.topNews)      CONFIG.news         = data.topNews;
+    else if (data.news)    CONFIG.news         = data.news;
+
+    if (data.industryNews) CONFIG.industryNews = data.industryNews;
+    if (data.kmNews)       CONFIG.kmNews       = data.kmNews;
+
+    CONFIG.lastSyncStamp = data.lastUpdated || data.generatedAt || data.lastSynced || null;
+    updateVersionStamp();
+    return true;
+  } catch (e) {
+    console.warn('Dynamic data fetch failed — using fallback defaults', e);
+    return false;
+  }
+}
+
+/* ===========================================================
+   CLOCKS
+   =========================================================== */
+function updateClocks() {
+  const now = new Date();
+  const chiOpts = { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', hour12: true };
+  const colOpts = { timeZone: 'Europe/Berlin',   hour: '2-digit', minute: '2-digit', hour12: false };
+  const dateOpts = { weekday: 'long', month: 'short', day: 'numeric' };
+
+  document.getElementById('time-chi').textContent = now.toLocaleTimeString('en-US', chiOpts);
+  document.getElementById('time-col').textContent = now.toLocaleTimeString('de-DE', colOpts);
+  document.getElementById('date-chi').textContent = now.toLocaleDateString('en-US', { ...dateOpts, timeZone: 'America/Chicago' });
+  document.getElementById('date-col').textContent = now.toLocaleDateString('en-US', { ...dateOpts, timeZone: 'Europe/Berlin' });
+}
+
+/* ===========================================================
+   WEATHER
+   =========================================================== */
+const WMO = {
+  0:{i:'☀️',l:'Clear sky'}, 1:{i:'🌤️',l:'Mainly clear'}, 2:{i:'⛅',l:'Partly cloudy'},
+  3:{i:'☁️',l:'Overcast'},  45:{i:'🌫️',l:'Fog'}, 48:{i:'🌫️',l:'Rime fog'},
+  51:{i:'🌦️',l:'Light drizzle'}, 53:{i:'🌦️',l:'Drizzle'}, 55:{i:'🌧️',l:'Heavy drizzle'},
+  61:{i:'🌧️',l:'Light rain'}, 63:{i:'🌧️',l:'Rain'}, 65:{i:'🌧️',l:'Heavy rain'},
+  71:{i:'🌨️',l:'Light snow'}, 73:{i:'🌨️',l:'Snow'}, 75:{i:'❄️',l:'Heavy snow'},
+  80:{i:'🌦️',l:'Rain showers'}, 81:{i:'🌧️',l:'Heavy showers'}, 82:{i:'⛈️',l:'Violent showers'},
+  95:{i:'⛈️',l:'Thunderstorm'}, 96:{i:'⛈️',l:'Storm w/ hail'}, 99:{i:'⛈️',l:'Severe storm'}
+};
+
+async function fetchWeather(lat, lon, unit) {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
+              `&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m` +
+              `&temperature_unit=${unit==='F'?'fahrenheit':'celsius'}` +
+              `&wind_speed_unit=${unit==='F'?'mph':'kmh'}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error();
+  return r.json();
+}
+async function paintWeather(id, lat, lon, unit, windUnit) {
+  try {
+    const data = await fetchWeather(lat, lon, unit);
+    const c = data.current;
+    const w = WMO[c.weather_code] || { i: '🌡️', l: '—' };
+    const el = document.getElementById(id);
+    el.querySelector('.weather-icon').textContent = w.i;
+    el.querySelector('.condition').textContent = w.l;
+    el.querySelector('.meta').textContent =
+      `Wind ${Math.round(c.wind_speed_10m)} ${windUnit} · Humidity ${c.relative_humidity_2m}%`;
+    el.querySelector('.weather-temp').innerHTML =
+      `${Math.round(c.temperature_2m)}<span class="unit">°${unit}</span>`;
+  } catch {
+    document.querySelector(`#${id} .condition`).textContent = 'Offline';
+  }
+}
+function updateWeather() {
+  paintWeather('weather-chi', 41.8781, -87.6298, 'F', 'mph');
+  paintWeather('weather-col', 50.9375,   6.9603, 'C', 'km/h');
+}
+
+/* ===========================================================
+   MARKETS — daily morning snapshot + hourly refresh
+   USD/EUR, EUR/USD, USD/GBP via Frankfurter (ECB)
+   =========================================================== */
+let lastFx = { eur: null };
+
+async function fetchFxPrimary() {
+  // Frankfurter v1 (current ECB-backed endpoint as of 2025)
+  const r = await fetch('https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR');
+  if (!r.ok) throw new Error('frankfurter ' + r.status);
+  const d = await r.json();
+  if (!d.rates || !d.rates.EUR) throw new Error('no rate');
+  return { eur: d.rates.EUR, source: 'ECB' };
+}
+async function fetchFxBackup() {
+  // Fallback: open.er-api.com — free, no key, CORS-enabled
+  const r = await fetch('https://open.er-api.com/v6/latest/USD');
+  if (!r.ok) throw new Error('er-api ' + r.status);
+  const d = await r.json();
+  if (!d.rates || !d.rates.EUR) throw new Error('no rate');
+  return { eur: d.rates.EUR, source: 'open.er-api' };
+}
+
+async function updateFx() {
+  let fx;
+  try { fx = await fetchFxPrimary(); }
+  catch { try { fx = await fetchFxBackup(); } catch { fx = null; } }
+
+  if (!fx) {
+    document.getElementById('usd-eur').textContent = '—';
+    document.getElementById('eur-usd').textContent = '—';
+    document.getElementById('market-meta').textContent = 'Market feed offline — retrying';
+    return;
+  }
+
+  try {
+    const eur = fx.eur;
+    const eurInv = 1 / eur;
+
+    document.getElementById('usd-eur').textContent = '€' + eur.toFixed(4);
+    document.getElementById('eur-usd').textContent = '$' + eurInv.toFixed(4);
+
+    function diff(elId, current, prev, invert) {
+      const el = document.getElementById(elId);
+      if (prev === null) { el.textContent = 'ECB'; return; }
+      const change = (current - prev) / prev * 100;
+      const up = change >= 0;
+      const cls = invert ? (up ? 'neg' : 'pos') : (up ? 'pos' : 'neg');
+      const arrow = up ? (invert ? '▼' : '▲') : (invert ? '▲' : '▼');
+      el.innerHTML = `<span class="${cls}">${arrow} ${Math.abs(change).toFixed(2)}%</span>`;
+    }
+    diff('usd-eur-change', eur, lastFx.eur, false);
+    diff('eur-usd-change', eur, lastFx.eur, true);
+
+    lastFx.eur = eur;
+
+    // Stamp last update in Chicago time
+    const stamp = new Date().toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit', hour12: true
+    });
+    document.getElementById('market-meta').textContent =
+      `${fx.source} · Updated ${stamp} CT`;
+  } catch (e) {
+    document.getElementById('usd-eur').textContent = '—';
+    document.getElementById('eur-usd').textContent = '—';
+    document.getElementById('market-meta').textContent = 'Market feed offline — retrying';
+  }
+}
+
+/* Daily 8:00 AM Chicago refresh */
+function scheduleDailyFx() {
+  const fire = () => { updateFx(); scheduleDailyFx(); };
+  const now = new Date();
+  // Convert "now" to Chicago time components
+  const chiNow = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+  const next = new Date(chiNow);
+  next.setHours(CONFIG.dailyFxHourChicago, 0, 0, 0);
+  if (next <= chiNow) next.setDate(next.getDate() + 1);
+  const delay = next - chiNow;
+  setTimeout(fire, delay);
+}
+
+/* ===========================================================
+   NEWS
+   =========================================================== */
+async function fetchRss(url, max=5) {
+  const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=${max}`;
+  const r = await fetch(api);
+  const d = await r.json();
+  if (d.status !== 'ok') throw new Error();
+  return d.items;
+}
+function renderNews(elId, items, src) {
+  const ul = document.getElementById(elId);
+  ul.innerHTML = '';
+  // 3 items (was 4) — guarantees the last one isn't clipped at the panel bottom
+  items.slice(0, 3).forEach(it => {
+    const li = document.createElement('li');
+    li.className = 'news-item';
+    const title = (it.title||'').slice(0, 140);
+    const date = it.pubDate ? new Date(it.pubDate).toLocaleDateString('en-US', { month:'short', day:'numeric' })
+                            : (it.source || '');
+    const srcLabel = it.source || src;
+    li.innerHTML = `<div class="news-title">${title}</div>
+                    <div class="news-meta"><span class="news-source">${srcLabel}</span> · ${date}</div>`;
+    ul.appendChild(li);
+  });
+}
+
+async function updateNews() {
+  // PRIMARY SOURCE: dashboard-data.json (populated by the 6am/noon sync
+  // pulling fresh headlines from TSNN + Trade Show Executive + Koelnmesse
+  // press office). This bypasses client-side RSS quotas and CORS entirely.
+  const industryFromJson = (CONFIG.industryNews || []);
+  const kmFromJson       = (CONFIG.kmNews || []);
+
+  if (industryFromJson.length) {
+    renderNews('industry-news', industryFromJson.map(n => ({
+      title: n.title,
+      pubDate: n.date || null,
+      source: n.source || 'Industry'
+    })), 'Industry');
+  } else {
+    // FALLBACK: try live RSS (may fail on Fire Stick due to CORS)
+    try {
+      const items = await fetchRss('https://www.tsnn.com/rss.xml', 5);
+      renderNews('industry-news', items, 'TSNN');
+    } catch {
+      renderNews('industry-news', [
+        { title: 'Global B2B events market on track to surpass $40B by 2027', pubDate: new Date(), source: 'IBISWorld' },
+        { title: 'Face-to-face events continue to outperform digital channels for lead quality in B2B', pubDate: new Date(), source: 'UFI Global' },
+        { title: 'Sustainability requirements now standard in >60% of major trade show RFPs', pubDate: new Date(), source: 'IAEE' }
+      ], 'Industry');
+    }
+  }
+
+  if (kmFromJson.length) {
+    renderNews('km-news', kmFromJson.map(n => ({
+      title: n.title,
+      pubDate: n.date || null,
+      source: n.source || 'Koelnmesse'
+    })), 'Koelnmesse');
+  } else {
+    // FALLBACK: try live Google News RSS
+    try {
+      const googleNewsRss = 'https://news.google.com/rss/search?q=Koelnmesse&hl=en-US&gl=US&ceid=US:en';
+      const items = await fetchRss(googleNewsRss, 6);
+      if (!items || items.length === 0) throw new Error();
+      const cleaned = items.map(it => {
+        const m = (it.title || '').match(/^(.+?)\s+-\s+([^-]+)$/);
+        return m
+          ? { title: m[1].trim(), pubDate: it.pubDate, source: m[2].trim() }
+          : { title: it.title,    pubDate: it.pubDate, source: 'Google News' };
+      });
+      renderNews('km-news', cleaned, 'Google News');
+    } catch {
+      renderNews('km-news', CONFIG.kmNewsBaseline.map(n => ({
+        title: n.title,
+        pubDate: null,
+        source: n.source
+      })), 'Koelnmesse');
+    }
+  }
+}
+
+/* ===========================================================
+   UPCOMING SHOWS
+   =========================================================== */
+function fmtRange(start, end) {
+  // Append T12:00:00 to force noon-local parsing — prevents UTC-midnight
+  // rolling back one day in US timezones (e.g. "2026-06-09" → Jun 8 in CDT)
+  const s = new Date(start + 'T12:00:00'), e = new Date(end + 'T12:00:00');
+  const mo = s.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  const eMo = e.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  if (mo === eMo) return `${mo} ${s.getDate()}–${e.getDate()}`;
+  return `${mo} ${s.getDate()} – ${eMo} ${e.getDate()}`;
+}
+function daysUntil(d) {
+  return Math.ceil((new Date(d + 'T12:00:00') - new Date()) / 86400000);
+}
+function renderShows() {
+  const grid = document.getElementById('shows-grid');
+  grid.innerHTML = '';
+  const now = new Date();
+  const upcoming = CONFIG.upcomingShows
+    .filter(s => new Date(s.end) >= now)
+    .sort((a,b) => new Date(a.start) - new Date(b.start))
+    .slice(0, 5);
+
+  upcoming.forEach(s => {
+    const days = daysUntil(s.start);
+    const yr = new Date(s.start).getFullYear();
+    const card = document.createElement('div');
+    card.className = 'show-card';
+    card.style.borderLeftColor = s.color;
+
+    // 3-tier logo strategy for 75" TV legibility:
+    //   1. s.logoUrl  — high-res brand logo (best — sharp on TV)
+    //   2. favicon@256 — Google's s2 favicons, 2x resolution vs prior
+    //   3. wordmark   — stylized text fallback
+    const primaryLogo = s.logoUrl
+      || (s.domain ? `https://www.google.com/s2/favicons?domain=${s.domain}&sz=256` : '');
+    const bg = `background: linear-gradient(135deg, ${s.color} 0%, ${s.color}AA 100%);`;
+    const wordmarkClass = s.name.length <= 6 ? 'wordmark short' : 'wordmark';
+    const wordmark = `<div class="${wordmarkClass}">${s.name}</div>`;
+    const logoHtml = primaryLogo
+      ? `<img src="${primaryLogo}" alt="${s.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+         <div class="${wordmarkClass}" style="display:none;">${s.name}</div>`
+      : wordmark;
+
+    card.innerHTML = `
+      <div class="show-logo" style="${bg}">${logoHtml}</div>
+      <div class="show-info">
+        <div class="show-name">${s.name} <span style="color:${s.color}; font-size:11px;">${yr}</span></div>
+        <div class="show-sub">${s.sub} · ${s.loc}</div>
+      </div>
+      <div class="show-date-block">
+        <div class="show-date-range" style="color:${s.color}">${fmtRange(s.start, s.end)}</div>
+        <div class="show-countdown">${days > 0 ? `In ${days} days` : 'In progress'}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ===========================================================
+   STAFF CALENDAR — computed locally from CONFIG.employees/holidays
+   Three sections (Birthdays, Anniversaries, Office Closures)
+   render side-by-side for non-touch TV display.
+   =========================================================== */
+function ordinal(n) {
+  const s = ["th","st","nd","rd"], v = n % 100;
+  return n + (s[(v-20)%10] || s[v] || s[0]);
+}
+function fmtShort(d) {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+}
+function daysFromToday(d) {
+  const t = new Date(); t.setHours(0,0,0,0);
+  return Math.round((d - t) / 86400000);
+}
+function whenLabel(diff, d) {
+  if (diff === 0) return 'TODAY';
+  if (diff === 1) return 'TOMORROW';
+  if (diff > 1 && diff <= 7) return `IN ${diff} DAYS`;
+  return fmtShort(d);
+}
+
+function buildBirthdays() {
+  const t = new Date(); t.setHours(0,0,0,0);
+  return CONFIG.employees
+    .filter(e => e.birthday)
+    .map(e => {
+      const [mm, dd] = e.birthday.split('-').map(Number);
+      let d = new Date(t.getFullYear(), mm-1, dd);
+      if (d < t) d.setFullYear(t.getFullYear() + 1);
+      return { name: e.name, date: d, diff: daysFromToday(d) };
+    })
+    .sort((a,b) => a.diff - b.diff);
+}
+
+function buildAnniversaries() {
+  const t = new Date(); t.setHours(0,0,0,0);
+  return CONFIG.employees
+    .map(e => {
+      const sd = new Date(e.startDate + 'T00:00:00');
+      let d = new Date(t.getFullYear(), sd.getMonth(), sd.getDate());
+      if (d < t) d.setFullYear(t.getFullYear() + 1);
+      const years = d.getFullYear() - sd.getFullYear();
+      if (years <= 0) return null;
+      return { name: e.name, date: d, diff: daysFromToday(d), years };
+    })
+    .filter(Boolean)
+    .sort((a,b) => a.diff - b.diff);
+}
+
+function buildClosures() {
+  return CONFIG.holidays
+    .map(h => {
+      const d = new Date(h.date + 'T00:00:00');
+      return { name: h.name, date: d, diff: daysFromToday(d) };
+    })
+    .filter(h => h.diff >= 0)
+    .sort((a,b) => a.diff - b.diff);
+}
+
+function renderStaffSection(elId, items, kind) {
+  const ul = document.getElementById(elId);
+  ul.innerHTML = '';
+  if (!items.length) {
+    ul.innerHTML = '<li class="staff-empty">No upcoming entries</li>';
+    return 0;
+  }
+  const milestoneYears = [1, 5, 10, 15, 20, 25, 30, 35, 40];
+  // 4 items per block (was 5) — each staff-block is ~140px tall after the header;
+  // 5 rows overflow and clip the bottom name. 4 fits cleanly.
+  items.slice(0, 4).forEach(it => {
+    const li = document.createElement('li');
+    li.className = 'staff-row';
+    let label = it.name;
+    if (kind === 'anniv') {
+      label += ` <span style="color:var(--km-text-dim); font-size:11px; font-weight:500;">(${ordinal(it.years)} yr)</span>`;
+      if (milestoneYears.includes(it.years) && it.diff <= 30) {
+        li.classList.add('milestone');
+      }
+    }
+    if (kind === 'bday' && it.diff === 0) {
+      li.classList.add('celebrating');
+      label = '🎂 ' + label;
+    }
+    if (kind === 'anniv' && it.diff === 0) {
+      li.classList.add('celebrating');
+      label = '🏆 ' + label;
+    }
+    let when = whenLabel(it.diff, it.date);
+    li.innerHTML = `<span class="who">${label}</span><span class="when">${when}</span>`;
+    ul.appendChild(li);
+  });
+  return items.length;
+}
+
+function updateStaffCalendar() {
+  const b = buildBirthdays();
+  const a = buildAnniversaries();
+  const c = buildClosures();
+  renderStaffSection('staff-birthdays',     b, 'bday');
+  renderStaffSection('staff-anniversaries', a, 'anniv');
+  renderStaffSection('staff-closures',      c, 'closure');
+  document.getElementById('bday-count').textContent   = b.length;
+  document.getElementById('anniv-count').textContent  = a.length;
+  document.getElementById('closed-count').textContent = c.length;
+  renderOutOfOffice();
+}
+
+/* ===========================================================
+   OUT OF OFFICE — merges Outlook-synced + manual entries.
+   - Auto-pulled daily at 6am CT from SharedCal@koelnmesse.us
+   - Manual entries layered on top for ad-hoc additions
+   - Deduped per name (keeps the entry ending soonest)
+   =========================================================== */
+function renderOutOfOffice() {
+  const ooo = CONFIG.outOfOffice || {};
+
+  // Backward-compat: if outOfOffice is still an array, treat as manual
+  let synced = [], manual = [];
+  if (Array.isArray(ooo)) {
+    manual = ooo;
+  } else {
+    synced = (ooo.synced || []).map(o => ({ ...o, _src: 'synced' }));
+    manual = (ooo.manual || []).map(o => ({ ...o, _src: 'manual' }));
+  }
+
+  const combined = [...synced, ...manual]
+    .map(o => {
+      const until = new Date(o.until + 'T00:00:00');
+      return { ...o, untilDate: until, diff: daysFromToday(until) };
+    })
+    .filter(o => o.diff >= 0);
+
+  // Dedupe per name — keep entry with earliest "until" (current period first)
+  const byName = {};
+  combined.forEach(o => {
+    if (!byName[o.name] || o.diff < byName[o.name].diff) byName[o.name] = o;
+  });
+  const items = Object.values(byName).sort((a, b) => a.diff - b.diff);
+
+  const ul = document.getElementById('staff-ooo');
+  const countEl = document.getElementById('ooo-count');
+  ul.innerHTML = '';
+  if (!items.length) {
+    ul.innerHTML = '<li class="staff-empty">Everyone in office</li>';
+    countEl.textContent = '0';
+    return;
+  }
+  // 4 items per block — matches renderStaffSection so OOO row visually aligns with others
+  items.slice(0, 4).forEach(it => {
+    const li = document.createElement('li');
+    li.className = 'staff-row';
+    const back = it.diff === 0
+      ? 'BACK TOMORROW'
+      : `BACK ${fmtShort(new Date(it.untilDate.getTime() + 86400000))}`;
+    const status = it.status
+      ? ` <span style="color:var(--km-text-dim); font-size:11px; font-weight:500;">${it.status}</span>`
+      : '';
+    li.innerHTML =
+      `<span class="who">${it.name}${status}</span>` +
+      `<span class="when">${back}</span>`;
+    ul.appendChild(li);
+  });
+  countEl.textContent = items.length;
+}
+
+/* ===========================================================
+   NEWS — World / Germany-Cologne / Chicago / Sports
+   Pulled fresh each morning at 6am Chicago by the scheduled task.
+   =========================================================== */
+function updateNewsRow() {
+  const n = CONFIG.news || {};
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val || '—';
+  };
+
+  if (n.world) {
+    set('news-world-headline', n.world.headline);
+    set('news-world-src',      n.world.source);
+    set('news-world-time',     n.world.time);
+  }
+  if (n.germany) {
+    set('news-germany-headline', n.germany.headline);
+    set('news-germany-src',      n.germany.source);
+    set('news-germany-time',     n.germany.time);
+  }
+  if (n.chicago) {
+    set('news-chicago-headline', n.chicago.headline);
+    set('news-chicago-src',      n.chicago.source);
+    set('news-chicago-time',     n.chicago.time);
+  }
+  if (n.sports) {
+    set('news-sports-team',     n.sports.team || 'Chicago Sports');
+    set('news-sports-headline', n.sports.headline);
+    set('news-sports-src',      n.sports.source);
+    set('news-sports-time',     n.sports.time);
+  }
+}
+
+/* ===========================================================
+   LIVE PIP CAPTIONS FORCER (currently Yahoo Finance Live)
+   YouTube's cc_load_policy=1 doesn't always stick on Fire Stick.
+   Post a command to the iframe (enablejsapi=1) to force captions
+   on after the player has had time to load.
+   Function name kept as forceBloombergCaptions for backward compat
+   with existing call sites; safe to rename in a future pass.
+   =========================================================== */
+function forceBloombergCaptions() {
+  const iframe = document.getElementById('bloomberg-pip');
+  if (!iframe || !iframe.contentWindow) return;
+  try {
+    iframe.contentWindow.postMessage(
+      JSON.stringify({ event: 'command', func: 'loadModule', args: ['captions'] }),
+      '*'
+    );
+    iframe.contentWindow.postMessage(
+      JSON.stringify({ event: 'command', func: 'setOption', args: ['captions', 'track', { languageCode: 'en' }] }),
+      '*'
+    );
+    iframe.contentWindow.postMessage(
+      JSON.stringify({ event: 'command', func: 'setOption', args: ['captions', 'reload', true] }),
+      '*'
+    );
+  } catch (e) { /* silently ignore — Fire Stick may block postMessage */ }
+}
+
+/* ===========================================================
+   FEATURED SHOW SPOTLIGHT
+   Rotates through upcoming Koelnmesse shows every 45s.
+   Big logo, brand color background, days-out countdown.
+   =========================================================== */
+let spotlightIndex = 0;
+function renderSpotlight() {
+  const now = new Date();
+  const upcoming = CONFIG.upcomingShows
+    .filter(s => new Date(s.end) >= now)
+    .sort((a, b) => new Date(a.start) - new Date(b.start))
+    .slice(0, 5);
+
+  if (!upcoming.length) return;
+
+  const s = upcoming[spotlightIndex % upcoming.length];
+  const days = Math.max(0, Math.ceil((new Date(s.start) - now) / 86400000));
+  const inProgress = new Date(s.start) <= now && new Date(s.end) >= now;
+
+  // Update brand color accents
+  const body = document.getElementById('spotlight-body');
+  const spotlight = document.getElementById('spotlight');
+  if (body && s.color) {
+    body.style.background = `linear-gradient(135deg, ${s.color} 0%, ${s.color}CC 100%)`;
+  }
+  if (spotlight) spotlight.style.borderLeftColor = s.color || 'var(--km-red)';
+
+  // Logo — prefer real logoUrl, fall back to favicon@256, then hide
+  const logo = document.getElementById('spotlight-logo');
+  const primaryLogo = s.logoUrl
+    || (s.domain ? `https://www.google.com/s2/favicons?domain=${s.domain}&sz=256` : '');
+  if (logo && primaryLogo) {
+    logo.src = primaryLogo;
+    logo.style.display = '';
+    logo.onerror = () => { logo.style.display = 'none'; };
+  } else if (logo) {
+    logo.style.display = 'none';
+  }
+
+  // Text fields
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  };
+  set('spotlight-name', s.name);
+  set('spotlight-sub', `${s.sub} · ${s.loc}`);
+  set('spotlight-date', fmtRange(s.start, s.end) + ' · ' + new Date(s.start).getFullYear());
+  set('spotlight-days', inProgress ? 'LIVE' : days);
+  const cycle = document.getElementById('spotlight-cycle');
+  if (cycle) cycle.textContent = `${(spotlightIndex % upcoming.length) + 1} OF ${upcoming.length}`;
+
+  // If show is in progress, swap the "DAYS OUT" unit text
+  const unit = document.querySelector('#spotlight-countdown .unit');
+  if (unit) unit.textContent = inProgress ? 'IN PROGRESS' : 'DAYS OUT';
+
+  spotlightIndex++;
+}
+
+/* ===========================================================
+   QUOTE OF THE DAY + WORT DES TAGES
+   Deterministic by day-of-year so quote/word stays stable
+   for the full day, rotates at midnight.
+   =========================================================== */
+function dayOfYearChicago() {
+  const now = new Date();
+  // Anchor rotation to Chicago midnight, not server/browser midnight
+  const chiDateStr = now.toLocaleDateString('en-US', {
+    timeZone: 'America/Chicago',
+    year: 'numeric', month: '2-digit', day: '2-digit'
+  });
+  const [m, d, y] = chiDateStr.split('/').map(Number);
+  const dt = new Date(Date.UTC(y, m-1, d));
+  const startOfYear = new Date(Date.UTC(y, 0, 1));
+  return Math.floor((dt - startOfYear) / 86400000);
+}
+
+function updateQuote() {
+  if (!CONFIG.quotes || !CONFIG.quotes.length) return;
+  const q = CONFIG.quotes[dayOfYearChicago() % CONFIG.quotes.length];
+  document.getElementById('quote-text').textContent = '"' + q.text + '"';
+  document.getElementById('quote-source').textContent = '— ' + q.author;
+}
+
+function updateGermanWord() {
+  if (!CONFIG.germanWords || !CONFIG.germanWords.length) return;
+  // Offset by 7 so quote and word don't cycle in lockstep
+  const idx = (dayOfYearChicago() + 7) % CONFIG.germanWords.length;
+  const w = CONFIG.germanWords[idx];
+  document.getElementById('word-german').textContent  = w.word;
+  document.getElementById('word-pron').textContent    = '/' + w.pron + '/';
+  document.getElementById('word-meaning').textContent = w.meaning;
+}
+
+/* ===========================================================
+   AUTO DIM — apply night-mode 7pm–7am Chicago time
+   =========================================================== */
+function updateDayNightMode() {
+  const chiHour = parseInt(
+    new Date().toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      hour: 'numeric',
+      hour12: false
+    }),
+    10
+  );
+  if (chiHour >= 19 || chiHour < 7) {
+    document.body.classList.add('night-mode');
+  } else {
+    document.body.classList.remove('night-mode');
+  }
+}
+
+/* ===========================================================
+   TICKER — industry news + KM press + evergreen KM stats.
+   v2.0: no longer duplicates world/germany/chicago/sports headlines
+   (those already show in the news cards above). Ticker is now
+   COMPLEMENTARY content: Trade Show industry beat + Koelnmesse
+   press releases + evergreen brand stats.
+   Each dated item gets a date-prefix tag (TODAY / YESTERDAY / MMM DD).
+   =========================================================== */
+function fmtTickerDate(dateStr) {
+  if (!dateStr) return null;
+  const d = new Date(dateStr + 'T12:00:00');
+  if (isNaN(d)) return null;
+  // Compare against Chicago-anchored today
+  const chi = new Date().toLocaleDateString('en-US', {
+    timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit'
+  });
+  const [m, dd, y] = chi.split('/').map(Number);
+  const today = new Date(Date.UTC(y, m - 1, dd));
+  const itemUTC = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const diff = Math.round((today - itemUTC) / 86400000);
+  if (diff === 0) return 'TODAY';
+  if (diff === 1) return 'YESTERDAY';
+  if (diff > 1 && diff <= 6) return `${diff}D AGO`;
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+}
+
+function renderTicker() {
+  const items = [];
+
+  // Industry news (from JSON — populated by daily sync)
+  (CONFIG.industryNews || []).forEach(n => {
+    const dateTag = fmtTickerDate(n.date) || 'INDUSTRY';
+    items.push({ tag: dateTag, text: `${n.title}${n.source ? ' · ' + n.source : ''}` });
+  });
+
+  // Koelnmesse press (from JSON — populated by daily sync)
+  (CONFIG.kmNews || []).forEach(n => {
+    const dateTag = fmtTickerDate(n.date) || 'KM';
+    items.push({ tag: dateTag, text: `${n.title}${n.source ? ' · ' + n.source : ''}` });
+  });
+
+  // Evergreen KM stats — timeless, no date prefix
+  const baseline = [
+    { tag: 'KM',        text: 'Koelnmesse hosts 80+ trade shows globally each year' },
+    { tag: 'EXPANSION', text: '€193M new building near Messe/Deutz to break ground post-Anuga 2027' },
+    { tag: 'NAFTA',     text: 'Koelnmesse Inc. — your North American gateway to Cologne' }
+  ];
+  items.push(...baseline);
+
+  // Fallback if JSON never loaded and we have nothing to show
+  if (items.length === 0) {
+    items.push({ tag: 'LIVE', text: 'Loading industry + Koelnmesse press feed…' });
+  }
+
+  const track = document.getElementById('ticker-track');
+  if (track) {
+    track.innerHTML = [...items, ...items].map(i =>
+      `<span class="ticker-item"><strong>${i.tag}</strong>${i.text}</span>`).join('');
+  }
+}
+
+/* ===========================================================
+   ANTI-SLEEP — keep the TV awake on a long-running display.
+
+   Three layers of defense:
+     1. Wake Lock API (modern browsers) — tells the OS to keep
+        the screen awake. Best when supported.
+     2. Heartbeat element — moves a 2px dot every 30 seconds so
+        TVs that look for visual change see continuous motion.
+     3. visibility re-acquire — if the user (or the system) flips
+        away and back, we re-request the wake lock automatically.
+   =========================================================== */
+let wakeLockRef = null;
+async function acquireWakeLock() {
+  try {
+    if ('wakeLock' in navigator) {
+      wakeLockRef = await navigator.wakeLock.request('screen');
+      wakeLockRef.addEventListener('release', () => {
+        // Re-request next time the page is visible
+        wakeLockRef = null;
+      });
+    }
+  } catch (e) {
+    // Wake Lock can fail if the tab is backgrounded; ignore silently
+  }
+}
+function startAntiSleep() {
+  acquireWakeLock();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && !wakeLockRef) {
+      acquireWakeLock();
+    }
+  });
+
+  // Heartbeat motion — small enough to be invisible, regular enough
+  // to register as "screen is active" to TV firmware
+  const dot = document.getElementById('heartbeat');
+  if (dot) {
+    let pos = 0;
+    setInterval(() => {
+      pos = (pos + 1) % 8;
+      const x = Math.floor(Math.cos(pos * Math.PI / 4) * 6);
+      const y = Math.floor(Math.sin(pos * Math.PI / 4) * 6);
+      dot.style.transform = `translate(${x}px, ${y}px)`;
+    }, 30000);
+  }
+}
+
+/* ===========================================================
+   INIT
+   =========================================================== */
+async function init() {
+  startAntiSleep();
+
+  updateClocks();
+  updateWeather();
+  updateFx();
+  updateNews();
+  renderShows();
+  renderSpotlight();
+  scheduleDailyFx();
+  updateQuote();
+  updateGermanWord();
+  updateDayNightMode();
+
+  // Pull dynamic OOO + news + industry/km news from JSON, THEN render panels
+  await loadDynamicData();
+  updateStaffCalendar();
+  updateNewsRow();
+  updateNews();     // re-render Trade Show + KM news panels with JSON-supplied items
+  renderTicker();   // ticker now uses news headlines — render AFTER JSON loads
+
+  // Re-fetch dynamic data every 30 minutes so manual updates to the JSON
+  // appear without waiting for the next Fire Stick auto-reload at 24h
+  setInterval(async () => {
+    await loadDynamicData();
+    updateStaffCalendar();
+    updateNewsRow();
+    updateNews();
+    renderTicker();
+  }, 30 * 60 * 1000);
+
+  // Featured Show rotates every 45 seconds
+  setInterval(renderSpotlight, 45 * 1000);
+
+  // Force Bloomberg captions on after the iframe has time to boot (Fire Stick)
+  setTimeout(forceBloombergCaptions, 8000);
+  setInterval(forceBloombergCaptions, 60 * 1000);   // re-assert every minute
+
+  setInterval(updateClocks,        CONFIG.refreshIntervals.clock);
+  setInterval(updateWeather,       CONFIG.refreshIntervals.weather);
+  setInterval(updateNews,          CONFIG.refreshIntervals.news);
+  setInterval(updateFx,            CONFIG.refreshIntervals.fx);
+  setInterval(renderShows,         CONFIG.refreshIntervals.shows);
+  setInterval(updateStaffCalendar, 60 * 60 * 1000);   // hourly
+  setInterval(updateQuote,         15 * 60 * 1000);   // re-check (rotates at midnight)
+  setInterval(updateGermanWord,    15 * 60 * 1000);
+  setInterval(updateDayNightMode,  5  * 60 * 1000);   // 5-min check is plenty
+
+  setTimeout(() => location.reload(), 24*60*60*1000);
+
+  // v2.0: also force a reload at 3am Chicago every day — ensures the
+  // dashboard always freshens overnight before anyone's in the office,
+  // even if the 24h timer drifts (Fire Stick clock skew, DST, etc.)
+  scheduleDailyReloadAt3amChicago();
+}
+
+function scheduleDailyReloadAt3amChicago() {
+  const now = new Date();
+  // Get "now" as Chicago wall-clock components
+  const chiParts = new Date(now.toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+  const target = new Date(chiParts);
+  target.setHours(3, 0, 0, 0);
+  if (target <= chiParts) target.setDate(target.getDate() + 1);   // if past 3am today, schedule for tomorrow
+  const msUntil = target - chiParts;
+  setTimeout(() => {
+    location.reload();
+  }, Math.max(60000, msUntil));   // guard: never fire in less than 60s
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

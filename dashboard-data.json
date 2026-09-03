@@ -1,0 +1,76 @@
+{
+  "lastUpdated": "2026-09-03T06:00:00-05:00",
+  "ooo": [
+    {"name": "Kylie", "status": "OOO", "until": "2026-09-03"},
+    {"name": "George", "status": "Half Day", "until": "2026-09-03"},
+    {"name": "Kym", "status": "Half Day", "until": "2026-09-03"},
+    {"name": "George", "status": "OOO", "until": "2026-09-04"},
+    {"name": "Kym", "status": "OOO", "until": "2026-09-08"},
+    {"name": "VW", "status": "Vacation", "until": "2026-09-09"},
+    {"name": "Leslie", "status": "OOO", "until": "2026-09-10"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-09-11"},
+    {"name": "Leslie", "status": "Miami F&B", "until": "2026-09-16"},
+    {"name": "VW", "status": "Vacation", "until": "2026-09-18"},
+    {"name": "George", "status": "Half Day", "until": "2026-09-18"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-09-18"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-09-25"},
+    {"name": "VW", "status": "Competing Show", "until": "2026-09-25"},
+    {"name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02"}
+  ],
+  "topNews": {
+    "world": {
+      "headline": "Germany says Russia behind Leipzig airport drone attack; EU weighs new sanctions",
+      "source": "Euronews",
+      "time": "Today"
+    },
+    "germany": {
+      "headline": "Two Russian suspects identified in Leipzig airport drone 'hybrid attack'",
+      "source": "The Local Germany",
+      "time": "Today"
+    },
+    "chicago": {
+      "headline": "McCormick Place preps to host IMTS 2026, 1,800+ exhibitors, Sept 14-20",
+      "source": "Choose Chicago",
+      "time": "This morning"
+    },
+    "sports": {
+      "headline": "Bears coach Ben Johnson praises Caleb Williams' focus ahead of Week 1 at Carolina",
+      "source": "Chicago Bears / NFL",
+      "time": "Today"
+    }
+  },
+  "industryNews": [
+    {
+      "title": "TSNN Announces Inaugural EXHIEs Award Winners from Connect Marketplace",
+      "source": "TSNN",
+      "date": "2026-09-03"
+    },
+    {
+      "title": "$616 Million Economic Jolt: New York Resort Doubles Down on Trade Show and Events Business",
+      "source": "TSNN",
+      "date": "2026-09-01"
+    },
+    {
+      "title": "TSNN Opens Nominations for Its 16th Annual Awards, Entries Due Sept 30",
+      "source": "TSNN",
+      "date": "2026-08-30"
+    }
+  ],
+  "kmNews": [
+    {
+      "title": "gamescom 2026 concludes with record 368,000 visitors and sold-out 233,000 sqm exhibitor floor",
+      "source": "Koelnmesse Press Office",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "Koelnmesse Inc. to launch h+h americas Fall Edition in Houston, TX in 2026",
+      "source": "hh-americas.com Press Release",
+      "date": "2025-12-17"
+    },
+    {
+      "title": "DMEXCO 2026, Europe's leading digital marketing event, set for Sept 23-24 in Cologne",
+      "source": "Koelnmesse Press Office",
+      "date": "2026-09-03"
+    }
+  ]
+}
