@@ -47,7 +47,7 @@
   /* ---------- Layout ---------- */
   .dashboard {
     display: grid;
-    grid-template-rows: 96px 1fr 206px 52px;
+    grid-template-rows: 96px 34px 1fr 206px 52px;   /* v3.0: added 34px row for daily-brief strip */
     height: 100vh;
     gap: 10px;
     padding: 10px;
@@ -902,9 +902,60 @@
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
   ::-webkit-scrollbar { display: none; }
+
+  /* ---------- v3.0: Globe (Koelnmesse global footprint) ---------- */
+  .spotlight-globe {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #000;
+  }
+  .spotlight-globe canvas { display: block; width: 100% !important; height: 100% !important; }
+  /* Spotlight body already has ::before dark gradient; keep it so overlay text stays readable */
+  .spotlight-body.has-globe::before {
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%);
+  }
+
+  /* ---------- v3.0: Daily Executive Brief strip ---------- */
+  .daily-brief {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 18px;
+    background: linear-gradient(90deg, rgba(226,0,26,0.10) 0%, rgba(21,23,28,0.9) 60%, rgba(21,23,28,0.9) 100%);
+    border-radius: 6px;
+    border-left: 4px solid var(--km-red-glow);
+    font-size: 13px;
+    line-height: 1.35;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .daily-brief .tag {
+    color: var(--km-red-glow);
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding-right: 10px;
+    border-right: 1px solid var(--km-line);
+  }
+  .daily-brief .text {
+    color: var(--km-text);
+    font-weight: 500;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+  .daily-brief .text .divider { color: var(--km-red-glow); margin: 0 8px; opacity: 0.7; font-weight: 800; }
+
 </style>
 </head>
 <body>
+  <!-- globe.gl for v3.0 global-footprint spotlight (lazy: only inits if container exists) -->
+  <script src="https://unpkg.com/globe.gl@2.35.1/dist/globe.gl.min.js"></script>
   <div class="dashboard">
 
     <!-- HEADER -->
@@ -933,6 +984,12 @@
         </div>
       </div>
     </header>
+
+    <!-- v3.0: DAILY EXECUTIVE BRIEF — 1-line synthesis of today's OOO + news + KM press -->
+    <section class="daily-brief" id="daily-brief">
+      <span class="tag">● Today</span>
+      <span class="text" id="daily-brief-text">Loading executive brief…</span>
+    </section>
 
     <!-- MAIN -->
     <main class="main">
@@ -992,7 +1049,9 @@
             <span><span class="pulse">●</span>Featured Show</span>
             <span style="color: var(--km-text-dim); font-size: 9px; letter-spacing: 1.5px;" id="spotlight-cycle">1 OF 5</span>
           </div>
-          <div class="spotlight-body" id="spotlight-body">
+          <div class="spotlight-body has-globe" id="spotlight-body">
+            <!-- v3.0: 3D globe backdrop showing Koelnmesse global footprint -->
+            <div class="spotlight-globe" id="spotlight-globe"></div>
             <img class="spotlight-logo" id="spotlight-logo" alt="" />
             <div class="spotlight-name" id="spotlight-name">Loading…</div>
             <div class="spotlight-sub" id="spotlight-sub">—</div>
@@ -1008,7 +1067,10 @@
       <section class="panel">
         <div class="panel-header">
           <div class="panel-title">Trade Show Industry News</div>
-          <div class="panel-icon">📰</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="refresh-stamp" data-freshness></span>
+            <div class="panel-icon">📰</div>
+          </div>
         </div>
         <ul class="news-list" id="industry-news">
           <li class="news-item"><div class="news-title">Loading…</div></li>
@@ -1028,7 +1090,10 @@
       <section class="panel" style="grid-row: span 2;">
         <div class="panel-header">
           <div class="panel-title">Team Calendar</div>
-          <div class="panel-icon">🎉</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="refresh-stamp" data-freshness></span>
+            <div class="panel-icon">🎉</div>
+          </div>
         </div>
         <div class="staff-stack">
           <div class="staff-block b1">
@@ -1074,7 +1139,10 @@
       <section class="panel">
         <div class="panel-header">
           <div class="panel-title">Koelnmesse News</div>
-          <div class="panel-icon">🏛️</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="refresh-stamp" data-freshness></span>
+            <div class="panel-icon">🏛️</div>
+          </div>
         </div>
         <ul class="news-list" id="km-news">
           <li class="news-item"><div class="news-title">Loading…</div></li>
@@ -1155,7 +1223,7 @@
   </div>
 
   <!-- VERSION BADGE — bottom-left, shows current app version + last data sync -->
-  <div class="version-badge" id="version-badge">v2.0<span class="stamp" id="version-stamp">· data —</span></div>
+  <div class="version-badge" id="version-badge">v3.0<span class="stamp" id="version-stamp">· data —</span></div>
 
   <!-- HEARTBEAT: imperceptible motion pixel to defeat TV sleep timers -->
   <div class="heartbeat" id="heartbeat"></div>
@@ -1485,6 +1553,7 @@ async function loadDynamicData() {
     else if (data.news)    CONFIG.news         = data.news;
 
     if (data.industryNews) CONFIG.industryNews = data.industryNews;
+    if (typeof data.dailyBrief === 'string') CONFIG.dailyBrief = data.dailyBrief;
     if (data.kmNews)       CONFIG.kmNews       = data.kmNews;
 
     CONFIG.lastSyncStamp = data.lastUpdated || data.generatedAt || data.lastSynced || null;
@@ -2012,7 +2081,146 @@ function forceBloombergCaptions() {
    FEATURED SHOW SPOTLIGHT
    Rotates through upcoming Koelnmesse shows every 45s.
    Big logo, brand color background, days-out countdown.
+   v3.0: globe backdrop rotates to focus on featured show's location.
    =========================================================== */
+
+/* -----------------------------------------------------------
+   v3.0 GLOBE — Koelnmesse global footprint
+   Coordinates for every location that shows up in
+   CONFIG.upcomingShows (loc field) + our two offices.
+   ----------------------------------------------------------- */
+const LOC_COORDS = {
+  "Cologne, DE":    { lat: 50.9375, lng:   6.9603, label: "Cologne (HQ)",   type: "hq" },
+  "Köln":           { lat: 50.9375, lng:   6.9603, label: "Cologne (HQ)",   type: "hq" },
+  "Chicago, IL":    { lat: 41.8781, lng: -87.6298, label: "Chicago Inc.",   type: "office" },
+  "Chicago":        { lat: 41.8781, lng: -87.6298, label: "Chicago Inc.",   type: "office" },
+  "Tashkent, UZ":   { lat: 41.2995, lng:  69.2401, label: "Tashkent",       type: "show" },
+  "Bogota, CO":     { lat:  4.7110, lng: -74.0721, label: "Bogotá",         type: "show" },
+  "Bogotá":         { lat:  4.7110, lng: -74.0721, label: "Bogotá",         type: "show" },
+  "Bangkok, TH":    { lat: 13.7563, lng: 100.5018, label: "Bangkok",        type: "show" },
+  "Houston, TX":    { lat: 29.7604, lng: -95.3698, label: "Houston",        type: "show" },
+  "Sao Paulo, BR":  { lat:-23.5505, lng: -46.6333, label: "São Paulo",      type: "show" },
+  "Tokyo, JP":      { lat: 35.6762, lng: 139.6503, label: "Tokyo",          type: "show" },
+  "Mumbai, IN":     { lat: 19.0760, lng:  72.8777, label: "Mumbai",         type: "show" },
+  "Jakarta, ID":    { lat: -6.2088, lng: 106.8456, label: "Jakarta",        type: "show" },
+  "Guangzhou, CN":  { lat: 23.1291, lng: 113.2644, label: "Guangzhou",      type: "show" },
+  "Riyadh, SA":     { lat: 24.7136, lng:  46.6753, label: "Riyadh",         type: "show" },
+  "Dubai, UAE":     { lat: 25.2048, lng:  55.2708, label: "Dubai",          type: "show" }
+};
+function locOf(locStr) {
+  if (!locStr) return null;
+  return LOC_COORDS[locStr] || null;
+}
+
+let globeInstance = null;
+function initGlobe() {
+  if (globeInstance) return globeInstance;
+  const el = document.getElementById('spotlight-globe');
+  if (!el || typeof Globe !== 'function') return null;
+
+  // Build points: HQ + office (always red) + all upcoming show locations (gold)
+  const now = new Date();
+  const showLocs = (CONFIG.upcomingShows || [])
+    .filter(s => new Date(s.end) >= now)
+    .map(s => locOf(s.loc))
+    .filter(Boolean);
+  const officeLocs = [ LOC_COORDS["Cologne, DE"], LOC_COORDS["Chicago, IL"] ];
+  const uniq = [...officeLocs, ...showLocs].reduce((acc, p) => {
+    const k = `${p.lat},${p.lng}`;
+    if (!acc._seen.has(k)) { acc._seen.add(k); acc.list.push(p); }
+    return acc;
+  }, { _seen: new Set(), list: [] }).list;
+
+  const colorFor = (t) => t === 'hq' ? '#E2001A' : t === 'office' ? '#FF2335' : '#F2C744';
+  const sizeFor  = (t) => t === 'hq' ? 0.9 : t === 'office' ? 0.7 : 0.45;
+
+  try {
+    globeInstance = Globe()(el)
+      .backgroundColor('#000000')
+      .globeImageUrl('https://unpkg.com/three-globe@2.31.0/example/img/earth-dark.jpg')
+      .showAtmosphere(false)             // Fire Stick GPU is weak — skip atmosphere
+      .pointsData(uniq)
+      .pointLat('lat').pointLng('lng')
+      .pointColor(d => colorFor(d.type))
+      .pointAltitude(d => sizeFor(d.type) * 0.05)
+      .pointRadius(d => sizeFor(d.type))
+      .pointResolution(6)                // low poly — keep it cheap
+      .pointsMerge(true);
+
+    // Slow continuous rotation until renderSpotlight overrides POV to focus on featured show
+    const controls = globeInstance.controls();
+    if (controls) {
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.4;
+      controls.enableZoom = false;
+    }
+  } catch (e) {
+    console.warn('Globe init failed — hiding container', e);
+    el.style.display = 'none';
+    return null;
+  }
+  return globeInstance;
+}
+
+function focusGlobeOn(loc) {
+  if (!globeInstance || !loc) return;
+  try {
+    // Turn off auto-rotate briefly, pan to the featured location, restart rotate after
+    const controls = globeInstance.controls();
+    if (controls) controls.autoRotate = false;
+    globeInstance.pointOfView({ lat: loc.lat, lng: loc.lng, altitude: 2.2 }, 2500);
+    setTimeout(() => { if (controls) controls.autoRotate = true; }, 3000);
+  } catch (e) { /* silent — globe might not be initialized */ }
+}
+
+/* -----------------------------------------------------------
+   v3.0 DAILY EXECUTIVE BRIEF renderer
+   ----------------------------------------------------------- */
+function renderDailyBrief() {
+  const el = document.getElementById('daily-brief-text');
+  if (!el) return;
+  const brief = (CONFIG.dailyBrief || '').trim();
+  if (brief) {
+    // Replace pipe/bullet separators with a styled divider
+    const html = brief
+      .replace(/</g, '&lt;')
+      .replace(/(\s+[·•|]\s+)/g, '<span class="divider">·</span>');
+    el.innerHTML = html;
+  } else {
+    // Fallback synthesis from top news if sync task hasn't populated yet
+    const n = CONFIG.news || {};
+    const parts = [];
+    if (n.world?.headline)   parts.push(n.world.headline);
+    if (n.germany?.headline) parts.push(n.germany.headline);
+    if (n.chicago?.headline) parts.push(n.chicago.headline);
+    el.innerHTML = parts.length
+      ? parts.join(' <span class="divider">·</span> ')
+      : 'Loading executive brief…';
+  }
+}
+
+/* -----------------------------------------------------------
+   v3.0 FRESHNESS STAMPS — small "updated Xm ago" per panel
+   ----------------------------------------------------------- */
+function fmtAgo(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d)) return '';
+  const mins = Math.floor((Date.now() - d.getTime()) / 60000);
+  if (mins < 1)   return 'just now';
+  if (mins < 60)  return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24)   return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+function updateFreshnessStamps() {
+  const stamp = fmtAgo(CONFIG.lastSyncStamp);
+  document.querySelectorAll('[data-freshness]').forEach(el => {
+    el.textContent = stamp ? '· ' + stamp : '';
+  });
+}
+
 let spotlightIndex = 0;
 function renderSpotlight() {
   const now = new Date();
@@ -2062,6 +2270,9 @@ function renderSpotlight() {
   // If show is in progress, swap the "DAYS OUT" unit text
   const unit = document.querySelector('#spotlight-countdown .unit');
   if (unit) unit.textContent = inProgress ? 'IN PROGRESS' : 'DAYS OUT';
+
+  // v3.0: point the globe at this show's location
+  focusGlobeOn(locOf(s.loc));
 
   spotlightIndex++;
 }
@@ -2239,18 +2450,21 @@ async function init() {
   updateFx();
   updateNews();
   renderShows();
+  initGlobe();          // v3.0: init globe backdrop before first spotlight cycle
   renderSpotlight();
   scheduleDailyFx();
   updateQuote();
   updateGermanWord();
   updateDayNightMode();
 
-  // Pull dynamic OOO + news + industry/km news from JSON, THEN render panels
+  // Pull dynamic OOO + news + industry/km news + dailyBrief from JSON, THEN render panels
   await loadDynamicData();
   updateStaffCalendar();
   updateNewsRow();
-  updateNews();     // re-render Trade Show + KM news panels with JSON-supplied items
-  renderTicker();   // ticker now uses news headlines — render AFTER JSON loads
+  updateNews();          // re-render Trade Show + KM news panels with JSON-supplied items
+  renderTicker();        // ticker uses news headlines — render AFTER JSON loads
+  renderDailyBrief();    // v3.0: executive brief strip
+  updateFreshnessStamps(); // v3.0: "updated Xm ago" on panel headers
 
   // Re-fetch dynamic data every 30 minutes so manual updates to the JSON
   // appear without waiting for the next Fire Stick auto-reload at 24h
@@ -2260,7 +2474,12 @@ async function init() {
     updateNewsRow();
     updateNews();
     renderTicker();
+    renderDailyBrief();
+    updateFreshnessStamps();
   }, 30 * 60 * 1000);
+
+  // Update the "Xm ago" freshness display every minute (independent of data refetch)
+  setInterval(updateFreshnessStamps, 60 * 1000);
 
   // Featured Show rotates every 45 seconds
   setInterval(renderSpotlight, 45 * 1000);
