@@ -1,36 +1,76 @@
 {
-  "lastUpdated": "2026-09-04T06:00:00-05:00",
+  "lastUpdated": "2026-09-05T06:00:00-05:00",
+  "dailyBrief": "5 out through Sept 11 · Koelnmesse 3.0 campus upgrade advances · DMEXCO Cologne Sept 23-25 · Fed rate-hike bets rise, markets slip",
   "ooo": [
-    { "name": "Kylie", "status": "OOO", "until": "2026-09-03" },
-    { "name": "George", "status": "OOO 1/2 day pm", "until": "2026-09-03" },
-    { "name": "Kym", "status": "OOO 1/2 day", "until": "2026-09-03" },
     { "name": "George", "status": "OOO", "until": "2026-09-04" },
     { "name": "Kym", "status": "OOO", "until": "2026-09-08" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-09" },
     { "name": "Leslie", "status": "OOO", "until": "2026-09-10" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-11" },
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-17" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "OOO 1/2 day pm", "until": "2026-09-18" },
+    { "name": "George", "status": "OOO (half day)", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" }
+    { "name": "VW", "status": "Comp day", "until": "2026-09-25" },
+    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" }
   ],
   "topNews": {
-    "world": { "headline": "Xi Jinping visits Egypt for first time in a decade as China expands global reach", "source": "Reuters", "time": "Today" },
-    "germany": { "headline": "Volkswagen approves radical restructuring plans amid biggest-ever industry shake-up", "source": "The Local Germany (thelocal.de)", "time": "Today" },
-    "chicago": { "headline": "Chicago Auto Show veteran Chris Konecki named new McCormick Place general manager", "source": "Crain's Chicago Business", "time": "Yesterday" },
-    "sports": { "headline": "Bears eye edge-rusher trade as Ryan Poles reshapes roster ahead of opener vs. Panthers", "source": "Yardbarker", "time": "Today" }
+    "world": {
+      "headline": "Markets slip as strong US jobs data lifts Fed rate-hike odds; gold, Treasury yields climb",
+      "source": "Rio Times Online",
+      "time": "Today"
+    },
+    "germany": {
+      "headline": "Cologne debates new Dürener Straße bike lanes as businesses, politicians call plans unrealistic",
+      "source": "Kölner Stadt-Anzeiger (ksta.de)",
+      "time": "This morning"
+    },
+    "chicago": {
+      "headline": "McCormick Place/MPEA invests $24M+ annually with M/WBE suppliers as convention calendar builds",
+      "source": "McCormick Place Newsroom",
+      "time": "This morning"
+    },
+    "sports": {
+      "headline": "Pete Crow-Armstrong powers Cubs win as Bears' Caleb Williams, Bulls stars cheer from the stands",
+      "source": "Chicago Sun-Times",
+      "time": "Yesterday"
+    }
   },
   "industryNews": [
-    { "title": "TSNN Announces Inaugural EXHIEs Award Winners from Connect Marketplace", "source": "TSNN", "date": "2026-08-28" },
-    { "title": "World of Asphalt Draws Record 15,800+ Attendees, Up 38% From 2022", "source": "TSNN", "date": "2026-08-25" },
-    { "title": "IAAPA Expo 2026 Returns to Orlando With Expanded West Hall Show Floor", "source": "Trade Show Executive", "date": "2026-08-20" }
+    {
+      "title": "Freeman promotes Chris Schimek to President of Freeman Events & Exhibits",
+      "source": "TSNN",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "Javits Center's Joyce Leveston elected UFI North American Chapter Chair; Al Shanfari named Incoming President",
+      "source": "TSNN",
+      "date": "2026-08-27"
+    },
+    {
+      "title": "NYC Tourism + Conventions names Fred Dixon President & CEO, effective December 1",
+      "source": "BizBash",
+      "date": "2026-09-01"
+    }
   ],
   "kmNews": [
-    { "title": "Kind + Jugend 2026 to Open September 15 in Cologne, Spotlighting Global Childcare Market", "source": "Koelnmesse Press Office", "date": "2026-09-01" },
-    { "title": "DMEXCO 2026 Set to Return to Cologne Sept 23-24 as Europe's Leading Digital Marketing Event", "source": "Koelnmesse Press Office", "date": "2026-08-28" },
-    { "title": "Four Furniture Trade Fairs to Run Concurrently in Jakarta Sept 23-27 via Koelnmesse Partnerships", "source": "Koelnmesse Asia", "date": "2026-08-25" }
+    {
+      "title": "Koelnmesse 3.0 investment program advances: new exhibition hall, multifunctional venue, East-West terminal by 2030",
+      "source": "Koelnmesse Press Office",
+      "date": "2026-08-20"
+    },
+    {
+      "title": "interzum jakarta, IFFINA, IFMAC WOODMAC to run concurrently Sept 23-27, forming full furniture value-chain platform",
+      "source": "Koelnmesse Press Office",
+      "date": "2026-08-15"
+    },
+    {
+      "title": "CEO Gerald Böse: 2025 was strong, but 2026 will be a challenging year for Koelnmesse amid event cycle, economic headwinds",
+      "source": "Koelnmesse Press Office",
+      "date": "2026-08-10"
+    }
   ]
 }
