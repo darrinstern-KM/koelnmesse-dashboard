@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T06:00:00-05:00",
+  "lastUpdated": "2026-09-05T06:20:00-05:00",
   "dailyBrief": "5 out through Sept 11 · Koelnmesse 3.0 campus upgrade advances · DMEXCO Cologne Sept 23-25 · Fed rate-hike bets rise, markets slip",
   "ooo": [
     { "name": "George", "status": "OOO", "until": "2026-09-04" },
@@ -41,36 +41,36 @@
   },
   "industryNews": [
     {
-      "title": "Freeman promotes Chris Schimek to President of Freeman Events & Exhibits",
+      "title": "Farm Progress named TSNN's B2B Show of the Year for purpose-driven transformation",
       "source": "TSNN",
-      "date": "2026-08-28"
+      "date": "2026-09-02"
     },
     {
-      "title": "Javits Center's Joyce Leveston elected UFI North American Chapter Chair; Al Shanfari named Incoming President",
-      "source": "TSNN",
-      "date": "2026-08-27"
-    },
-    {
-      "title": "NYC Tourism + Conventions names Fred Dixon President & CEO, effective December 1",
-      "source": "BizBash",
+      "title": "MPEA names Chris Konecki new McCormick Place General Manager, effective Aug. 24",
+      "source": "Trade Show Executive",
       "date": "2026-09-01"
+    },
+    {
+      "title": "Caesars Palace marks 60th anniversary, hosts events-industry press for celebration",
+      "source": "Trade Show Executive",
+      "date": "2026-09-03"
     }
   ],
   "kmNews": [
     {
-      "title": "Koelnmesse 3.0 investment program advances: new exhibition hall, multifunctional venue, East-West terminal by 2030",
-      "source": "Koelnmesse Press Office",
-      "date": "2026-08-20"
+      "title": "41st IAW opens Sept 8-10 in Cologne with ~300 exhibitors, 5,500 trade visitors expected",
+      "source": "iaw-messe.de",
+      "date": "2026-09-05"
     },
     {
-      "title": "interzum jakarta, IFFINA, IFMAC WOODMAC to run concurrently Sept 23-27, forming full furniture value-chain platform",
-      "source": "Koelnmesse Press Office",
-      "date": "2026-08-15"
+      "title": "Zukunft Personal Europe 2026 previews \"Team Human x AI\" theme, ~700 exhibitors, Sept 15-17",
+      "source": "Haufe",
+      "date": "2026-09-04"
     },
     {
-      "title": "CEO Gerald Böse: 2025 was strong, but 2026 will be a challenging year for Koelnmesse amid event cycle, economic headwinds",
-      "source": "Koelnmesse Press Office",
-      "date": "2026-08-10"
+      "title": "Koelnmesse unveils new dog-supplies trade fair to launch 2027 alongside spoga horse",
+      "source": "Presseportal",
+      "date": "2026-09-01"
     }
   ]
 }
