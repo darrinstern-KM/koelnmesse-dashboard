@@ -1,8 +1,7 @@
 {
-  "lastUpdated": "2026-09-05T06:20:00-05:00",
-  "dailyBrief": "5 out through Sept 11 · Koelnmesse 3.0 campus upgrade advances · DMEXCO Cologne Sept 23-25 · Fed rate-hike bets rise, markets slip",
+  "lastUpdated": "2026-09-06T06:15:00-05:00",
+  "dailyBrief": "Leslie out thru Wed · gamescom peaked 368K, record global reach · Berlin advances tax reform, offshore wind law · Bears open Sun vs Panthers",
   "ooo": [
-    { "name": "George", "status": "OOO", "until": "2026-09-04" },
     { "name": "Kym", "status": "OOO", "until": "2026-09-08" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-09" },
     { "name": "Leslie", "status": "OOO", "until": "2026-09-10" },
@@ -10,67 +9,25 @@
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "Saloni", "status": "OOO", "until": "2026-09-17" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "OOO (half day)", "until": "2026-09-18" },
+    { "name": "George", "status": "Half Day PM", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
+    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp day", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" }
   ],
   "topNews": {
-    "world": {
-      "headline": "Markets slip as strong US jobs data lifts Fed rate-hike odds; gold, Treasury yields climb",
-      "source": "Rio Times Online",
-      "time": "Today"
-    },
-    "germany": {
-      "headline": "Cologne debates new Dürener Straße bike lanes as businesses, politicians call plans unrealistic",
-      "source": "Kölner Stadt-Anzeiger (ksta.de)",
-      "time": "This morning"
-    },
-    "chicago": {
-      "headline": "McCormick Place/MPEA invests $24M+ annually with M/WBE suppliers as convention calendar builds",
-      "source": "McCormick Place Newsroom",
-      "time": "This morning"
-    },
-    "sports": {
-      "headline": "Pete Crow-Armstrong powers Cubs win as Bears' Caleb Williams, Bulls stars cheer from the stands",
-      "source": "Chicago Sun-Times",
-      "time": "Yesterday"
-    }
+    "world": { "headline": "US envoys Witkoff, Kushner arrive in Moscow to revive Ukraine peace push", "source": "Euronews", "time": "Today" },
+    "germany": { "headline": "German cabinet advances offshore wind expansion law, income tax reform", "source": "Bundesregierung.de", "time": "This week" },
+    "chicago": { "headline": "IMTS 2026 opens at McCormick Place Sept 14, expects 90,000 visitors", "source": "IMTS.com", "time": "This week" },
+    "sports": { "headline": "Bears' Odunze, Swift banged up in practice ahead of Sunday's opener vs Panthers", "source": "Bleacher Nation", "time": "This week" }
   },
   "industryNews": [
-    {
-      "title": "Farm Progress named TSNN's B2B Show of the Year for purpose-driven transformation",
-      "source": "TSNN",
-      "date": "2026-09-02"
-    },
-    {
-      "title": "MPEA names Chris Konecki new McCormick Place General Manager, effective Aug. 24",
-      "source": "Trade Show Executive",
-      "date": "2026-09-01"
-    },
-    {
-      "title": "Caesars Palace marks 60th anniversary, hosts events-industry press for celebration",
-      "source": "Trade Show Executive",
-      "date": "2026-09-03"
-    }
+    { "title": "$616M Economic Jolt: NY Resort Doubles Down on Trade Show, Events Business", "source": "TSNN", "date": "2026-09-01" },
+    { "title": "TSNN Announces Inaugural EXHIEs Award Winners from Connect Marketplace", "source": "TSNN", "date": "2026-09-03" },
+    { "title": "Outdoor Retailer 2026 Resets, Showcases More Emerging Brands and Creators", "source": "TSNN", "date": "2026-09-04" }
   ],
   "kmNews": [
-    {
-      "title": "41st IAW opens Sept 8-10 in Cologne with ~300 exhibitors, 5,500 trade visitors expected",
-      "source": "iaw-messe.de",
-      "date": "2026-09-05"
-    },
-    {
-      "title": "Zukunft Personal Europe 2026 previews \"Team Human x AI\" theme, ~700 exhibitors, Sept 15-17",
-      "source": "Haufe",
-      "date": "2026-09-04"
-    },
-    {
-      "title": "Koelnmesse unveils new dog-supplies trade fair to launch 2027 alongside spoga horse",
-      "source": "Presseportal",
-      "date": "2026-09-01"
-    }
+    { "title": "gamescom 2026 concludes with record 368,000 visitors from 131 countries", "source": "GamesBeat", "date": "2026-08-31" }
   ]
 }
