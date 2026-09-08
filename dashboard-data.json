@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-07T06:00:00-05:00",
-  "dailyBrief": "Leslie out through Wed · gamescom closed at 368K, record global reach · Ukraine peace push stalls despite Kyiv/Moscow visits · Bears open Sunday vs Panthers",
+  "lastUpdated": "2026-09-08T06:00:00-05:00",
+  "dailyBrief": "4 out through Thu · AfD wins record 43.8% in Saxony-Anhalt · FABTECH opens at McCormick Place · Bears open season Sunday vs Panthers",
   "ooo": [
     { "name": "Kym", "status": "OOO", "until": "2026-09-08" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-09" },
@@ -8,25 +8,22 @@
     { "name": "Cathy", "status": "OOO", "until": "2026-09-11" },
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "Half Day", "until": "2026-09-18" },
+    { "name": "George", "status": "1/2 Day PM", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
-    { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" }
   ],
   "topNews": {
-    "world": { "headline": "US envoys Kushner, Witkoff push Ukraine-Russia peace after Kyiv, Moscow visits; no breakthrough yet", "source": "CNBC", "time": "Yesterday" },
-    "germany": { "headline": "Suspected sabotage devices found near power substation in Bergheim, near Cologne", "source": "The Local Germany", "time": "Today" },
-    "chicago": { "headline": "Pedestrian fatally struck by Metra train near McCormick Place, service delayed", "source": "WGN Chicago", "time": "This morning" },
-    "sports": { "headline": "Bears open 2026 season Sunday vs. Panthers; team eyes NFC North repeat despite tough schedule", "source": "NFL.com", "time": "Today" }
+    "world": { "headline": "Amazon cargo jet overshoots runway at Miami airport, killing 5", "source": "Euronews", "time": "Today" },
+    "germany": { "headline": "AfD wins record 43.8% in Saxony-Anhalt election, CDU falls to 17.2%", "source": "ZDFheute", "time": "Yesterday" },
+    "chicago": { "headline": "FABTECH manufacturing expo opens at McCormick Place, runs through Sept 11", "source": "McCormick Place Newsroom", "time": "Today" },
+    "sports": { "headline": "Bears open regular season Sunday vs. Panthers at 1pm on FOX", "source": "NFL.com", "time": "This morning" }
   },
   "industryNews": [
-    { "title": "TSNN Announces Inaugural EXHIEs Award Winners from Connect Marketplace", "source": "TSNN", "date": "2026-09-03" },
-    { "title": "Outdoor Retailer 2026 Makes Minneapolis Debut, Embraces Creators and Influencers", "source": "TSNN", "date": "2026-09-04" },
-    { "title": "EMMA Opens Registration for First-Ever Event Measurement Certification Course", "source": "TSNN", "date": "2026-09-04" }
+    { "title": "US Event Industry News for September 3, 2026: Algonquin Hotel renovation, USAV Golden Gate Classic added to Moscone calendar", "source": "BizBash", "date": "2026-09-03" },
+    { "title": "US Event Industry News for September 1, 2026: NYC Tourism + Conventions names Fred Dixon president/CEO", "source": "BizBash", "date": "2026-09-01" }
   ],
-  "kmNews": [
-    { "title": "gamescom 2026 concludes with 368,000 visitors, record global participation; 2027 dates set", "source": "GamesBeat", "date": "2026-08-31" }
-  ]
+  "kmNews": []
 }
