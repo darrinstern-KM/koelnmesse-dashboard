@@ -1,33 +1,28 @@
 {
-  "lastUpdated": "2026-09-10T06:00:00-05:00",
-  "dailyBrief": "3 out today: Leslie, Kate, Saloni · Kind+Jugend Cologne opens 9/15 · DMEXCO Sept 23-25 · news feed unavailable today (search outage)",
+  "lastUpdated": "2026-09-11T06:07:08-05:00",
+  "dailyBrief": "2 out today (Cathy, Kate/Saloni) · Merz demands PISA overhaul after worst-ever scores · Bears open season Sun vs Panthers · watch: Houthis seize Yemen port",
   "ooo": [
-    { "name": "VW", "status": "Vacation", "until": "2026-09-09" },
-    { "name": "Leslie", "status": "OOO", "until": "2026-09-10" },
     { "name": "Kate & Saloni", "status": "Wisconsin Quilt Show & Wool Festival", "until": "2026-09-11" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-11" },
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "1/2 day pm", "until": "2026-09-18" },
+    { "name": "George", "status": "OOO half day", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp time", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Comp", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
+    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" }
   ],
   "topNews": {
-    "world": { "headline": "US-Iran tanker war escalates; Brent crude spikes to $99/barrel", "source": "Al Jazeera", "time": "Yesterday" },
-    "germany": { "headline": "Merz finalizes cabinet reshuffle after Spahn, Schnieder exits", "source": "ZDF (zdfheute.de)", "time": "Yesterday" },
-    "chicago": { "headline": "Chicago faces $130M budget shortfall as new revenue sources fall short", "source": "WGN-TV", "time": "Yesterday" },
-    "sports": { "headline": "Bears open regular season Sunday vs. Panthers", "source": "NFL.com", "time": "Yesterday" }
+    "world":   { "headline": "Houthi rebels capture key Yemeni port city, escalating regional conflict", "source": "Anadolu Agency", "time": "Today" },
+    "germany": { "headline": "Merz demands action after Germany records worst-ever PISA results", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "McCormick Place named among world's top 25 convention centers by Exhibitor magazine", "source": "McCormick Place Newsroom", "time": "This week" },
+    "sports":  { "headline": "Bears open 2026 season Sunday at Carolina Panthers, noon CT kickoff", "source": "NFL.com", "time": "This week" }
   },
   "industryNews": [
-    { "title": "Newsblast: Willwork University 2026, Airshow China's 30-year milestone", "source": "Exhibit City News", "date": "2026-09-08" },
-    { "title": "US Event Industry News for September 3, 2026", "source": "BizBash", "date": "2026-09-03" },
-    { "title": "Canada Event Industry News for September 3, 2026", "source": "BizBash", "date": "2026-09-03" }
+    { "title": "Venue News: More than $1B in Venue Investment, From Bloomington to Miami", "source": "TSNN", "date": "2026-09-08" },
+    { "title": "Event Launch: Africa Exhibition Forum Set for December in Nairobi", "source": "TSNN", "date": "2026-09-08" },
+    { "title": "5 Trends Reshaping Event Beverage Programs", "source": "TSNN", "date": "2026-09-10" }
   ],
   "kmNews": []
 }
