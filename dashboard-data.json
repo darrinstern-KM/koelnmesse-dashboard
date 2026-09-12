@@ -1,28 +1,32 @@
 {
-  "lastUpdated": "2026-09-11T06:07:08-05:00",
-  "dailyBrief": "2 out today (Cathy, Kate/Saloni) · Merz demands PISA overhaul after worst-ever scores · Bears open season Sun vs Panthers · watch: Houthis seize Yemen port",
+  "lastUpdated": "2026-09-12T06:05:00-05:00",
+  "dailyBrief": "Leslie out to Miami F&B Mon · Kind+Jugend opens Cologne Tue · Bears open season Sun vs Panthers · Merz cabinet reshuffle sworn in",
   "ooo": [
-    { "name": "Kate & Saloni", "status": "Wisconsin Quilt Show & Wool Festival", "until": "2026-09-11" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-11" },
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "OOO half day", "until": "2026-09-18" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp time", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" }
+    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
+    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
+    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
   ],
   "topNews": {
-    "world":   { "headline": "Houthi rebels capture key Yemeni port city, escalating regional conflict", "source": "Anadolu Agency", "time": "Today" },
-    "germany": { "headline": "Merz demands action after Germany records worst-ever PISA results", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "McCormick Place named among world's top 25 convention centers by Exhibitor magazine", "source": "McCormick Place Newsroom", "time": "This week" },
-    "sports":  { "headline": "Bears open 2026 season Sunday at Carolina Panthers, noon CT kickoff", "source": "NFL.com", "time": "This week" }
+    "world":   { "headline": "Wall St snaps losing streak as inflation cools; BRICS summit convenes in Brazil", "source": "Reuters", "time": "Today" },
+    "germany": { "headline": "Merz cabinet reshuffle: new ministers set to be sworn in as Bundestag returns", "source": "ZDF (zdfheute.de)", "time": "Today" },
+    "chicago": { "headline": "Chicago City Council confirms Kenya Merritt as Cultural Affairs Commissioner", "source": "Chicago Sun-Times", "time": "Today" },
+    "sports":  { "headline": "Bears travel to Panthers for Sunday season opener; Odunze questionable", "source": "NFL.com", "time": "Today" }
   },
   "industryNews": [
-    { "title": "Venue News: More than $1B in Venue Investment, From Bloomington to Miami", "source": "TSNN", "date": "2026-09-08" },
-    { "title": "Event Launch: Africa Exhibition Forum Set for December in Nairobi", "source": "TSNN", "date": "2026-09-08" },
-    { "title": "5 Trends Reshaping Event Beverage Programs", "source": "TSNN", "date": "2026-09-10" }
+    { "title": "Trade Show Moves: TSNN's Roundup of New Hires & Promotions for September", "source": "TSNN", "date": "2026-09-11" },
+    { "title": "Inside Natural Products Expo West & SupplySide Global with Jeff D'Entremont", "source": "TSNN", "date": "2026-09-10" },
+    { "title": "US Event Industry News for September 8, 2026", "source": "BizBash", "date": "2026-09-08" }
   ],
-  "kmNews": []
+  "kmNews": [
+    { "title": "Kind + Jugend 2026 opens in Cologne Sept 15-17 with 700+ exhibitors, AI theme", "source": "Koelnmesse", "date": "2026-09-12" },
+    { "title": "DMEXCO 2026 set for Cologne Sept 23-25 as digital marketing show ramps up", "source": "Koelnmesse", "date": "2026-09-12" }
+  ]
 }
