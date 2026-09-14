@@ -1,31 +1,33 @@
 {
-  "lastUpdated": "2026-09-13T09:00:00-05:00",
-  "dailyBrief": "4 out this week · Bears open season vs Panthers today · Merz cabinet reshuffle continues · Chicago mayor targets deportation-aiding firms",
+  "lastUpdated": "2026-09-14T07:00:00-05:00",
+  "dailyBrief": "4 out through Fri · IMTS opens at McCormick Place (86K+ attendees) · Merz pushes growth reforms · Bears open season 1-0",
   "ooo": [
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "1/2 day PM", "until": "2026-09-18" },
+    { "name": "George", "status": "Half Day PM", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
-    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
+    { "name": "VW", "status": "Comp Day", "until": "2026-10-09" },
+    { "name": "George", "status": "Half Day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
   ],
   "topNews": {
-    "world":   { "headline": "Houthi advance on Yemen's Red Sea coast threatens to push gas prices higher", "source": "Reuters", "time": "Yesterday" },
-    "germany": { "headline": "Merz cabinet reshuffle: what comes next after the government shake-up", "source": "ZDFheute", "time": "This week" },
-    "chicago": { "headline": "Mayor's executive order targets firms aiding federal deportation campaign", "source": "Chicago Sun-Times", "time": "Today" },
-    "sports":  { "headline": "Bears open 2026 season on the road vs. Panthers under new coach Ben Johnson", "source": "NFL.com", "time": "Today" }
+    "world": { "headline": "Fed weighs quarter-point hike Sept 16 as ECB lifts rates, oil near $104", "source": "Market wires", "time": "Today" },
+    "germany": { "headline": "Merz cabinet retreat: economy is 'the most important topic,' pushes growth reforms", "source": "ZDFheute", "time": "This week" },
+    "chicago": { "headline": "IMTS 2026 opens at McCormick Place, drawing 1,800+ exhibitors", "source": "Trade Show Executive", "time": "Today" },
+    "sports": { "headline": "Bears open season 1-0, beat Panthers behind Swift, Williams TDs", "source": "NFL.com", "time": "Yesterday" }
   },
   "industryNews": [
-    { "title": "TSNN: Trade Show Moves — September Roundup of New Hires & Promotions (Clarion, IAEE, Raccoon Media, Destination El Paso)", "source": "TSNN", "date": "2026-09-11" },
-    { "title": "Canada Event Industry News for September 8, 2026", "source": "BizBash", "date": "2026-09-08" }
+    { "title": "Trade Show Executive covers IMTS move-in at McCormick Place ahead of Sept 14 opening", "source": "Trade Show Executive", "date": "2026-09-09" },
+    { "title": "ECA submits FCC comments for 100 groups to protect tradeshow equipment display rules", "source": "Exhibit City News", "date": "2026-09-08" },
+    { "title": "Exposure Analytics benchmark: exhibitions average 39.7% engagement, 17-min dwell time", "source": "Exhibit City News", "date": "2026-09-07" }
   ],
   "kmNews": [
-    { "title": "La Feria de Diseño Medellín powered by idd cologne opens in Medellín, Colombia", "source": "Koelnmesse", "date": "2026-09-10" }
+    { "title": "Kind + Jugend 2026 opens in Cologne with 'Growing with AI' theme for baby & toddler industry", "source": "Koelnmesse", "date": "2026-09-10" }
   ]
 }
