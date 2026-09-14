@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-12T06:05:00-05:00",
-  "dailyBrief": "Leslie out to Miami F&B Mon · Kind+Jugend opens Cologne Tue · Bears open season Sun vs Panthers · Merz cabinet reshuffle sworn in",
+  "lastUpdated": "2026-09-13T09:00:00-05:00",
+  "dailyBrief": "4 out this week · Bears open season vs Panthers today · Merz cabinet reshuffle continues · Chicago mayor targets deportation-aiding firms",
   "ooo": [
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
@@ -8,6 +8,7 @@
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
     { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
     { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
@@ -15,18 +16,16 @@
     { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
   ],
   "topNews": {
-    "world":   { "headline": "Wall St snaps losing streak as inflation cools; BRICS summit convenes in Brazil", "source": "Reuters", "time": "Today" },
-    "germany": { "headline": "Merz cabinet reshuffle: new ministers set to be sworn in as Bundestag returns", "source": "ZDF (zdfheute.de)", "time": "Today" },
-    "chicago": { "headline": "Chicago City Council confirms Kenya Merritt as Cultural Affairs Commissioner", "source": "Chicago Sun-Times", "time": "Today" },
-    "sports":  { "headline": "Bears travel to Panthers for Sunday season opener; Odunze questionable", "source": "NFL.com", "time": "Today" }
+    "world":   { "headline": "Houthi advance on Yemen's Red Sea coast threatens to push gas prices higher", "source": "Reuters", "time": "Yesterday" },
+    "germany": { "headline": "Merz cabinet reshuffle: what comes next after the government shake-up", "source": "ZDFheute", "time": "This week" },
+    "chicago": { "headline": "Mayor's executive order targets firms aiding federal deportation campaign", "source": "Chicago Sun-Times", "time": "Today" },
+    "sports":  { "headline": "Bears open 2026 season on the road vs. Panthers under new coach Ben Johnson", "source": "NFL.com", "time": "Today" }
   },
   "industryNews": [
-    { "title": "Trade Show Moves: TSNN's Roundup of New Hires & Promotions for September", "source": "TSNN", "date": "2026-09-11" },
-    { "title": "Inside Natural Products Expo West & SupplySide Global with Jeff D'Entremont", "source": "TSNN", "date": "2026-09-10" },
-    { "title": "US Event Industry News for September 8, 2026", "source": "BizBash", "date": "2026-09-08" }
+    { "title": "TSNN: Trade Show Moves — September Roundup of New Hires & Promotions (Clarion, IAEE, Raccoon Media, Destination El Paso)", "source": "TSNN", "date": "2026-09-11" },
+    { "title": "Canada Event Industry News for September 8, 2026", "source": "BizBash", "date": "2026-09-08" }
   ],
   "kmNews": [
-    { "title": "Kind + Jugend 2026 opens in Cologne Sept 15-17 with 700+ exhibitors, AI theme", "source": "Koelnmesse", "date": "2026-09-12" },
-    { "title": "DMEXCO 2026 set for Cologne Sept 23-25 as digital marketing show ramps up", "source": "Koelnmesse", "date": "2026-09-12" }
+    { "title": "La Feria de Diseño Medellín powered by idd cologne opens in Medellín, Colombia", "source": "Koelnmesse", "date": "2026-09-10" }
   ]
 }
