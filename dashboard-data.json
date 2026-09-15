@@ -1,33 +1,37 @@
 {
-  "lastUpdated": "2026-09-14T07:00:00-05:00",
-  "dailyBrief": "4 out through Fri · IMTS opens at McCormick Place (86K+ attendees) · Merz pushes growth reforms · Bears open season 1-0",
+  "lastUpdated": "2026-09-15T06:00:00-05:00",
+  "dailyBrief": "5 out this week · PSI trade show relocates to Cologne from 2027 · gamescom 2026 fully booked · Bears open season with 59-36 rout",
   "ooo": [
     { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-16" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "Half Day PM", "until": "2026-09-18" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-09-18" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-21" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
+    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Comp Day", "until": "2026-10-09" },
-    { "name": "George", "status": "Half Day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
-    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
+    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
   ],
   "topNews": {
-    "world": { "headline": "Fed weighs quarter-point hike Sept 16 as ECB lifts rates, oil near $104", "source": "Market wires", "time": "Today" },
-    "germany": { "headline": "Merz cabinet retreat: economy is 'the most important topic,' pushes growth reforms", "source": "ZDFheute", "time": "This week" },
-    "chicago": { "headline": "IMTS 2026 opens at McCormick Place, drawing 1,800+ exhibitors", "source": "Trade Show Executive", "time": "Today" },
-    "sports": { "headline": "Bears open season 1-0, beat Panthers behind Swift, Williams TDs", "source": "NFL.com", "time": "Yesterday" }
+    "world":   { "headline": "AI regulation debate escalates: Trump dismisses Amodei's slowdown warning", "source": "Wire reports", "time": "Today" },
+    "germany": { "headline": "Ford to cut up to 1,000 jobs at Cologne EV plant amid weak demand", "source": "The Local Germany", "time": "This week" },
+    "chicago": { "headline": "McCormick Place enters 2026 with EXHIBITOR magazine top-25 convention center honors", "source": "Choose Chicago", "time": "This week" },
+    "sports":  { "headline": "Bears open 2026 season with record-tying 59-36 rout of Panthers", "source": "NBC Chicago", "time": "This week" }
   },
   "industryNews": [
-    { "title": "Trade Show Executive covers IMTS move-in at McCormick Place ahead of Sept 14 opening", "source": "Trade Show Executive", "date": "2026-09-09" },
-    { "title": "ECA submits FCC comments for 100 groups to protect tradeshow equipment display rules", "source": "Exhibit City News", "date": "2026-09-08" },
-    { "title": "Exposure Analytics benchmark: exhibitions average 39.7% engagement, 17-min dwell time", "source": "Exhibit City News", "date": "2026-09-07" }
+    { "title": "M&A: ALTOUR Acquires UK Meetings Provider Your Event Solutions", "source": "TSNN", "date": "2026-09-14" },
+    { "title": "Event Launch: Africa Exhibition Forum Set for December in Nairobi", "source": "TSNN", "date": "2026-09-08" },
+    { "title": "Greg Topalian Named Chairman of North America at Events Investment Firm", "source": "TSNN", "date": "2026-09-08" }
   ],
   "kmNews": [
-    { "title": "Kind + Jugend 2026 opens in Cologne with 'Growing with AI' theme for baby & toddler industry", "source": "Koelnmesse", "date": "2026-09-10" }
+    { "title": "PSI Confirms Koelnmesse as New Home from 2027, Relocating from Dusseldorf", "source": "BPMA", "date": "2026-09-14" },
+    { "title": "FUR SIE Messe 2026 Sees Record Participation at Koelnmesse", "source": "about-drinks.com", "date": "2026-09-10" },
+    { "title": "Kind+Jugend Opens Today at Koelnmesse Cologne", "source": "Koelnmesse trade fair calendar", "date": "2026-09-15" }
   ]
 }
