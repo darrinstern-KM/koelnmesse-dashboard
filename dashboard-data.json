@@ -1,37 +1,36 @@
 {
-  "lastUpdated": "2026-09-15T06:00:00-05:00",
-  "dailyBrief": "5 out this week · PSI trade show relocates to Cologne from 2027 · gamescom 2026 fully booked · Bears open season with 59-36 rout",
+  "lastUpdated": "2026-09-16T06:10:00-05:00",
+  "dailyBrief": "4 out through Fri · Kind+Jugend & Zukunft Personal Europe live in Cologne · VW eyes deeper restructuring · Bears 1-0 after record opener",
   "ooo": [
-    { "name": "Leslie", "status": "Miami F&B", "until": "2026-09-16" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-16" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-17" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "1/2 day PM", "until": "2026-09-18" },
+    { "name": "George", "status": "Half Day (PM)", "until": "2026-09-18" },
     { "name": "Saloni", "status": "OOO", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-21" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
-    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" }
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
+    { "name": "VW", "status": "Comp", "until": "2026-10-09" },
+    { "name": "George", "status": "Half Day (PM)", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "George", "status": "OOO", "until": "2026-10-16" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
   ],
   "topNews": {
-    "world":   { "headline": "AI regulation debate escalates: Trump dismisses Amodei's slowdown warning", "source": "Wire reports", "time": "Today" },
-    "germany": { "headline": "Ford to cut up to 1,000 jobs at Cologne EV plant amid weak demand", "source": "The Local Germany", "time": "This week" },
-    "chicago": { "headline": "McCormick Place enters 2026 with EXHIBITOR magazine top-25 convention center honors", "source": "Choose Chicago", "time": "This week" },
-    "sports":  { "headline": "Bears open 2026 season with record-tying 59-36 rout of Panthers", "source": "NBC Chicago", "time": "This week" }
+    "world": { "headline": "Von der Leyen proposes Canada as EU's first associate member amid US tariffs", "source": "Reuters", "time": "Today" },
+    "germany": { "headline": "Kind+Jugend and Zukunft Personal Europe trade fairs open in Cologne through Thursday", "source": "koelnmesse.com", "time": "Today" },
+    "chicago": { "headline": "IMTS manufacturing technology show returns to McCormick Place this month", "source": "mccormickplace.com", "time": "Today" },
+    "sports": { "headline": "Bears set franchise record with 59-37 season-opening win over Panthers", "source": "chicagobears.com", "time": "This week" }
   },
   "industryNews": [
-    { "title": "M&A: ALTOUR Acquires UK Meetings Provider Your Event Solutions", "source": "TSNN", "date": "2026-09-14" },
-    { "title": "Event Launch: Africa Exhibition Forum Set for December in Nairobi", "source": "TSNN", "date": "2026-09-08" },
-    { "title": "Greg Topalian Named Chairman of North America at Events Investment Firm", "source": "TSNN", "date": "2026-09-08" }
+    { "title": "Jennifer LeMaster named president & CEO of Seattle Convention Center, first woman to lead venue", "source": "TSNN", "date": "2026-09-16" },
+    { "title": "ALTOUR acquires UK meetings provider Your Event Solutions", "source": "TSNN", "date": "2026-09-14" },
+    { "title": "TSNN's Trade Show Moves: roundup of September hires and promotions", "source": "TSNN", "date": "2026-09-14" }
   ],
   "kmNews": [
-    { "title": "PSI Confirms Koelnmesse as New Home from 2027, Relocating from Dusseldorf", "source": "BPMA", "date": "2026-09-14" },
-    { "title": "FUR SIE Messe 2026 Sees Record Participation at Koelnmesse", "source": "about-drinks.com", "date": "2026-09-10" },
-    { "title": "Kind+Jugend Opens Today at Koelnmesse Cologne", "source": "Koelnmesse trade fair calendar", "date": "2026-09-15" }
+    { "title": "Kind+Jugend, premier baby and toddler products trade fair, opens in Cologne", "source": "koelnmesse.com", "date": "2026-09-15" },
+    { "title": "Zukunft Personal Europe opens alongside Kind+Jugend in Cologne", "source": "koelnmesse.com", "date": "2026-09-15" }
   ]
 }
