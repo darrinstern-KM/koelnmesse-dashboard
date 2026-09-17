@@ -1,36 +1,77 @@
 {
-  "lastUpdated": "2026-09-16T06:10:00-05:00",
-  "dailyBrief": "4 out through Fri · Kind+Jugend & Zukunft Personal Europe live in Cologne · VW eyes deeper restructuring · Bears 1-0 after record opener",
+  "lastUpdated": "2026-09-17T09:31:30-05:00",
+  "dailyBrief": "5 out Fri · PSI signs to host at Koelnmesse from 2027 · Bears home opener Sunday vs Vikings · watch: Houthi Red Sea seizure hits Saudi oil",
   "ooo": [
     { "name": "Saloni", "status": "OOO", "until": "2026-09-17" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "Half Day (PM)", "until": "2026-09-18" },
+    { "name": "George", "status": "Half Day PM", "until": "2026-09-18" },
     { "name": "Saloni", "status": "OOO", "until": "2026-09-18" },
+    { "name": "Kate", "status": "Half Day PM", "until": "2026-09-18" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-21" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
+    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Comp", "until": "2026-10-09" },
-    { "name": "George", "status": "Half Day (PM)", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
-    { "name": "George", "status": "OOO", "until": "2026-10-16" },
-    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
+    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
+    { "name": "George", "status": "Half Day PM", "until": "2026-10-09" }
   ],
   "topNews": {
-    "world": { "headline": "Von der Leyen proposes Canada as EU's first associate member amid US tariffs", "source": "Reuters", "time": "Today" },
-    "germany": { "headline": "Kind+Jugend and Zukunft Personal Europe trade fairs open in Cologne through Thursday", "source": "koelnmesse.com", "time": "Today" },
-    "chicago": { "headline": "IMTS manufacturing technology show returns to McCormick Place this month", "source": "mccormickplace.com", "time": "Today" },
-    "sports": { "headline": "Bears set franchise record with 59-37 season-opening win over Panthers", "source": "chicagobears.com", "time": "This week" }
+    "world": {
+      "headline": "Houthis seize Red Sea island near Bab el-Mandeb; Saudi Arabia shuts oil pipeline",
+      "source": "Wire reports",
+      "time": "Today"
+    },
+    "germany": {
+      "headline": "Kolner Lichter 2026 lights the Rhine with fireworks and drone show",
+      "source": "ksta.de",
+      "time": "This week"
+    },
+    "chicago": {
+      "headline": "McCormick Place earns Gold sustainability certification, extends 2026 momentum",
+      "source": "Crain's Chicago Business",
+      "time": "This week"
+    },
+    "sports": {
+      "headline": "Bears prep for Sunday home opener vs. Vikings after 59-37 win over Panthers",
+      "source": "ChicagoBears.com",
+      "time": "Today"
+    }
   },
   "industryNews": [
-    { "title": "Jennifer LeMaster named president & CEO of Seattle Convention Center, first woman to lead venue", "source": "TSNN", "date": "2026-09-16" },
-    { "title": "ALTOUR acquires UK meetings provider Your Event Solutions", "source": "TSNN", "date": "2026-09-14" },
-    { "title": "TSNN's Trade Show Moves: roundup of September hires and promotions", "source": "TSNN", "date": "2026-09-14" }
+    {
+      "title": "Dennis Edwards to retire as President and CEO of Greater Raleigh CVB",
+      "source": "TSNN",
+      "date": "2026-09-16"
+    },
+    {
+      "title": "GISEC Global 2026 opens in Dubai; Genians unveils Security Platform",
+      "source": "TSNN",
+      "date": "2026-09-16"
+    },
+    {
+      "title": "The Power of Scent at Events: sensory branding trend for exhibitors",
+      "source": "TSNN",
+      "date": "2026-09-17"
+    }
   ],
   "kmNews": [
-    { "title": "Kind+Jugend, premier baby and toddler products trade fair, opens in Cologne", "source": "koelnmesse.com", "date": "2026-09-15" },
-    { "title": "Zukunft Personal Europe opens alongside Kind+Jugend in Cologne", "source": "koelnmesse.com", "date": "2026-09-15" }
+    {
+      "title": "Kind + Jugend and Zukunft Personal Europe open in Cologne",
+      "source": "Koelnmesse",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "RX Deutschland and Koelncongress sign contracts to host PSI at Koelnmesse from 2027",
+      "source": "BPMA",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "Koelnmesse announces International Hardware Fair India 2026, 23-25 Oct in New Delhi",
+      "source": "ANI",
+      "date": "2026-09-17"
+    }
   ]
 }
