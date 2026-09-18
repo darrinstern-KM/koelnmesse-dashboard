@@ -1,77 +1,37 @@
 {
-  "lastUpdated": "2026-09-17T09:31:30-05:00",
-  "dailyBrief": "5 out Fri · PSI signs to host at Koelnmesse from 2027 · Bears home opener Sunday vs Vikings · watch: Houthi Red Sea seizure hits Saudi oil",
+  "lastUpdated": "2026-09-18T06:05:00-05:00",
+  "dailyBrief": "5 out today · PSI trade show relocating to Cologne 2027 · Bears home opener Sun vs Vikings · Merz cabinet reshuffle continues",
   "ooo": [
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-17" },
     { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "Half Day PM", "until": "2026-09-18" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-18" },
-    { "name": "Kate", "status": "Half Day PM", "until": "2026-09-18" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-18" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-21" },
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
-    { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Competing Show", "until": "2026-10-09" },
-    { "name": "George", "status": "Half Day PM", "until": "2026-10-09" }
+    { "name": "George", "status": "1/2 Day PM", "until": "2026-09-18" },
+    { "name": "Saloni", "status": "Out", "until": "2026-09-18" },
+    { "name": "Kate", "status": "1/2 Day PM", "until": "2026-09-18" },
+    { "name": "Cathy", "status": "Out", "until": "2026-09-18" },
+    { "name": "Saloni", "status": "Out", "until": "2026-09-21" },
+    { "name": "Saloni", "status": "Out", "until": "2026-09-22" },
+    { "name": "George", "status": "Out", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "Out", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "Out", "until": "2026-10-02" },
+    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "VW", "status": "Comp Day", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 Day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "Out", "until": "2026-10-09" }
   ],
   "topNews": {
-    "world": {
-      "headline": "Houthis seize Red Sea island near Bab el-Mandeb; Saudi Arabia shuts oil pipeline",
-      "source": "Wire reports",
-      "time": "Today"
-    },
-    "germany": {
-      "headline": "Kolner Lichter 2026 lights the Rhine with fireworks and drone show",
-      "source": "ksta.de",
-      "time": "This week"
-    },
-    "chicago": {
-      "headline": "McCormick Place earns Gold sustainability certification, extends 2026 momentum",
-      "source": "Crain's Chicago Business",
-      "time": "This week"
-    },
-    "sports": {
-      "headline": "Bears prep for Sunday home opener vs. Vikings after 59-37 win over Panthers",
-      "source": "ChicagoBears.com",
-      "time": "Today"
-    }
+    "world": { "headline": "Trump threatens EU tariffs over plan to admit Canada as associate member", "source": "DW", "time": "Today" },
+    "germany": { "headline": "Merz cabinet reshuffle continues following Spahn resignation", "source": "ZDF", "time": "This week" },
+    "chicago": { "headline": "Cubs and White Sox both push toward October as playoff races tighten", "source": "ABC7 Chicago", "time": "This week" },
+    "sports": { "headline": "Bears host Soldier Field home opener Sunday vs. Vikings", "source": "NBC Chicago", "time": "This week" }
   },
   "industryNews": [
-    {
-      "title": "Dennis Edwards to retire as President and CEO of Greater Raleigh CVB",
-      "source": "TSNN",
-      "date": "2026-09-16"
-    },
-    {
-      "title": "GISEC Global 2026 opens in Dubai; Genians unveils Security Platform",
-      "source": "TSNN",
-      "date": "2026-09-16"
-    },
-    {
-      "title": "The Power of Scent at Events: sensory branding trend for exhibitors",
-      "source": "TSNN",
-      "date": "2026-09-17"
-    }
+    { "title": "LIONS Expands Global Platform with VidCon Combination, Riyadh and Singapore Festival Launch", "source": "TSNN", "date": "2026-09-17" },
+    { "title": "Jennifer LeMaster Becomes First Female CEO of Seattle Convention Center", "source": "TSNN", "date": "2026-09-16" },
+    { "title": "TSNN News Desk: Las Vegas CVB's Rebecca DeLuca on Industry Insights", "source": "TSNN", "date": "2026-09-17" }
   ],
   "kmNews": [
-    {
-      "title": "Kind + Jugend and Zukunft Personal Europe open in Cologne",
-      "source": "Koelnmesse",
-      "date": "2026-09-15"
-    },
-    {
-      "title": "RX Deutschland and Koelncongress sign contracts to host PSI at Koelnmesse from 2027",
-      "source": "BPMA",
-      "date": "2026-09-14"
-    },
-    {
-      "title": "Koelnmesse announces International Hardware Fair India 2026, 23-25 Oct in New Delhi",
-      "source": "ANI",
-      "date": "2026-09-17"
-    }
+    { "title": "PSI Confirms Koelnmesse as New Cologne Home Starting 2027, Ending 60-Year Düsseldorf Run", "source": "Koelnmesse / BPMA", "date": "2026-09-14" },
+    { "title": "Kind + Jugend 2026 Wraps in Cologne After Three-Day Run", "source": "Koelnmesse", "date": "2026-09-17" },
+    { "title": "Zukunft Personal Europe HR Trade Fair Concludes in Cologne", "source": "Koelnmesse", "date": "2026-09-17" }
   ]
 }
