@@ -1,37 +1,29 @@
 {
-  "lastUpdated": "2026-09-18T06:05:00-05:00",
-  "dailyBrief": "5 out today · PSI trade show relocating to Cologne 2027 · Bears home opener Sun vs Vikings · Merz cabinet reshuffle continues",
+  "lastUpdated": "2026-09-19T06:00:00-05:00",
+  "dailyBrief": "Saloni out through Mon · DMEXCO opens Cologne Tue · Köln WWII bomb defused overnight · Bears home opener Sun vs Vikings",
   "ooo": [
-    { "name": "VW", "status": "Vacation", "until": "2026-09-18" },
-    { "name": "George", "status": "1/2 Day PM", "until": "2026-09-18" },
-    { "name": "Saloni", "status": "Out", "until": "2026-09-18" },
-    { "name": "Kate", "status": "1/2 Day PM", "until": "2026-09-18" },
-    { "name": "Cathy", "status": "Out", "until": "2026-09-18" },
-    { "name": "Saloni", "status": "Out", "until": "2026-09-21" },
-    { "name": "Saloni", "status": "Out", "until": "2026-09-22" },
-    { "name": "George", "status": "Out", "until": "2026-09-25" },
+    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
+    { "name": "George", "status": "OOO", "until": "2026-09-25" },
     { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "Out", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "Out", "until": "2026-10-02" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
     { "name": "VW", "status": "Comp Day", "until": "2026-10-09" },
     { "name": "George", "status": "1/2 Day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "Out", "until": "2026-10-09" }
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "George", "status": "OOO", "until": "2026-10-16" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
   ],
   "topNews": {
-    "world": { "headline": "Trump threatens EU tariffs over plan to admit Canada as associate member", "source": "DW", "time": "Today" },
-    "germany": { "headline": "Merz cabinet reshuffle continues following Spahn resignation", "source": "ZDF", "time": "This week" },
-    "chicago": { "headline": "Cubs and White Sox both push toward October as playoff races tighten", "source": "ABC7 Chicago", "time": "This week" },
-    "sports": { "headline": "Bears host Soldier Field home opener Sunday vs. Vikings", "source": "NBC Chicago", "time": "This week" }
+    "world": { "headline": "Trump signs new sanctions act targeting Russia and Iran actors", "source": "AP", "time": "Today" },
+    "germany": { "headline": "WWII bomb defused in Cologne-Porz; ~2,300 residents evacuated", "source": "Stadt Köln", "time": "This week" },
+    "chicago": { "headline": "Morning storms trigger nearly 1,000 flight delays at Chicago airports", "source": "Chicago Sun-Times", "time": "Today" },
+    "sports": { "headline": "Bears (1-0) host Vikings Sunday in home opener at Soldier Field", "source": "Chicago Bears", "time": "Today" }
   },
   "industryNews": [
-    { "title": "LIONS Expands Global Platform with VidCon Combination, Riyadh and Singapore Festival Launch", "source": "TSNN", "date": "2026-09-17" },
-    { "title": "Jennifer LeMaster Becomes First Female CEO of Seattle Convention Center", "source": "TSNN", "date": "2026-09-16" },
-    { "title": "TSNN News Desk: Las Vegas CVB's Rebecca DeLuca on Industry Insights", "source": "TSNN", "date": "2026-09-17" }
+    { "title": "IMTS 2026 opens in Chicago as manufacturing takes center stage", "source": "RoboticsTomorrow / IMTS", "date": "2026-09-14" },
+    { "title": "LIONS expands global platform with VidCon combination, Riyadh and Singapore festival launch", "source": "TSNN", "date": "2026-09-18" },
+    { "title": "Executive Interview: Rebecca DeLuca of Las Vegas Convention & Visitors Authority", "source": "Trade Show Executive", "date": "2026-09-18" }
   ],
-  "kmNews": [
-    { "title": "PSI Confirms Koelnmesse as New Cologne Home Starting 2027, Ending 60-Year Düsseldorf Run", "source": "Koelnmesse / BPMA", "date": "2026-09-14" },
-    { "title": "Kind + Jugend 2026 Wraps in Cologne After Three-Day Run", "source": "Koelnmesse", "date": "2026-09-17" },
-    { "title": "Zukunft Personal Europe HR Trade Fair Concludes in Cologne", "source": "Koelnmesse", "date": "2026-09-17" }
-  ]
+  "kmNews": []
 }
