@@ -1,29 +1,30 @@
 {
-  "lastUpdated": "2026-09-19T06:00:00-05:00",
-  "dailyBrief": "Saloni out through Mon · DMEXCO opens Cologne Tue · Köln WWII bomb defused overnight · Bears home opener Sun vs Vikings",
+  "lastUpdated": "2026-09-20T06:32:52-05:00",
+  "dailyBrief": "3 out through late Sept · PSI trade fair confirmed for Cologne 2027 · Bears home opener today vs Vikings · watch: Iran war keeps diesel at $6/gal",
   "ooo": [
-    { "name": "Saloni", "status": "OOO", "until": "2026-09-22" },
     { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp Day", "until": "2026-09-25" },
+    { "name": "VW", "status": "comp", "until": "2026-09-25" },
     { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "Comp Day", "until": "2026-10-09" },
-    { "name": "George", "status": "1/2 Day PM", "until": "2026-10-09" },
+    { "name": "VW", "status": "comp", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
     { "name": "George", "status": "OOO", "until": "2026-10-16" },
     { "name": "VW", "status": "Sial", "until": "2026-10-22" }
   ],
   "topNews": {
-    "world": { "headline": "Trump signs new sanctions act targeting Russia and Iran actors", "source": "AP", "time": "Today" },
-    "germany": { "headline": "WWII bomb defused in Cologne-Porz; ~2,300 residents evacuated", "source": "Stadt Köln", "time": "This week" },
-    "chicago": { "headline": "Morning storms trigger nearly 1,000 flight delays at Chicago airports", "source": "Chicago Sun-Times", "time": "Today" },
-    "sports": { "headline": "Bears (1-0) host Vikings Sunday in home opener at Soldier Field", "source": "Chicago Bears", "time": "Today" }
+    "world":   { "headline": "Iran war nears 7 months, Ukraine conflict keeps energy markets on edge as US diesel hits $6/gal", "source": "Kiplinger/Yahoo Finance", "time": "Yesterday" },
+    "germany": { "headline": "Frustration grows within Union over federal budget as Merz pushes EU Arctic strategy in Finland", "source": "ZDFheute", "time": "Yesterday" },
+    "chicago": { "headline": "McCormick Place opens 2026 with Exhibitor magazine top-25 convention center honor, sustainability gold cert", "source": "McCormick Place Newsroom", "time": "This week" },
+    "sports":  { "headline": "Bears open home slate today vs Vikings at Soldier Field after 59-37 rout of Panthers in Week 1", "source": "NFL.com", "time": "Today" }
   },
   "industryNews": [
-    { "title": "IMTS 2026 opens in Chicago as manufacturing takes center stage", "source": "RoboticsTomorrow / IMTS", "date": "2026-09-14" },
-    { "title": "LIONS expands global platform with VidCon combination, Riyadh and Singapore festival launch", "source": "TSNN", "date": "2026-09-18" },
-    { "title": "Executive Interview: Rebecca DeLuca of Las Vegas Convention & Visitors Authority", "source": "Trade Show Executive", "date": "2026-09-18" }
+    { "title": "SISO CEO Vinnie Polito on AI, M&A and the future of trade shows", "source": "TSNN", "date": "2026-09-18" },
+    { "title": "LIONS expands global platform with VidCon combination, launches Riyadh and Singapore festivals", "source": "TSNN", "date": "2026-09-17" },
+    { "title": "TSNN Executive Interview Series features LVCVA's Rebecca DeLuca", "source": "TSNN", "date": "2026-09-16" }
   ],
-  "kmNews": []
+  "kmNews": [
+    { "title": "RX Deutschland and Koelncongress sign contracts bringing PSI to Koelnmesse grounds starting Jan 2027", "source": "BPMA / Koelnmesse", "date": "2026-09-14" }
+  ]
 }
