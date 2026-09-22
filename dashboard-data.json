@@ -1,28 +1,30 @@
 {
-  "lastUpdated": "2026-09-22T09:00:00-05:00",
-  "dailyBrief": "4 out this week (George, Cathy, VW, Leslie) · Merz's CDU battered in state votes · Fed hikes to 3.75-4.00% · DMEXCO opens Cologne Wed",
+  "lastUpdated": "2026-09-22T18:15:09-05:00",
+  "dailyBrief": "3 out Fri (George, VW, Cathy) · DMEXCO opens in Cologne tomorrow · Merz reeling after state vote losses · watch: Hormuz talks steering energy prices",
   "ooo": [
-    { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "comp", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
-    { "name": "VW", "status": "comp", "until": "2026-10-09" },
+    { "name": "George", "status": "Out of office", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp day", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "Out of office", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "Out of office", "until": "2026-10-02" },
+    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "VW", "status": "Comp day", "until": "2026-10-09" },
     { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
-    { "name": "George", "status": "OOO", "until": "2026-10-16" },
-    { "name": "VW", "status": "Sial", "until": "2026-10-22" }
+    { "name": "Cathy", "status": "Out of office", "until": "2026-10-09" },
+    { "name": "George", "status": "Out of office", "until": "2026-10-16" },
+    { "name": "VW", "status": "SIAL", "until": "2026-10-22" }
   ],
   "topNews": {
-    "world": { "headline": "Fed raises rates to 3.75%-4.00%, first hike since 2023, citing inflation", "source": "NPR", "time": "This week" },
-    "germany": { "headline": "Merz's CDU battered in Berlin, Mecklenburg-Vorpommern state elections", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "McCormick Place named among world's top 25 convention centers by EXHIBITOR", "source": "Crain's Chicago Business", "time": "This week" },
-    "sports": { "headline": "Cubs enter final week of regular season chasing playoff seeding", "source": "MLB.com", "time": "This week" }
+    "world":   { "headline": "Trump addresses UN General Assembly; US and France pledge to protect Hormuz shipping and calm energy markets", "source": "Just Security", "time": "Today" },
+    "germany": { "headline": "Merz under pressure after CDU routs in Berlin and Mecklenburg-Western Pomerania; cancels UN trip", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "City's tab for Guevara wrongful-conviction lawsuits set to reach at least $206 million", "source": "WTTW News", "time": "Today" },
+    "sports":  { "headline": "Bears 1-1: Caleb Williams week-to-week with hamstring injury after 9-3 loss to Vikings", "source": "Chicago Sun-Times", "time": "Yesterday" }
   },
   "industryNews": [
-    { "title": "September Destination News: More Ways to Connect, Experience, and Explore", "source": "TSNN", "date": "2026-09-21" },
-    { "title": "SISO CEO Vinnie Polito on AI, M&A and the Future of Trade Shows", "source": "TSNN", "date": "2026-09-18" },
-    { "title": "LIONS Expands Global Platform with VidCon Combination, Riyadh and Singapore Festival Launch", "source": "TSNN", "date": "2026-09-17" }
+    { "title": "Freeman introduces turnkey booth solutions with sustainability focus", "source": "TSNN", "date": "2026-09-21" },
+    { "title": "SISO CEO Vinnie Polito on AI, M&A and the future of trade shows", "source": "TSNN", "date": "2026-09-18" },
+    { "title": "LIONS expands global platform with VidCon combination, Riyadh and Singapore festival launch", "source": "TSNN", "date": "2026-09-17" }
   ],
-  "kmNews": []
+  "kmNews": [
+    { "title": "VideoWeek's guide to DMEXCO 2026: Scaling Intelligence in Cologne, Sept 23-24", "source": "VideoWeek", "date": "2026-09-21" }
+  ]
 }
