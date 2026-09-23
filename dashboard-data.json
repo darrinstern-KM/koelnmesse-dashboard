@@ -1,30 +1,48 @@
 {
-  "lastUpdated": "2026-09-22T18:15:09-05:00",
-  "dailyBrief": "3 out Fri (George, VW, Cathy) · DMEXCO opens in Cologne tomorrow · Merz reeling after state vote losses · watch: Hormuz talks steering energy prices",
+  "lastUpdated": "2026-09-23T08:11:34-05:00",
+  "dailyBrief": "3 out through Fri · DMEXCO kicks off in Cologne · Merz coalition shaken by state losses · Caleb Williams week-to-week",
   "ooo": [
-    { "name": "George", "status": "Out of office", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp day", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "Out of office", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "Out of office", "until": "2026-10-02" },
+    { "name": "George", "status": "OOO", "until": "2026-09-25" },
+    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
     { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
-    { "name": "VW", "status": "Comp day", "until": "2026-10-09" },
-    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
-    { "name": "Cathy", "status": "Out of office", "until": "2026-10-09" },
-    { "name": "George", "status": "Out of office", "until": "2026-10-16" },
-    { "name": "VW", "status": "SIAL", "until": "2026-10-22" }
+    { "name": "VW", "status": "Comp", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 Day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "George", "status": "OOO", "until": "2026-10-16" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" },
+    { "name": "VW", "status": "Comp", "until": "2026-10-23" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-23" }
   ],
   "topNews": {
-    "world":   { "headline": "Trump addresses UN General Assembly; US and France pledge to protect Hormuz shipping and calm energy markets", "source": "Just Security", "time": "Today" },
-    "germany": { "headline": "Merz under pressure after CDU routs in Berlin and Mecklenburg-Western Pomerania; cancels UN trip", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "City's tab for Guevara wrongful-conviction lawsuits set to reach at least $206 million", "source": "WTTW News", "time": "Today" },
-    "sports":  { "headline": "Bears 1-1: Caleb Williams week-to-week with hamstring injury after 9-3 loss to Vikings", "source": "Chicago Sun-Times", "time": "Yesterday" }
+    "world": {
+      "headline": "UN General Assembly opens with first day of world leader speeches",
+      "source": "CNN",
+      "time": "Yesterday"
+    },
+    "germany": {
+      "headline": "'Disaster': far-right and far-left gains in German state votes leave Merz shaken",
+      "source": "The Local Germany",
+      "time": "Yesterday"
+    },
+    "chicago": {
+      "headline": "City panel approves $202M subsidy for Lincoln Yards' Foundry Park project",
+      "source": "WTTW News",
+      "time": "Yesterday"
+    },
+    "sports": {
+      "headline": "Caleb Williams week-to-week with hamstring injury after Bears' loss to Vikings",
+      "source": "ChicagoBears.com",
+      "time": "Yesterday"
+    }
   },
   "industryNews": [
-    { "title": "Freeman introduces turnkey booth solutions with sustainability focus", "source": "TSNN", "date": "2026-09-21" },
-    { "title": "SISO CEO Vinnie Polito on AI, M&A and the future of trade shows", "source": "TSNN", "date": "2026-09-18" },
-    { "title": "LIONS expands global platform with VidCon combination, Riyadh and Singapore festival launch", "source": "TSNN", "date": "2026-09-17" }
+    { "title": "EuroCIS 2027 Books 90 Percent of Exhibit Space", "source": "Exhibit City News", "date": "2026-09-23" },
+    { "title": "M&A: Forge to Acquire Becker's Healthcare, Expanding Healthcare Events and Media Portfolio", "source": "TSNN", "date": "2026-09-22" },
+    { "title": "Momentum Management Acquires ACES", "source": "Exhibit City News", "date": "2026-09-22" }
   ],
   "kmNews": [
-    { "title": "VideoWeek's guide to DMEXCO 2026: Scaling Intelligence in Cologne, Sept 23-24", "source": "VideoWeek", "date": "2026-09-21" }
+    { "title": "DMEXCO Marketing Reality Check: Tech Is Driving Marketing Investment as Consumers Stay Skeptical of AI Ads", "source": "DMEXCO (Koelnmesse)", "date": "2026-09-17" }
   ]
 }
