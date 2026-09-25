@@ -1,1 +1,48 @@
-{"lastUpdated": "2026-09-24T14:33:00-05:00", "dailyBrief": "3 out Fri (George, VW, Cathy) · German auto job cuts intensify · Bears-Eagles Monday night · watch: Ukraine-Russia deal talk moving markets", "ooo": [{"name": "George", "status": "OOO", "until": "2026-09-25"}, {"name": "VW", "status": "comp", "until": "2026-09-25"}, {"name": "Cathy", "status": "OOO", "until": "2026-09-25"}, {"name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02"}, {"name": "Cathy", "status": "OOO", "until": "2026-10-02"}, {"name": "VW", "status": "comp", "until": "2026-10-09"}, {"name": "George", "status": "1/2 day PM", "until": "2026-10-09"}, {"name": "Cathy", "status": "OOO", "until": "2026-10-09"}, {"name": "Courtney", "status": "OOO", "until": "2026-10-12"}, {"name": "George", "status": "OOO", "until": "2026-10-16"}, {"name": "VW", "status": "Sial", "until": "2026-10-22"}, {"name": "VW", "status": "comp", "until": "2026-10-23"}, {"name": "Cathy", "status": "OOO", "until": "2026-10-23"}], "topNews": {"world": {"headline": "Trump says Ukraine-Russia deal to end war could be close", "source": "Euronews", "time": "Today"}, "germany": {"headline": "Germany faces pressure to save auto industry as job cuts intensify", "source": "The Local Germany", "time": "Today"}, "chicago": {"headline": "Downtown Chicago hotel workers vote to authorize strike", "source": "Chicago Sun-Times", "time": "Today"}, "sports": {"headline": "Bears coach Ben Johnson confident in QB depth ahead of Eagles game", "source": "ChicagoBears.com", "time": "Yesterday"}}, "industryNews": [{"title": "German Consumer Tech Trade Show IFA Reports 240,000 Attendees, Debuts Robot Catwalk", "source": "TSNN", "date": "2026-09-24"}, {"title": "M&A: Forge to Acquire Becker's Healthcare, Expanding Healthcare Events and Media Portfolio", "source": "TSNN", "date": "2026-09-22"}, {"title": "Freeman Introduces Turnkey Booth Solutions With Sustainability Focus", "source": "TSNN", "date": "2026-09-21"}], "kmNews": []}
+{
+  "lastUpdated": "2026-09-25T12:26:17-05:00",
+  "dailyBrief": "3 out today · DMEXCO wraps in Cologne · Trump-Xi summit ends on conciliatory note · Merz under pressure after state losses",
+  "ooo": [
+    { "name": "George", "status": "OOO", "until": "2026-09-25" },
+    { "name": "VW", "status": "comp", "until": "2026-09-25" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
+    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
+    { "name": "VW", "status": "comp", "until": "2026-10-09" },
+    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "Courtney", "status": "OOO", "until": "2026-10-12" },
+    { "name": "George", "status": "OOO", "until": "2026-10-16" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" },
+    { "name": "VW", "status": "comp", "until": "2026-10-23" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-23" },
+    { "name": "Cathy", "status": "Vacation", "until": "2026-10-29" }
+  ],
+  "topNews": {
+    "world": {
+      "headline": "Trump-Xi summit ends with pledge of harmony, no confrontation; trade transshipment in focus",
+      "source": "Euronews",
+      "time": "Today"
+    },
+    "germany": {
+      "headline": "Think tanks urge Merz to stick with reforms after German state election defeats",
+      "source": "The Local Germany",
+      "time": "Yesterday"
+    },
+    "chicago": {
+      "headline": "City Council Finance Committee approves $2.5B Chicago parking meter sale",
+      "source": "Chicago Sun-Times",
+      "time": "Yesterday"
+    },
+    "sports": {
+      "headline": "Bears prep for Monday night vs Eagles; Ben Johnson delays QB call amid Caleb Williams injury",
+      "source": "ChicagoBears.com",
+      "time": "Today"
+    }
+  },
+  "industryNews": [
+    { "title": "Forge Names Four Group Presidents to Lead Market-Focused Growth Strategy", "source": "TSNN", "date": "2026-09-24" },
+    { "title": "German Consumer Tech Trade Show IFA Reports 240,000 Attendees, Debuts Robot Catwalk", "source": "TSNN", "date": "2026-09-24" },
+    { "title": "What Awards Can Do For Trade Show Registration", "source": "TSNN", "date": "2026-09-23" }
+  ],
+  "kmNews": []
+}
