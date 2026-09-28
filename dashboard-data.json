@@ -1,11 +1,8 @@
 {
-  "lastUpdated": "2026-09-26T08:10:28-05:00",
-  "dailyBrief": "Everyone in office today · Leslie departs tomorrow for HHA Fall TX · NRW grid-sabotage probe goes federal · Cubs & Sox both clinch playoff berths",
+  "lastUpdated": "2026-09-27T20:10:00-05:00",
+  "dailyBrief": "2 out this week (Leslie, Cathy) · Munich beats Cologne for Olympic bid · Iran holds firm, oil premium returns · Bears without Caleb Williams Monday",
   "ooo": [
-    { "name": "George", "status": "OOO", "until": "2026-09-25" },
-    { "name": "VW", "status": "Comp", "until": "2026-09-25" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-09-25" },
-    { "name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02" },
+    { "name": "Leslie", "status": "HHA FALL TX", "until": "2026-10-02" },
     { "name": "Cathy", "status": "OOO", "until": "2026-10-02" },
     { "name": "VW", "status": "Comp", "until": "2026-10-09" },
     { "name": "George", "status": "1/2 Day PM", "until": "2026-10-09" },
@@ -18,15 +15,43 @@
     { "name": "Cathy", "status": "Vacation", "until": "2026-10-29" }
   ],
   "topNews": {
-    "world": { "headline": "Hungary's new PM Magyar slashes EU defense loan request to €5.4B", "source": "Euronews", "time": "Yesterday" },
-    "germany": { "headline": "Federal prosecutors take over probe into coordinated power-grid sabotage attacks across NRW", "source": "ZDF", "time": "Today" },
-    "chicago": { "headline": "Downtown Chicago hotel workers authorize strike vote at Hilton, Hyatt, Marriott properties", "source": "Chicago Sun-Times", "time": "Today" },
-    "sports": { "headline": "Cubs and White Sox both clinch playoff berths within minutes of each other", "source": "Chicago Sun-Times", "time": "Today" }
+    "world": {
+      "headline": "Oil rises as Iran holds firm on Strait of Hormuz demands, reviving crude's war premium",
+      "source": "CNBC",
+      "time": "Today"
+    },
+    "germany": {
+      "headline": "Germany picks Munich over Cologne/Rhine-Ruhr as its bid city for a future Summer Olympics",
+      "source": "The Local",
+      "time": "Yesterday"
+    },
+    "chicago": {
+      "headline": "Illinois Supreme Court rules against Uber, sides with widow in wrongful death arbitration case",
+      "source": "Chicago Sun-Times",
+      "time": "Today"
+    },
+    "sports": {
+      "headline": "Bears rule out QB Caleb Williams (hamstring) for Monday Night Football vs. Eagles",
+      "source": "Chicago Sun-Times",
+      "time": "Today"
+    }
   },
   "industryNews": [
-    { "title": "Forge to Acquire Becker's Healthcare, Expanding Healthcare Events and Media Portfolio", "source": "TSNN", "date": "2026-09-22" },
-    { "title": "EuroCIS 2027 Books 90 Percent of Exhibit Space", "source": "Exhibit City News", "date": "2026-09-23" },
-    { "title": "German Consumer Tech Trade Show IFA Reports 240,000 Attendees, Debuts Robot Catwalk", "source": "TSNN", "date": "2026-09-24" }
+    {
+      "title": "Raccoon Media Group Acquires Stake in Edition Dog Live in Joint Venture",
+      "source": "TSNN",
+      "date": "2026-09-27"
+    },
+    {
+      "title": "German Consumer Tech Trade Show IFA Reports 240,000 Attendees, Debuts Robot Catwalk",
+      "source": "TSNN",
+      "date": "2026-09-24"
+    },
+    {
+      "title": "Forge Names Four Group Presidents to Lead Market-Focused Growth Strategy",
+      "source": "TSNN",
+      "date": "2026-09-24"
+    }
   ],
   "kmNews": []
 }
