@@ -1,1 +1,30 @@
-{"lastUpdated":"2026-09-28T18:24:00-05:00","dailyBrief":"Leslie out at HHA Fall TX thru Fri · Housewares show leaves Chicago for Atlanta · Bears host Eagles tonight, Keenum at QB · watch: VW recalls 3M cars","ooo":[{"name":"Leslie","status":"HHA Fall TX","until":"2026-10-02"},{"name":"Cathy","status":"OOO","until":"2026-10-02"},{"name":"VW","status":"Comp day","until":"2026-10-09"},{"name":"George","status":"Half day PM","until":"2026-10-09"},{"name":"Cathy","status":"OOO","until":"2026-10-09"},{"name":"Courtney","status":"OOO","until":"2026-10-12"},{"name":"George","status":"OOO","until":"2026-10-16"},{"name":"VW","status":"Sial","until":"2026-10-22"},{"name":"VW","status":"Comp day","until":"2026-10-23"},{"name":"Cathy","status":"OOO","until":"2026-10-23"},{"name":"Cathy","status":"Vacation","until":"2026-10-29"}],"topNews":{"world":{"headline":"Poland treats burnt Starlink station as sabotage; Tusk warns of hybrid attacks","source":"The Rio Times","time":"Today"},"germany":{"headline":"Welfare reform rallies, Munich Olympic bid pick lead Germany's Monday roundup","source":"The Local Germany","time":"Today"},"chicago":{"headline":"Sale of Chicago parking meters to investment firm advances","source":"WTTW News","time":"Friday"},"sports":{"headline":"Bears host Eagles on Monday Night Football; Keenum starts as Williams sits","source":"ABC7 Chicago","time":"Today"}},"industryNews":[{"title":"Blackstone's ANDMORE Inks Deal With Housewares Association to Move Show From Chicago to Atlanta","source":"TSNN","date":"2026-09-28"},{"title":"German Consumer Tech Trade Show IFA Reports 240,000 Attendees, Debuts Robot Catwalk","source":"TSNN","date":"2026-09-24"},{"title":"TSE Reveals Gold 100 Grand Award Winners: KBIS Takes Home Title for Greatest Trade Show of 2025","source":"Trade Show Executive","date":"2026-09-24"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-09-29T08:10:00-05:00",
+  "dailyBrief": "1 out through Fri (Leslie) · ANDMORE moves housewares show from Chicago to Atlanta · h+h americas Houston + Anuga India live this week · watch: Pack Expo Chicago Oct 18",
+  "ooo": [
+    {"name":"Leslie","status":"HHA Fall TX","until":"2026-10-02"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-02"},
+    {"name":"VW","status":"Comp day","until":"2026-10-09"},
+    {"name":"George","status":"1/2 day PM","until":"2026-10-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-09"},
+    {"name":"Courtney","status":"OOO","until":"2026-10-12"},
+    {"name":"George","status":"OOO","until":"2026-10-16"},
+    {"name":"VW","status":"Sial","until":"2026-10-22"},
+    {"name":"VW","status":"Comp day","until":"2026-10-23"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-23"},
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"}
+  ],
+  "topNews": {
+    "world": {"headline":"U.S. ban on imports of various Canadian products, incl. dairy and alcohol, takes effect","source":"NBC Chicago","time":"Today"},
+    "germany": {"headline":"What Germany's EUR 10 billion income tax reform means for you","source":"The Local Germany","time":"Today"},
+    "chicago": {"headline":"CEO defends controversial proposed Grayslake data center","source":"NBC Chicago","time":"This morning"},
+    "sports": {"headline":"Cubs beat Red Sox 6-2 in finale, finish 89-73 and head to Wild Card round","source":"Bleacher Nation","time":"Yesterday"}
+  },
+  "industryNews": [
+    {"title":"Blackstone's ANDMORE inks deal with Housewares Association to move its trade show from Chicago to Atlanta","source":"TSNN","date":"2026-09-28"},
+    {"title":"German consumer tech show IFA reports 240,000 attendees, debuts robot catwalk","source":"TSNN","date":"2026-09-24"},
+    {"title":"M&A: Forge to acquire Becker's Healthcare, expanding healthcare events and media portfolio","source":"TSNN","date":"2026-09-22"}
+  ],
+  "kmNews": []
+}
