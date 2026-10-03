@@ -1,10 +1,7 @@
 {
-  "lastUpdated": "2026-10-02T06:00:00-05:00",
-  "dailyBrief": "3 out today · Courtney, George, Cathy out next week · Housewares show leaves Chicago for Atlanta · watch: US Iran buildup",
+  "lastUpdated": "2026-10-03T12:20:00-05:00",
+  "dailyBrief": "George, Cathy out Fri 10/9, Courtney Mon 10/12 · Pack Expo hits McCormick Oct 18 · Orgatec Cologne Oct 27 · no KM press in 7 days",
   "ooo": [
-    {"name": "Leslie", "status": "HHA Fall TX", "until": "2026-10-02"},
-    {"name": "VW", "status": "Comp day", "until": "2026-10-02"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-10-02"},
     {"name": "George", "status": "Half day PM", "until": "2026-10-09"},
     {"name": "Cathy", "status": "OOO", "until": "2026-10-09"},
     {"name": "Courtney", "status": "OOO", "until": "2026-10-12"},
@@ -17,14 +14,14 @@
     {"name": "George", "status": "ISM ME", "until": "2026-11-06"}
   ],
   "topNews": {
-    "world": {"headline": "US sends Roosevelt strike group and 2,000 Marines to Middle East as Iran tensions escalate", "source": "Al Jazeera", "time": "Today"},
-    "germany": {"headline": "Merz hails NATO unity on Russia; EU holds emergency meeting on diesel prices", "source": "The Local Germany", "time": "Today"},
-    "chicago": {"headline": "Chicago's first fully elected school board vote underway; early voting began Oct 1", "source": "Chicago Sun-Times", "time": "Today"},
-    "sports": {"headline": "White Sox sweep Astros for first playoff series win in 21 years; Cubs ousted by Padres", "source": "Chicago Sun-Times", "time": "Today"}
+    "world": {"headline": "US sends Roosevelt strike group and 2,000 Marines to Middle East as Iran tensions escalate", "source": "Al Jazeera", "time": "Yesterday"},
+    "germany": {"headline": "Unity Day: How October 3rd became Germany's national holiday", "source": "The Local Germany", "time": "Today"},
+    "chicago": {"headline": "Chicago's first fully elected school board vote underway; early voting began Oct 1", "source": "Chicago Sun-Times", "time": "Yesterday"},
+    "sports": {"headline": "White Sox sweep Astros for first playoff series win in 21 years; Cubs ousted by Padres", "source": "Chicago Sun-Times", "time": "Yesterday"}
   },
   "industryNews": [
+    {"title": "Preview: 6 Things to Know About IMEX America 2026", "source": "TSNN", "date": "2026-10-02"},
     {"title": "On Site: Americas Food & Beverage Show attendance rises 17% for 30th anniversary", "source": "TSNN", "date": "2026-10-01"},
-    {"title": "CEIR Predict 2026 tackles recovery gaps, geopolitical risk and innovation imperative", "source": "TSNN", "date": "2026-09-30"},
     {"title": "Blackstone's ANDMORE inks deal to move Housewares Association trade show from Chicago to Atlanta", "source": "TSNN", "date": "2026-09-28"}
   ],
   "kmNews": []
