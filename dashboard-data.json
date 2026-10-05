@@ -1,1 +1,28 @@
-{"lastUpdated":"2026-10-04T10:36:00-05:00","dailyBrief":"Light week: only George and Cathy out Fri · Orgatec Cologne opens in 23 days · Iran-US Hormuz standoff, watch markets · Americas F&B Show up 17%","ooo":[{"name":"George","status":"1/2 day PM","until":"2026-10-09"},{"name":"Cathy","status":"OOO","until":"2026-10-09"},{"name":"Courtney","status":"OOO","until":"2026-10-12"},{"name":"George","status":"OOO","until":"2026-10-16"},{"name":"VW","status":"Sial","until":"2026-10-22"},{"name":"VW","status":"Comp day","until":"2026-10-23"},{"name":"Cathy","status":"OOO","until":"2026-10-23"},{"name":"Cathy","status":"Vacation","until":"2026-10-29"},{"name":"Kate","status":"Vacation","until":"2026-11-06"},{"name":"George","status":"ISM ME","until":"2026-11-06"}],"topNews":{"world":{"headline":"Iran sets conditions for reopening Strait of Hormuz, demands US honor memorandum of understanding","source":"Al Jazeera","time":"Today"},"germany":{"headline":"Deutschlandticket to rise to EUR 66.80 from 2027; Merz meets Zelensky in Kyiv","source":"The Local Germany","time":"Today"},"chicago":{"headline":"Early voting opens for midterms, downtown supersite live; first fully elected school board on ballot","source":"Chicago Sun-Times","time":"Today"},"sports":{"headline":"Blackhawks home opener Tuesday: Patrick Kane's return expected to draw raucous reception","source":"Chicago Sun-Times","time":"Today"}},"industryNews":[{"title":"Preview: 6 Things to Know About IMEX America 2026","source":"TSNN","date":"2026-10-02"},{"title":"On Site: Americas Food & Beverage Show Attendance Rises 17% For 30th Anniversary","source":"TSNN","date":"2026-10-01"},{"title":"CEIR Predict 2026 Tackles Recovery Gaps, Geopolitical Risk and Innovation Imperative","source":"TSNN","date":"2026-09-30"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-10-05T11:55:00-05:00",
+  "dailyBrief": "Nobody out today · VW away Oct 15-22 for Sial · Merz in Kyiv as strikes hit · Orgatec Cologne opens in 22 days · Americas F&B Show up 17%",
+  "ooo": [
+    { "name": "George", "status": "1/2 day PM", "until": "2026-10-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-09" },
+    { "name": "Courtney", "status": "OOO", "until": "2026-10-12" },
+    { "name": "George", "status": "OOO", "until": "2026-10-16" },
+    { "name": "VW", "status": "Sial", "until": "2026-10-22" },
+    { "name": "VW", "status": "Comp day", "until": "2026-10-23" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-23" },
+    { "name": "Cathy", "status": "Vacation", "until": "2026-10-29" },
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-06" },
+    { "name": "George", "status": "ISM ME", "until": "2026-11-06" }
+  ],
+  "topNews": {
+    "world": { "headline": "Russian strikes hit Kyiv while German Chancellor Merz visits", "source": "The Local Germany", "time": "Today" },
+    "germany": { "headline": "Deutsche Bahn makes its family ticket a permanent offer", "source": "The Local Germany", "time": "Today" },
+    "chicago": { "headline": "Chicago's first fully elected school board election set for Nov. 3", "source": "Chicago Sun-Times", "time": "Today" },
+    "sports": { "headline": "Bears beat Jets 23-12 behind Kyle Monangai's big day", "source": "Chicago Sun-Times", "time": "Yesterday" }
+  },
+  "industryNews": [
+    { "title": "Preview: IAEE Expo! Expo! 2026 Moves to November, Adds Executive Track", "source": "TSNN", "date": "2026-10-05" },
+    { "title": "On Site: Americas Food & Beverage Show Attendance Rises 17% For 30th Anniversary", "source": "TSNN", "date": "2026-10-01" },
+    { "title": "Gold 100 Awards & Summit Spotlights Event Excellence in Palos Verdes", "source": "Trade Show Executive", "date": "2026-10-01" }
+  ],
+  "kmNews": []
+}
