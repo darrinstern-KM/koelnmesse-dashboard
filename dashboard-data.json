@@ -1,31 +1,32 @@
 {
-  "lastUpdated": "2026-10-08T15:50:00-05:00",
-  "dailyBrief": "3 out Fri (Cathy, George PM, Kym) · Informa buys Clarion for $2.96B · ORGATEC Cologne in 19 days · watch: tanker hit off Qatar",
+  "lastUpdated": "2026-10-09T09:05:00-05:00",
+  "dailyBrief": "3 out today, 2 out Mon · Informa buys Clarion for $2.96B · German factory output at 18-month high · Pack Expo Chicago Oct 18-21",
   "ooo": [
-    {"name": "George", "status": "1/2 day PM", "until": "2026-10-09"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-10-09"},
-    {"name": "Kym", "status": "1/2 day OOO", "until": "2026-10-09"},
-    {"name": "Courtney", "status": "OOO", "until": "2026-10-12"},
-    {"name": "George", "status": "OOO", "until": "2026-10-16"},
-    {"name": "VW", "status": "Sial", "until": "2026-10-22"},
-    {"name": "VW", "status": "Comp day", "until": "2026-10-23"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-10-23"},
-    {"name": "Cathy", "status": "Vacation", "until": "2026-10-29"},
-    {"name": "Leslie", "status": "OOO", "until": "2026-10-28"},
-    {"name": "Kate", "status": "Vacation", "until": "2026-11-06"},
-    {"name": "George", "status": "ISM ME", "until": "2026-11-06"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-06"}
+    {"name":"George","status":"Half day PM","until":"2026-10-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-09"},
+    {"name":"Kym","status":"Half day","until":"2026-10-09"},
+    {"name":"Courtney","status":"OOO","until":"2026-10-12"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-12"},
+    {"name":"George","status":"OOO","until":"2026-10-16"},
+    {"name":"VW","status":"Sial","until":"2026-10-22"},
+    {"name":"VW","status":"Comp day","until":"2026-10-23"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-23"},
+    {"name":"Leslie","status":"OOO","until":"2026-10-28"},
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-06"}
   ],
   "topNews": {
-    "world": {"headline": "Tanker hit by multiple projectiles off Qatar's north coast, UKMTO says", "source": "Al Jazeera", "time": "Today"},
-    "germany": {"headline": "Germany's fractious ruling coalition hails 'constructive' talks", "source": "The Local Germany", "time": "Today"},
-    "chicago": {"headline": "Mayor Johnson backs contested school board candidate despite harassment allegations", "source": "CBS Chicago", "time": "Today"},
-    "sports": {"headline": "White Sox lose ALDS Game 3 to Guardians 9-3, face Game 4", "source": "CBS Chicago", "time": "Today"}
+    "world": {"headline":"Russia cuts cancer care as defence spending hits post-Soviet record","source":"Euronews","time":"Today"},
+    "germany": {"headline":"Merz criticizes ex-chancellor's birthday visit to Putin","source":"The Local Germany","time":"Today"},
+    "chicago": {"headline":"Mayor Johnson backs school board president candidate despite harassment allegations","source":"CBS Chicago","time":"Today"},
+    "sports": {"headline":"Blackhawks beat Blues 4-2 in Patrick Kane's return to Chicago","source":"CBS Chicago","time":"This week"}
   },
   "industryNews": [
-    {"title": "IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming", "source": "TSNN", "date": "2026-10-08"},
-    {"title": "Informa to Acquire Clarion Events for $2.96 Billion, Plans Taylor & Francis Separation", "source": "TSNN", "date": "2026-10-06"},
-    {"title": "On Site: Americas Food & Beverage Show Attendance Rises 17% For 30th Anniversary", "source": "TSNN", "date": "2026-10-01"}
+    {"title":"IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming","source":"TSNN","date":"2026-10-08"},
+    {"title":"Informa to Acquire Clarion Events for $2.96 Billion, Plans Taylor & Francis Separation","source":"TSNN","date":"2026-10-06"},
+    {"title":"Preview: IAEE Expo! Expo! 2026 Moves to November, Adds Executive Track","source":"TSNN","date":"2026-10-05"}
   ],
   "kmNews": []
 }
