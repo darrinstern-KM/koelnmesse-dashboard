@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-10-10T21:58:00-05:00",
-  "dailyBrief": "2 out Mon, VW out Oct 15-22 for SIAL · Informa to buy Clarion for $2.96B · Orgatec Cologne in 17 days · Ditka dies at 86, Bears at Packers Sun",
+  "lastUpdated": "2026-10-11T08:15:00-05:00",
+  "dailyBrief": "2 out Mon · VW out Oct 15-22 for SIAL · Informa buys Clarion for $2.96B · hotel strike hits Marathon weekend · Orgatec Cologne opens Oct 27",
   "ooo": [
-    { "name": "Courtney", "status": "OOO", "until": "2026-10-12" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-12" },
-    { "name": "George", "status": "OOO", "until": "2026-10-16" },
-    { "name": "VW", "status": "Sial", "until": "2026-10-22" },
-    { "name": "VW", "status": "Comp", "until": "2026-10-23" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-10-23" },
-    { "name": "Leslie", "status": "Orgatec", "until": "2026-10-27" },
-    { "name": "Leslie", "status": "OOO", "until": "2026-10-28" },
-    { "name": "Cathy", "status": "Vacation", "until": "2026-10-29" },
-    { "name": "Kate", "status": "Vacation", "until": "2026-11-06" },
-    { "name": "George", "status": "ISM ME", "until": "2026-11-06" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-06" },
-    { "name": "George", "status": "OOO", "until": "2026-11-09" }
+    {"name":"Courtney","status":"OOO","until":"2026-10-12"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-12"},
+    {"name":"George","status":"OOO","until":"2026-10-16"},
+    {"name":"VW","status":"Sial","until":"2026-10-22"},
+    {"name":"VW","status":"Comp","until":"2026-10-23"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-23"},
+    {"name":"Leslie","status":"Orgatec","until":"2026-10-27"},
+    {"name":"Leslie","status":"OOO","until":"2026-10-28"},
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-06"},
+    {"name":"George","status":"OOO","until":"2026-11-09"}
   ],
   "topNews": {
-    "world": { "headline": "Trump to weigh joining Saudi strikes on Houthis after airport attack; S&P 500 up 0.6% as Iran fears ease", "source": "Times of Israel / Rio Times", "time": "Today" },
-    "germany": { "headline": "France and Germany lock horns over long-term EU budget", "source": "The Local Germany", "time": "Today" },
-    "chicago": { "headline": "Chicago Marathon street closures set; warm 80s weekend ahead across the Chicago area", "source": "NBC Chicago", "time": "Today" },
-    "sports": { "headline": "NFL legend Mike Ditka dies at 86; Bears (3-1) visit Packers (2-2) Sunday at Lambeau", "source": "CBS Sports", "time": "Today" }
+    "world": {"headline":"Saudi-led forces vow 'decisive' response to Houthi strike on Riyadh airport","source":"Al Jazeera","time":"Today"},
+    "germany": {"headline":"Merz angered by ex-chancellor's birthday trip to see Putin","source":"The Local Germany","time":"Today"},
+    "chicago": {"headline":"Hotel workers strike ahead of Chicago Marathon seeking better pay","source":"Chicago Sun-Times","time":"Today"},
+    "sports": {"headline":"Mike Ditka, Bears' only Super Bowl-winning coach, dies at 86","source":"Chicago Sun-Times","time":"Today"}
   },
   "industryNews": [
-    { "title": "IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming", "source": "TSNN", "date": "2026-10-08" },
-    { "title": "Informa to Acquire Clarion Events for $2.96 Billion, Plans Taylor & Francis Separation", "source": "TSNN", "date": "2026-10-06" },
-    { "title": "Preview: IAEE Expo! Expo! 2026 Moves to November, Adds Executive Track", "source": "TSNN", "date": "2026-10-05" }
+    {"title":"IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming","source":"TSNN","date":"2026-10-08"},
+    {"title":"Informa to Acquire Clarion Events for $2.96 Billion, Plans Taylor & Francis Separation","source":"TSNN","date":"2026-10-06"},
+    {"title":"Preview: IAEE Expo! Expo! 2026 Moves to November, Adds Executive Track","source":"TSNN","date":"2026-10-05"}
   ],
   "kmNews": []
 }
