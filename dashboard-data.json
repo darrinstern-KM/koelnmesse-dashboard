@@ -1,29 +1,30 @@
 {
-  "lastUpdated": "2026-10-13T15:47:00-05:00",
-  "dailyBrief": "Full office today · George out Fri, VW out Oct 15-22 for Sial · Orgatec Cologne opens Oct 27 · Informa buys Clarion for $2.96B",
+  "lastUpdated": "2026-10-14T06:00:00-05:00",
+  "dailyBrief": "VW out Oct 15-22 (Sial) · Pack Expo Chicago Oct 18-21 · Orgatec Cologne opens Oct 27 · Informa-Clarion $2.96B deal reshapes field",
   "ooo": [
     {"name":"George","status":"OOO","until":"2026-10-16"},
     {"name":"VW","status":"Sial","until":"2026-10-22"},
-    {"name":"VW","status":"Comp day","until":"2026-10-23"},
+    {"name":"VW","status":"Comp","until":"2026-10-23"},
     {"name":"Cathy","status":"OOO","until":"2026-10-23"},
     {"name":"Leslie","status":"Orgatec","until":"2026-10-27"},
     {"name":"Leslie","status":"OOO","until":"2026-10-28"},
     {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
     {"name":"Kate","status":"Vacation","until":"2026-11-06"},
-    {"name":"George","status":"ISM Middle East","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
     {"name":"Cathy","status":"OOO","until":"2026-11-06"},
-    {"name":"George","status":"OOO","until":"2026-11-09"}
+    {"name":"George","status":"OOO","until":"2026-11-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-13"}
   ],
   "topNews": {
-    "world": {"headline":"Iran calls US reply on Hormuz reopening insufficient, halts talks with Washington","source":"Just Security","time":"Yesterday"},
-    "germany": {"headline":"Labour minister's sudden resignation shakes Germany's governing coalition","source":"The Local Germany","time":"Yesterday"},
-    "chicago": {"headline":"Lake Street Bridge reconstruction to disrupt CTA Green and Pink Lines for weeks","source":"CBS Chicago","time":"This morning"},
-    "sports": {"headline":"Packers beat Bears decisively at Lambeau Field","source":"CBS Chicago","time":"This morning"}
+    "world": {"headline":"Iran using new Strait of Hormuz tactics to keep oil prices high, officials tell Reuters","source":"Just Security (Reuters)","time":"Today"},
+    "germany": {"headline":"Germany detains fourth person over Polish Starlink blaze","source":"The Local Germany","time":"Yesterday"},
+    "chicago": {"headline":"Pritzker and Bailey hold only governor debate ahead of midterms","source":"CBS Chicago","time":"Today"},
+    "sports": {"headline":"Bears fall 31-7 to Packers as Caleb Williams nears injury return","source":"ESPN","time":"Sunday"}
   },
   "industryNews": [
+    {"title":"Preview: What to Expect at the 93rd UFI Global Congress in Bahrain","source":"TSNN","date":"2026-10-14"},
     {"title":"How Better Stands Turned Open-Source Collaboration Into a UFI Award-Winning Movement","source":"TSNN","date":"2026-10-13"},
-    {"title":"IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming","source":"TSNN","date":"2026-10-08"},
-    {"title":"Informa to Acquire Clarion Events for $2.96 Billion, Plans Taylor & Francis Separation","source":"TSNN","date":"2026-10-06"}
+    {"title":"October Venue News: Hotels Get Serious About Meetings","source":"TSNN","date":"2026-10-12"}
   ],
   "kmNews": []
 }
