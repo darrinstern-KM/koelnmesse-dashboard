@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-10-14T06:00:00-05:00",
-  "dailyBrief": "VW out Oct 15-22 (Sial) · Pack Expo Chicago Oct 18-21 · Orgatec Cologne opens Oct 27 · Informa-Clarion $2.96B deal reshapes field",
+  "lastUpdated": "2026-10-15T08:10:00-05:00",
+  "dailyBrief": "VW out through 10/22 (SIAL) · Pack Expo Chicago Oct 18-21 · Orgatec Cologne Oct 27-30, Leslie attending · No new KM press this week",
   "ooo": [
     {"name":"George","status":"OOO","until":"2026-10-16"},
     {"name":"VW","status":"Sial","until":"2026-10-22"},
-    {"name":"VW","status":"Comp","until":"2026-10-23"},
+    {"name":"VW","status":"Comp day","until":"2026-10-23"},
     {"name":"Cathy","status":"OOO","until":"2026-10-23"},
     {"name":"Leslie","status":"Orgatec","until":"2026-10-27"},
     {"name":"Leslie","status":"OOO","until":"2026-10-28"},
@@ -16,15 +16,15 @@
     {"name":"Cathy","status":"OOO","until":"2026-11-13"}
   ],
   "topNews": {
-    "world": {"headline":"Iran using new Strait of Hormuz tactics to keep oil prices high, officials tell Reuters","source":"Just Security (Reuters)","time":"Today"},
-    "germany": {"headline":"Germany detains fourth person over Polish Starlink blaze","source":"The Local Germany","time":"Yesterday"},
-    "chicago": {"headline":"Pritzker and Bailey hold only governor debate ahead of midterms","source":"CBS Chicago","time":"Today"},
-    "sports": {"headline":"Bears fall 31-7 to Packers as Caleb Williams nears injury return","source":"ESPN","time":"Sunday"}
+    "world": {"headline":"Prince Harry and Meghan make first public appearance since UK return","source":"Euronews","time":"Today"},
+    "germany": {"headline":"How will the 'super El Niño' affect winter weather in Germany?","source":"The Local Germany","time":"Yesterday"},
+    "chicago": {"headline":"Pritzker's office calls Amtrak project a 'bait and switch' as Bridgeport residents fight on","source":"NBC Chicago","time":"Yesterday"},
+    "sports": {"headline":"Bears fall to Packers 31-7 in Green Bay","source":"Chicago Bears","time":"Sunday"}
   },
   "industryNews": [
-    {"title":"Preview: What to Expect at the 93rd UFI Global Congress in Bahrain","source":"TSNN","date":"2026-10-14"},
-    {"title":"How Better Stands Turned Open-Source Collaboration Into a UFI Award-Winning Movement","source":"TSNN","date":"2026-10-13"},
-    {"title":"October Venue News: Hotels Get Serious About Meetings","source":"TSNN","date":"2026-10-12"}
+    {"title":"TSNN's Top 250: The Cities Behind the Biggest Shows","source":"TSNN","date":"2026-10-15"},
+    {"title":"Loren Gold to Succeed Dennis Edwards as Visit Raleigh President and CEO","source":"TSNN","date":"2026-10-14"},
+    {"title":"IMTS 2026 Saw an Increase in Attendance, Plus More Interest in Specialty Programming","source":"TSNN","date":"2026-10-08"}
   ],
   "kmNews": []
 }
