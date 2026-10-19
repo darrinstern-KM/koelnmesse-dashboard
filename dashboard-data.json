@@ -1,1 +1,29 @@
-{"lastUpdated":"2026-10-16T12:50:00-05:00","dailyBrief":"3 out today, VW thru 10/22 · Pack Expo Chicago Oct 18-21 · Orgatec Cologne Oct 27 · watch: Hormuz attacks, oil near $98","ooo":[{"name":"George","status":"OOO","until":"2026-10-16"},{"name":"Jessica","status":"OOO","until":"2026-10-16"},{"name":"VW","status":"Sial","until":"2026-10-22"},{"name":"VW","status":"OOO comp","until":"2026-10-23"},{"name":"Cathy","status":"OOO","until":"2026-10-23"},{"name":"Leslie","status":"Orgatec","until":"2026-10-27"},{"name":"Leslie","status":"OOO","until":"2026-10-28"},{"name":"Cathy","status":"Vacation","until":"2026-10-29"},{"name":"Kate","status":"Vacation","until":"2026-11-06"},{"name":"George","status":"ISM ME","until":"2026-11-06"},{"name":"Cathy","status":"OOO","until":"2026-11-06"},{"name":"George","status":"OOO","until":"2026-11-09"}],"topNews":{"world":{"headline":"US crude near $98 as Iran steps up attacks in Strait of Hormuz","source":"CNBC","time":"Yesterday"},"germany":{"headline":"Germany and France strike deal to further relax EU auto emissions rules","source":"The Local Germany","time":"Today"},"chicago":{"headline":"Chicago's October tradeshows to spotlight packaging, healthcare and construction","source":"Exhibit City News","time":"This week"},"sports":{"headline":"Bears (3-2) visit Falcons Sunday with QB status still unsettled","source":"Bleacher Nation","time":"This week"}},"industryNews":[{"title":"Diversified Makes Third Acquisition of 2026 with Purchase of Smart Buildings Media","source":"TSNN","date":"2026-10-16"},{"title":"Behind the Scenes of the Launch of the EXHIEs","source":"TSNN","date":"2026-10-16"},{"title":"TSNN's Top 250: The Cities Behind the Biggest Shows","source":"TSNN","date":"2026-10-15"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-10-19T06:00:00-05:00",
+  "dailyBrief": "VW out through Thu (Sial) · Orgatec opens Oct 27, Leslie on site · Hormuz tanker strikes rattle markets · No new KM releases this week",
+  "ooo": [
+    {"name":"VW","status":"Sial","until":"2026-10-22"},
+    {"name":"VW","status":"Comp day","until":"2026-10-23"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-23"},
+    {"name":"Leslie","status":"Orgatec","until":"2026-10-27"},
+    {"name":"Leslie","status":"OOO","until":"2026-10-28"},
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-06"},
+    {"name":"George","status":"OOO","until":"2026-11-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-13"}
+  ],
+  "topNews": {
+    "world": {"headline":"Iran reports two tankers on fire after mine strikes in Strait of Hormuz","source":"Al Jazeera","time":"Yesterday"},
+    "germany": {"headline":"Germany and France strike deal to further relax EU auto emissions rules","source":"The Local Germany","time":"This week"},
+    "chicago": {"headline":"16 alders call for independent probe of school board president candidate","source":"CBS Chicago","time":"Today"},
+    "sports": {"headline":"Caleb Williams reportedly returning for Bears vs Falcons after three-game hamstring absence","source":"CBS Chicago","time":"Today"}
+  },
+  "industryNews": [
+    {"title":"Diversified Makes Third Acquisition of 2026 with Purchase of Smart Buildings Media","source":"TSNN","date":"2026-10-16"},
+    {"title":"TSNN's Top 250: The Cities Behind the Biggest Shows","source":"TSNN","date":"2026-10-15"},
+    {"title":"October Venue News: Hotels Get Serious About Meetings","source":"TSNN","date":"2026-10-12"}
+  ],
+  "kmNews": []
+}
