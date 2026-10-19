@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T06:00:00-05:00",
-  "dailyBrief": "VW out through Thu (Sial) · Orgatec opens Oct 27, Leslie on site · Hormuz tanker strikes rattle markets · No new KM releases this week",
+  "lastUpdated": "2026-10-19T08:15:00-05:00",
+  "dailyBrief": "VW out through Thu (Sial) · Pack Expo Chicago wraps Wed · Orgatec Cologne opens Oct 27, Leslie on site · Bears beat Falcons 31-23",
   "ooo": [
     {"name":"VW","status":"Sial","until":"2026-10-22"},
     {"name":"VW","status":"Comp day","until":"2026-10-23"},
@@ -15,15 +15,17 @@
     {"name":"Cathy","status":"OOO","until":"2026-11-13"}
   ],
   "topNews": {
-    "world": {"headline":"Iran reports two tankers on fire after mine strikes in Strait of Hormuz","source":"Al Jazeera","time":"Yesterday"},
+    "world": {"headline":"Macron vows to hold rioters accountable after French protests","source":"Euronews","time":"Yesterday"},
     "germany": {"headline":"Germany and France strike deal to further relax EU auto emissions rules","source":"The Local Germany","time":"This week"},
-    "chicago": {"headline":"16 alders call for independent probe of school board president candidate","source":"CBS Chicago","time":"Today"},
-    "sports": {"headline":"Caleb Williams reportedly returning for Bears vs Falcons after three-game hamstring absence","source":"CBS Chicago","time":"Today"}
+    "chicago": {"headline":"Chicago Build returns to McCormick Place Oct 28-29","source":"Chicago Build","time":"This week"},
+    "sports": {"headline":"Bears beat Falcons 31-23; Kyler Gordon posts 3 sacks, 2 forced fumbles","source":"Fox Sports","time":"Yesterday"}
   },
   "industryNews": [
-    {"title":"Diversified Makes Third Acquisition of 2026 with Purchase of Smart Buildings Media","source":"TSNN","date":"2026-10-16"},
-    {"title":"TSNN's Top 250: The Cities Behind the Biggest Shows","source":"TSNN","date":"2026-10-15"},
-    {"title":"October Venue News: Hotels Get Serious About Meetings","source":"TSNN","date":"2026-10-12"}
+    {"title":"After Taking a Stake, Raccoon Media Moves to Rebrand Dog Show and Nearly Double Its Size","source":"TSNN","date":"2026-10-19"},
+    {"title":"IMEX America 2026: CEO Carina Bauer on Growth, AI & the Future of Business Events","source":"TSNN","date":"2026-10-19"},
+    {"title":"IAAPA Expo Europe Breaks Records in 2026","source":"Trade Show Executive","date":"2026-10-15"}
   ],
-  "kmNews": []
+  "kmNews": [
+    {"title":"Launch of the 'Köln kann Zukunft' campaign","source":"koelnmesse.com","date":"2026-10-13"}
+  ]
 }
