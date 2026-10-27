@@ -1,1 +1,32 @@
-{"lastUpdated":"2026-10-26T08:12:00-05:00","dailyBrief":"2 out today, Kate out from Thu · Orgatec opens Tue in Cologne · Europe storms hit flights and power · watch: Iran oil risk","ooo":[{"name":"Leslie","status":"Orgatec","until":"2026-10-27"},{"name":"Leslie","status":"OOO","until":"2026-10-28"},{"name":"Cathy","status":"Vacation","until":"2026-10-29"},{"name":"Cathy","status":"OOO","until":"2026-10-30"},{"name":"Kate","status":"Vacation","until":"2026-11-06"},{"name":"George","status":"ISM ME","until":"2026-11-06"},{"name":"Cathy","status":"OOO","until":"2026-11-06"},{"name":"George","status":"OOO","until":"2026-11-09"},{"name":"Cathy","status":"OOO","until":"2026-11-13"},{"name":"Cathy","status":"OOO","until":"2026-11-20"},{"name":"VW","status":"Vacation","until":"2026-11-25"},{"name":"George","status":"OOO","until":"2026-11-25"},{"name":"Kate","status":"Vacation","until":"2026-11-27"},{"name":"Leslie","status":"OOO","until":"2026-12-01"}],"topNews":{"world":{"headline":"Oil markets stay on edge as Iran strike risk lingers; Russia sanctions relief eyed","source":"CNBC","time":"This week"},"germany":{"headline":"Storms across Europe disrupt power supplies, flights and phones","source":"The Local Germany (thelocal.de)","time":"Yesterday"},"chicago":{"headline":"Chicago voters pick first fully elected CPS school board on Nov. 3","source":"Chicago Sun-Times","time":"This week"},"sports":{"headline":"Bears QB Caleb Williams fined for Caddix cleats; more fines likely","source":"Chicago Sun-Times","time":"This week"}},"industryNews":[{"title":"\"There's No Home for Them\": Industry Veterans Launch APEX Network","source":"TSNN","date":"2026-10-23"},{"title":"Exclusive: Desiree Hanson on Reuniting with Greg Topalian at Opus Origin","source":"TSNN","date":"2026-10-23"},{"title":"IMEX America 2026: CEO Carina Bauer on Growth, AI & the Future of Business Events","source":"TSNN","date":"2026-10-19"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-10-27T16:35:00-05:00",
+  "dailyBrief": "2 out today (Cathy, Leslie) · Orgatec Cologne live through Oct 30 · Informa +6.5% revenue, Clarion deal closes Dec · watch: Iran strike risk",
+  "ooo": [
+    {"name":"Leslie","status":"Orgatec","until":"2026-10-27"},
+    {"name":"Leslie","status":"OOO","until":"2026-10-28"},
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-30"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-06"},
+    {"name":"George","status":"OOO","until":"2026-11-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-13"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-20"},
+    {"name":"VW","status":"Vacation","until":"2026-11-25"},
+    {"name":"George","status":"OOO","until":"2026-11-25"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-27"},
+    {"name":"Leslie","status":"OOO","until":"2026-12-01"}
+  ],
+  "topNews": {
+    "world": {"headline":"Saudi, Pakistani and Turkish security officials travel to Tehran to head off renewed US strike on Iran","source":"10 Things","time":"Today"},
+    "germany": {"headline":"German union slams Audi boss's appearance at Trump rally","source":"The Local Germany","time":"Yesterday"},
+    "chicago": {"headline":"Fifteen candidates file petitions to challenge Mayor Johnson in 2027","source":"CBS Chicago","time":"This morning"},
+    "sports": {"headline":"Bulls routed 134-99 by Celtics; Blackhawks fell 3-2 to Panthers Sunday","source":"CBS Chicago","time":"Yesterday"}
+  },
+  "industryNews": [
+    {"title":"Informa reports 6.5% underlying revenue growth through nine months; Clarion deal to close in December","source":"TSNN","date":"2026-10-27"},
+    {"title":"Nineteen Group acquires FIT Show from Montgomery Group","source":"TSNN","date":"2026-10-26"},
+    {"title":"Industry veterans launch APEX Network: 'There's no home for them'","source":"TSNN","date":"2026-10-23"}
+  ],
+  "kmNews": []
+}
