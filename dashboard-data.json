@@ -1,1 +1,34 @@
-{"lastUpdated":"2026-10-28T08:23:00-05:00","dailyBrief":"2 out today (Cathy, Leslie) · Kate out Oct 29 to Nov 6 · ORGATEC live in Cologne through Fri · Informa-Clarion deal closes in Dec","ooo":[{"name":"Leslie","status":"OOO","until":"2026-10-28"},{"name":"Cathy","status":"Vacation","until":"2026-10-29"},{"name":"Cathy","status":"OOO","until":"2026-10-30"},{"name":"Kate","status":"Vacation","until":"2026-11-06"},{"name":"George","status":"ISM ME","until":"2026-11-06"},{"name":"Cathy","status":"OOO","until":"2026-11-06"},{"name":"George","status":"OOO","until":"2026-11-09"},{"name":"Cathy","status":"OOO","until":"2026-11-13"},{"name":"Cathy","status":"OOO","until":"2026-11-20"},{"name":"George","status":"OOO","until":"2026-11-25"},{"name":"VW","status":"Vacation","until":"2026-11-25"},{"name":"Kate","status":"Vacation","until":"2026-11-27"},{"name":"George","status":"OOO","until":"2026-11-27"},{"name":"Cathy","status":"OOO","until":"2026-11-27"},{"name":"Leslie","status":"OOO","until":"2026-12-01"}],"topNews":{"world":{"headline":"Informa confirms Clarion deal to close in December, reports 6.5% underlying revenue growth","source":"TSNN","time":"Yesterday"},"germany":{"headline":"Porsche rules out US production after Audi's deal with Trump","source":"The Local Germany","time":"Yesterday"},"chicago":{"headline":"Special City Council meeting could leave ~$75M gap in mayor's budget","source":"Chicago Sun-Times","time":"Yesterday"},"sports":{"headline":"Bears DE Montez Sweat calls his suspension devastating","source":"Chicago Sun-Times","time":"Yesterday"}},"industryNews":[{"title":"Trading Update: Informa Reports 6.5% Underlying Revenue Growth Through Nine Months, Confirms Clarion Deal to Close in December","source":"TSNN","date":"2026-10-27"},{"title":"Nineteen Group Acquires FIT Show From Montgomery Group","source":"TSNN","date":"2026-10-26"},{"title":"What h+h americas Fall Edition Can Teach Organizers","source":"Trade Show Executive","date":"2026-10-26"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-10-29T15:57:00-05:00",
+  "dailyBrief": "2 out today (Kate through 11/6) · Orgatec Cologne runs through Fri · Informa to close $2.97B Clarion deal in Dec · h+h americas Fall Edition (Houston) in TSE spotlight",
+  "ooo": [
+    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
+    {"name":"Cathy","status":"OOO","until":"2026-10-30"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
+    {"name":"George","status":"ISM ME","until":"2026-11-06"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-06"},
+    {"name":"George","status":"OOO","until":"2026-11-09"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-13"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-20"},
+    {"name":"VW","status":"Vacation","until":"2026-11-25"},
+    {"name":"George","status":"OOO","until":"2026-11-25"},
+    {"name":"Kate","status":"Vacation","until":"2026-11-27"},
+    {"name":"George","status":"OOO","until":"2026-11-27"},
+    {"name":"Cathy","status":"OOO","until":"2026-11-27"},
+    {"name":"Leslie","status":"Vacation","until":"2026-12-01"}
+  ],
+  "topNews": {
+    "world": {"headline":"Informa confirms $2.97B Clarion Events acquisition will close in December","source":"TSNN","time":"Oct 27"},
+    "germany": {"headline":"Left Party grapples with Middle East conflict before vote to join Berlin government","source":"The Local Germany","time":"Today"},
+    "chicago": {"headline":"Chicago is about to elect its first-ever school board president","source":"CBS Chicago","time":"Today"},
+    "sports": {"headline":"Bears top Falcons 31-23","source":"CBS Chicago","time":"Yesterday"}
+  },
+  "industryNews": [
+    {"title":"Trading Update: Informa Reports 6.5% Underlying Revenue Growth Through Nine Months, Confirms Clarion Deal to Close in December","source":"TSNN","date":"2026-10-27"},
+    {"title":"Forge Acquires Kisaco Research","source":"Trade Show Executive","date":"2026-10-28"},
+    {"title":"TSNN Announces Finalists for 2026 Awards, Winners to Be Revealed at Celebration on Nov. 16","source":"TSNN","date":"2026-10-28"}
+  ],
+  "kmNews": [
+    {"title":"What h+h americas Fall Edition Can Teach Organizers","source":"Trade Show Executive","date":"2026-10-26"}
+  ]
+}
