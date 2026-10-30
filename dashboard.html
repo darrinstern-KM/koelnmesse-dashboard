@@ -47,7 +47,7 @@
   /* ---------- Layout ---------- */
   .dashboard {
     display: grid;
-    grid-template-rows: 96px 34px 1fr 206px 52px;   /* v3.0: added 34px row for daily-brief strip */
+    grid-template-rows: 96px auto 34px 1fr 206px 52px;   /* v4.0: added auto row for live-show ribbon (collapses when hidden) */
     height: 100vh;
     gap: 10px;
     padding: 10px;
@@ -232,6 +232,136 @@
     text-align: right;
   }
 
+  /* ---------- v4.0 Sales Report Office Overview (replaces Markets) ---------- */
+  .sales-report { display: flex; flex-direction: column; gap: 6px; }
+  .sr-hero {
+    background: var(--km-surface-2);
+    border-left: 3px solid var(--km-green);
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .sr-hero-label {
+    font-size: 10px; color: var(--km-text-dim);
+    text-transform: uppercase; letter-spacing: 1.8px; font-weight: 700;
+  }
+  .sr-hero-value {
+    font-size: 30px; font-weight: 900; color: var(--km-green);
+    font-variant-numeric: tabular-nums; line-height: 1.05;
+  }
+  .sr-hero-sub {
+    font-size: 10px; color: var(--km-text-dim);
+    letter-spacing: 0.5px; margin-top: 2px;
+  }
+  .sr-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;
+  }
+  .sr-cell {
+    background: var(--km-surface-2);
+    border-left: 3px solid var(--km-gold);
+    border-radius: 6px;
+    padding: 6px 8px;
+    min-width: 0;
+  }
+  .sr-cell-label {
+    font-size: 8.5px; color: var(--km-text-dim);
+    text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .sr-cell-value {
+    font-size: 15px; font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--km-text); line-height: 1.1;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .sr-cell-gap { border-left-color: var(--km-red-glow); }
+  .sr-cell-gap .sr-cell-value.neg { color: var(--km-red-glow); }
+  .sr-cell-gap .sr-cell-value.pos { color: var(--km-green); }
+  .sr-total {
+    background: var(--km-surface-2);
+    border-left: 3px solid var(--km-blue);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .sr-total-label {
+    font-size: 9px; color: var(--km-text-dim);
+    text-transform: uppercase; letter-spacing: 1.3px; font-weight: 700;
+  }
+  .sr-total-value {
+    font-size: 16px; font-weight: 800; color: var(--km-text);
+    font-variant-numeric: tabular-nums; line-height: 1.1;
+  }
+  .sr-total-unit { font-size: 10px; color: var(--km-text-dim); font-weight: 500; margin-left: 2px; }
+  .sr-total-sub {
+    font-size: 9px; color: var(--km-text-dim);
+    margin-top: 2px; line-height: 1.3;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .sr-attribution { text-align: right; margin-top: 2px; }
+  .sr-badge {
+    display: inline-block;
+    background: var(--km-green);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ---------- v4.0 "We're there now" live-show ribbon ---------- */
+  /* Only appears when a Koelnmesse show is currently in progress.
+     Collapses to zero height when hidden so grid math stays stable. */
+  .live-show-ribbon {
+    display: none;    /* JS flips to flex when a show is live */
+    align-items: center;
+    gap: 14px;
+    padding: 0 18px;
+    background: linear-gradient(90deg, var(--km-red) 0%, var(--km-red-deep) 55%, var(--km-surface) 100%);
+    color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    min-height: 0;
+    position: relative;
+  }
+  .live-show-ribbon.active { display: flex; }
+  .live-show-ribbon .lsr-badge {
+    background: #fff;
+    color: var(--km-red);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+  .live-show-ribbon .lsr-pulse {
+    width: 8px; height: 8px;
+    background: #fff; border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  .live-show-ribbon .lsr-name {
+    font-size: 15px; font-weight: 800;
+    letter-spacing: 0.3px; text-transform: uppercase;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex-shrink: 1;
+  }
+  .live-show-ribbon .lsr-loc {
+    font-size: 11px; opacity: 0.9;
+    letter-spacing: 1px; text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .live-show-ribbon .lsr-day {
+    margin-left: auto;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    background: rgba(0,0,0,0.3); padding: 3px 10px; border-radius: 3px;
+    flex-shrink: 0;
+  }
+
   /* ---------- Featured Show Spotlight ---------- */
   /* Cycles every 45s through upcoming shows. Big logo, brand color
      background, key stats, countdown. Higher signal than a social feed. */
@@ -400,6 +530,106 @@
     border: none;
     display: block;
     background: #000;
+  }
+
+  /* ---------- v3.1 Show Wall (replaces YouTube live PIP) ---------- */
+  .show-wall-body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    min-height: 0;
+  }
+  .show-wall-embed-slot {
+    position: absolute; inset: 0; z-index: 10;
+  }
+  .show-wall-slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    animation: showWallFade 0.6s ease-out;
+  }
+  .show-wall-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--km-surface-2);
+    transition: background 0.8s ease-in-out;
+    filter: saturate(0.95);
+  }
+  .show-wall-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%),
+      radial-gradient(ellipse at top right, rgba(226,0,26,0.18) 0%, transparent 60%);
+  }
+  .show-wall-logo {
+    position: absolute;
+    top: 36px;
+    right: 12px;
+    max-width: 110px;
+    max-height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.65));
+    z-index: 2;
+  }
+  .show-wall-info {
+    position: relative;
+    z-index: 2;
+    padding: 10px 14px 12px;
+    color: #fff;
+  }
+  .show-wall-name {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.08;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .show-wall-sub {
+    font-size: 10px;
+    color: rgba(255,255,255,0.80);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .show-wall-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .show-wall-meta .show-wall-dates { color: var(--km-gold); }
+  .show-wall-countdown {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    line-height: 1;
+  }
+  .show-wall-countdown .unit {
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 1.8px;
+    margin-left: 6px;
+  }
+  @keyframes showWallFade {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   /* ---------- Version Badge ---------- */
@@ -985,6 +1215,15 @@
       </div>
     </header>
 
+    <!-- v4.0: "WE'RE THERE NOW" LIVE-SHOW RIBBON — appears only when a Koelnmesse show is live today -->
+    <section class="live-show-ribbon" id="live-show-ribbon" aria-live="polite">
+      <span class="lsr-pulse"></span>
+      <span class="lsr-badge">LIVE NOW</span>
+      <span class="lsr-name" id="lsr-name">—</span>
+      <span class="lsr-loc"  id="lsr-loc">—</span>
+      <span class="lsr-day"  id="lsr-day">—</span>
+    </section>
+
     <!-- v3.0: DAILY EXECUTIVE BRIEF — 1-line synthesis of today's OOO + news + KM press -->
     <section class="daily-brief" id="daily-brief">
       <span class="tag">● Today</span>
@@ -1021,26 +1260,41 @@
           </div>
         </div>
 
+        <!-- v4.0: SALES REPORT OFFICE OVERVIEW — replaces former FX Markets panel.
+             Data lives in dashboard-data.json salesReport{} and is attributable to
+             REPORT v11 (Q4 2026) — the source dashboard the Managing Director maintains. -->
         <div class="panel-header" style="margin-top: 18px;">
-          <div class="panel-title">Markets</div>
-          <div class="panel-icon">💱</div>
+          <div class="panel-title">Office Overview</div>
+          <div class="panel-icon">📊</div>
         </div>
-        <div class="markets">
-          <div class="currency-box">
-            <div>
-              <div class="currency-label">USD → EUR</div>
-              <div class="currency-value" id="usd-eur">—</div>
-            </div>
-            <div class="currency-change" id="usd-eur-change">—</div>
+        <div class="sales-report">
+          <div class="sr-hero">
+            <div class="sr-hero-label">% TO GOAL</div>
+            <div class="sr-hero-value" id="sr-pct-to-goal">—</div>
+            <div class="sr-hero-sub" id="sr-pct-delta">—</div>
           </div>
-          <div class="currency-box" style="border-left-color: var(--km-red-glow);">
-            <div>
-              <div class="currency-label">EUR → USD</div>
-              <div class="currency-value" id="eur-usd">—</div>
+          <div class="sr-grid">
+            <div class="sr-cell">
+              <div class="sr-cell-label">2026 SQM GOAL</div>
+              <div class="sr-cell-value" id="sr-goal">—</div>
             </div>
-            <div class="currency-change" id="eur-usd-change">—</div>
+            <div class="sr-cell">
+              <div class="sr-cell-label">SQM SOLD</div>
+              <div class="sr-cell-value" id="sr-sold">—</div>
+            </div>
+            <div class="sr-cell sr-cell-gap">
+              <div class="sr-cell-label">GAP TO GOAL</div>
+              <div class="sr-cell-value" id="sr-gap">—</div>
+            </div>
           </div>
-          <div class="market-meta" id="market-meta">Refreshes 8:00 AM CT daily</div>
+          <div class="sr-total">
+            <div class="sr-total-label">ALL 2026 INCL. HANDICRAFT</div>
+            <div class="sr-total-value"><span id="sr-total">—</span> <span class="sr-total-unit">sqm</span></div>
+            <div class="sr-total-sub" id="sr-total-sub">—</div>
+          </div>
+          <div class="sr-attribution">
+            <span class="sr-badge" id="sr-badge">REPORT v11 · Q4 2026</span>
+          </div>
         </div>
 
         <!-- Featured Show Spotlight — rotates through upcoming Koelnmesse shows -->
@@ -1196,18 +1450,37 @@
       </div>
     </section>
 
-      <!-- SKY NEWS PIP — most reliable 24/7 YouTube live on the web -->
-      <aside class="news-pip" aria-label="Live news picture-in-picture">
+      <!-- v3.1: SHOW WALL — rotating full-bleed hero of upcoming Koelnmesse shows.
+           Replaces the former YouTube live PIP (which had chronic embed issues).
+           Zero external dependency, pulls hero images from media.koelnmesse.io.
+           Swap-ready for Instagram/Elfsight embed — see .show-wall-embed-slot below. -->
+      <aside class="news-pip show-wall" id="show-wall" aria-label="Koelnmesse show spotlight">
         <div class="news-pip-header">
-          <span><span class="live-dot">●</span>Sky News · Live</span>
-          <span class="cc-badge">CC</span>
+          <span><span class="live-dot">●</span><span id="show-wall-title">Koelnmesse Worldwide</span></span>
+          <span class="cc-badge" id="show-wall-count">—</span>
         </div>
-        <iframe class="news-pip-frame" id="bloomberg-pip"
-          src="https://www.youtube.com/embed/live_stream?channel=UCoMdktPbSTixAyNGwb-UYkQ&autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&cc_load_policy=1&cc_lang_pref=en&hl=en&iv_load_policy=3&fs=0&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"
-          title="Sky News Live"></iframe>
+        <div class="show-wall-body" id="show-wall-body">
+          <!-- Elfsight / Instagram embed can drop in here later. Until then,
+               the show-wall-slide takes the full area. -->
+          <div class="show-wall-embed-slot" id="show-wall-embed-slot" style="display:none"></div>
+          <div class="show-wall-slide" id="show-wall-slide">
+            <div class="show-wall-bg" id="show-wall-bg"></div>
+            <div class="show-wall-overlay"></div>
+            <img class="show-wall-logo" id="show-wall-logo" alt="" />
+            <div class="show-wall-info">
+              <div class="show-wall-name" id="show-wall-name">Loading…</div>
+              <div class="show-wall-sub"  id="show-wall-sub">—</div>
+              <div class="show-wall-meta">
+                <span class="show-wall-dates" id="show-wall-dates">—</span>
+                <span class="show-wall-loc"   id="show-wall-loc">—</span>
+              </div>
+              <div class="show-wall-countdown">
+                <span id="show-wall-days">—</span>
+                <span class="unit" id="show-wall-unit">DAYS OUT</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </aside>
 
     </section>
@@ -1223,7 +1496,7 @@
   </div>
 
   <!-- VERSION BADGE — bottom-left, shows current app version + last data sync -->
-  <div class="version-badge" id="version-badge">v3.0<span class="stamp" id="version-stamp">· data —</span></div>
+  <div class="version-badge" id="version-badge">v4.0<span class="stamp" id="version-stamp">· data —</span></div>
 
   <!-- HEARTBEAT: imperceptible motion pixel to defeat TV sleep timers -->
   <div class="heartbeat" id="heartbeat"></div>
@@ -1554,6 +1827,14 @@ async function loadDynamicData() {
 
     if (data.industryNews) CONFIG.industryNews = data.industryNews;
     if (typeof data.dailyBrief === 'string') CONFIG.dailyBrief = data.dailyBrief;
+    // v3.1: show list moved to JSON — overrides hardcoded CONFIG.upcomingShows if present
+    if (Array.isArray(data.upcomingShows) && data.upcomingShows.length) {
+      CONFIG.upcomingShows = data.upcomingShows;
+    }
+    // v4.0: Sales Report office overview data
+    if (data.salesReport && typeof data.salesReport === 'object') {
+      CONFIG.salesReport = data.salesReport;
+    }
     if (data.kmNews)       CONFIG.kmNews       = data.kmNews;
 
     CONFIG.lastSyncStamp = data.lastUpdated || data.generatedAt || data.lastSynced || null;
@@ -1647,6 +1928,9 @@ async function fetchFxBackup() {
 }
 
 async function updateFx() {
+  // v4.0: FX panel was replaced by Sales Report. Early-exit if the DOM
+  // elements no longer exist to prevent null-ref errors.
+  if (!document.getElementById('usd-eur')) return;
   let fx;
   try { fx = await fetchFxPrimary(); }
   catch { try { fx = await fetchFxBackup(); } catch { fx = null; } }
@@ -1805,6 +2089,146 @@ function fmtRange(start, end) {
 function daysUntil(d) {
   return Math.ceil((new Date(d + 'T12:00:00') - new Date()) / 86400000);
 }
+/* v4.0: Sales Report Office Overview
+   Reads CONFIG.salesReport populated from dashboard-data.json by the
+   daily/monthly sync. All numbers formatted with en-US comma thousands.
+   Attribution badge updates when report version/quarter change. */
+function fmtNum(n) {
+  if (n === null || n === undefined || isNaN(n)) return '—';
+  return Number(n).toLocaleString('en-US');
+}
+function renderSalesReport() {
+  const r = CONFIG.salesReport;
+  if (!r) return;
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
+  // Hero: % to Goal with delta vs prior version
+  if (typeof r.pctToGoal === 'number') {
+    set('sr-pct-to-goal', r.pctToGoal.toFixed(1) + '%');
+  }
+  if (typeof r.pctToGoalPrevious === 'number') {
+    const delta = r.pctToGoal - r.pctToGoalPrevious;
+    const arrow = delta >= 0 ? '▲' : '▼';
+    const sign = delta >= 0 ? '+' : '';
+    const prevVer = r.previousVersion || 'v10';
+    set('sr-pct-delta', `${arrow} ${sign}${delta.toFixed(1)} pts vs ${prevVer}`);
+    const sub = document.getElementById('sr-pct-delta');
+    if (sub) sub.style.color = delta >= 0 ? 'var(--km-green)' : 'var(--km-red-glow)';
+  }
+
+  // Row 2: Goal / Sold / Gap
+  set('sr-goal', fmtNum(r.goalSqm));
+  set('sr-sold', fmtNum(r.soldSqm));
+  const gapEl = document.getElementById('sr-gap');
+  if (gapEl && typeof r.gapSqm === 'number') {
+    const neg = r.gapSqm < 0;
+    gapEl.textContent = (neg ? '' : '+') + fmtNum(r.gapSqm);
+    gapEl.classList.toggle('neg', neg);
+    gapEl.classList.toggle('pos', !neg);
+  }
+
+  // Row 3: All 2026 total
+  set('sr-total', fmtNum(r.allShowsSqm));
+  const subBits = [];
+  if (r.allShowCount) subBits.push(`${r.allShowCount} shows`);
+  if (r.companyRecords) subBits.push(`~${fmtNum(r.companyRecords)} company records`);
+  set('sr-total-sub', subBits.join(' · '));
+
+  // Attribution badge: REPORT v11 · Q4 2026
+  const v = r.version || 'v11';
+  const q = r.quarter || '';
+  set('sr-badge', `REPORT ${v}${q ? ' · ' + q : ''}`);
+}
+
+/* v4.0: "We're there now" live-show ribbon
+   Appears only when at least one Koelnmesse show is currently in progress
+   (today falls between start and end). Uses the first active show found.
+   Collapses to zero height when nothing is live. */
+function renderLiveShowRibbon() {
+  const ribbon = document.getElementById('live-show-ribbon');
+  if (!ribbon) return;
+  const now = new Date();
+  const today = now.toISOString().slice(0,10);
+
+  const liveShows = (CONFIG.upcomingShows || [])
+    .filter(s => s.start <= today && s.end >= today);
+
+  if (!liveShows.length) {
+    ribbon.classList.remove('active');
+    return;
+  }
+
+  // Prefer Cologne/HQ show if multiple are running
+  const live = liveShows.sort((a, b) => {
+    const aC = /cologne|köln|germany|DE$/i.test(a.loc) ? 0 : 1;
+    const bC = /cologne|köln|germany|DE$/i.test(b.loc) ? 0 : 1;
+    return aC - bC;
+  })[0];
+
+  const start = new Date(live.start + 'T12:00:00');
+  const end = new Date(live.end + 'T12:00:00');
+  const totalDays = Math.max(1, Math.ceil((end - start) / 86400000) + 1);
+  const dayNumber = Math.min(totalDays, Math.ceil((now - start) / 86400000) + 1);
+
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set('lsr-name', live.name);
+  set('lsr-loc', live.loc || '');
+  set('lsr-day', `DAY ${dayNumber} OF ${totalDays}`);
+  ribbon.classList.add('active');
+}
+
+/* v3.1: Show Wall — rotates every 12s through upcoming shows.
+   Replaces the YouTube-live PIP that had chronic embed issues. */
+let showWallIndex = 0;
+function renderShowWall() {
+  const now = new Date();
+  const upcoming = (CONFIG.upcomingShows || [])
+    .filter(s => new Date(s.end) >= now)
+    .sort((a,b) => new Date(a.start) - new Date(b.start));
+  if (!upcoming.length) return;
+
+  const s = upcoming[showWallIndex % upcoming.length];
+  const days = Math.max(0, Math.ceil((new Date(s.start) - now) / 86400000));
+  const inProgress = new Date(s.start) <= now && new Date(s.end) >= now;
+
+  const bg = document.getElementById('show-wall-bg');
+  if (bg) {
+    const img = s.logoUrl || (s.domain ? `https://www.google.com/s2/favicons?domain=${s.domain}&sz=256` : '');
+    if (img) {
+      bg.style.background = `url("${img}") center/cover no-repeat, ${s.color || '#1E2027'}`;
+    } else {
+      bg.style.background = `linear-gradient(135deg, ${s.color || '#1E2027'} 0%, ${(s.color || '#1E2027')}99 100%)`;
+    }
+  }
+
+  const logo = document.getElementById('show-wall-logo');
+  if (logo) {
+    const primaryLogo = s.logoUrl
+      || (s.domain ? `https://www.google.com/s2/favicons?domain=${s.domain}&sz=256` : '');
+    if (primaryLogo) { logo.src = primaryLogo; logo.style.display = ''; }
+    else { logo.style.display = 'none'; }
+  }
+
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set('show-wall-name', s.name);
+  set('show-wall-sub', s.sub || '');
+  set('show-wall-dates', fmtRange(s.start, s.end) + ' ' + new Date(s.start).getFullYear());
+  set('show-wall-loc', s.loc || '');
+  set('show-wall-days', inProgress ? 'LIVE' : days);
+  set('show-wall-unit', inProgress ? 'IN PROGRESS' : 'DAYS OUT');
+  set('show-wall-count', `${(showWallIndex % upcoming.length) + 1} / ${upcoming.length}`);
+
+  // Restart fade animation
+  const slide = document.getElementById('show-wall-slide');
+  if (slide) {
+    slide.style.animation = 'none';
+    void slide.offsetWidth;
+    slide.style.animation = '';
+  }
+
+  showWallIndex++;
+}
+
 function renderShows() {
   const grid = document.getElementById('shows-grid');
   grid.innerHTML = '';
@@ -2465,6 +2889,10 @@ async function init() {
   renderTicker();        // ticker uses news headlines — render AFTER JSON loads
   renderDailyBrief();    // v3.0: executive brief strip
   updateFreshnessStamps(); // v3.0: "updated Xm ago" on panel headers
+  renderShows();           // v3.1: re-render show column with JSON-supplied list
+  renderShowWall();        // v3.1: re-render show-wall with JSON-supplied list
+  renderSalesReport();     // v4.0: office-overview KPIs
+  renderLiveShowRibbon();  // v4.0: "We're there now" ribbon
 
   // Re-fetch dynamic data every 30 minutes so manual updates to the JSON
   // appear without waiting for the next Fire Stick auto-reload at 24h
@@ -2476,7 +2904,14 @@ async function init() {
     renderTicker();
     renderDailyBrief();
     updateFreshnessStamps();
+    renderShows();           // v3.1
+    renderShowWall();        // v3.1
+    renderSalesReport();     // v4.0
+    renderLiveShowRibbon();  // v4.0
   }, 30 * 60 * 1000);
+
+  // v4.0: re-check live-show status every hour (shows can start/end mid-day)
+  setInterval(renderLiveShowRibbon, 60 * 60 * 1000);
 
   // Update the "Xm ago" freshness display every minute (independent of data refetch)
   setInterval(updateFreshnessStamps, 60 * 1000);
@@ -2484,9 +2919,9 @@ async function init() {
   // Featured Show rotates every 45 seconds
   setInterval(renderSpotlight, 45 * 1000);
 
-  // Force Bloomberg captions on after the iframe has time to boot (Fire Stick)
-  setTimeout(forceBloombergCaptions, 8000);
-  setInterval(forceBloombergCaptions, 60 * 1000);   // re-assert every minute
+  // v3.1: Show Wall renders immediately + rotates every 12 seconds
+  renderShowWall();
+  setInterval(renderShowWall, 12 * 1000);
 
   setInterval(updateClocks,        CONFIG.refreshIntervals.clock);
   setInterval(updateWeather,       CONFIG.refreshIntervals.weather);
