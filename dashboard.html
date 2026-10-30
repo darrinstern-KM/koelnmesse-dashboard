@@ -1995,14 +1995,32 @@ function scheduleDailyFx() {
    NEWS
    =========================================================== */
 async function fetchRss(url, max=5) {
-  // No &count= — rss2json returns 422 for it without an API key; trim client-side
+  // No &count= — rss2json returns 422 for it without an API key; trim client-side.
+  // 10s timeout so a stalled request rejects and the caller's fallback renders.
   const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`;
-  const r = await fetch(api);
-  const d = await r.json();
-  if (d.status !== 'ok' || !Array.isArray(d.items)) throw new Error();
-  // Some feeds (TSNN) double-encode entities; decode one level so innerHTML shows "&" not "&amp;"
-  const ta = document.createElement('textarea');
-  return d.items.slice(0, max).map(it => { ta.innerHTML = it.title || ''; return { ...it, title: ta.value }; });
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 10000);
+  try {
+    const r = await fetch(api, { signal: ctrl.signal });
+    if (!r.ok) throw new Error('rss ' + r.status);
+    const d = await r.json();
+    if (d.status !== 'ok' || !Array.isArray(d.items)) throw new Error();
+    return d.items.slice(0, max);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+// Decode HTML entities as plain text (feeds like TSNN double-encode, e.g. "&amp;amp;").
+// A <textarea> parses its content as text, so nothing here is ever executed.
+const _entityTa = document.createElement('textarea');
+function decodeEntities(s) {
+  let prev, out = String(s || '');
+  for (let i = 0; i < 3 && out !== prev; i++) {
+    prev = out;
+    _entityTa.innerHTML = out;
+    out = _entityTa.value;
+  }
+  return out;
 }
 function renderNews(elId, items, src) {
   const ul = document.getElementById(elId);
@@ -2011,70 +2029,88 @@ function renderNews(elId, items, src) {
   items.slice(0, 3).forEach(it => {
     const li = document.createElement('li');
     li.className = 'news-item';
-    const title = (it.title||'').slice(0, 140);
+    const srcLabel = decodeEntities(it.source || src);
     const date = it.pubDate ? new Date(it.pubDate).toLocaleDateString('en-US', { month:'short', day:'numeric' })
-                            : (it.source || '');
-    const srcLabel = it.source || src;
-    li.innerHTML = `<div class="news-title">${title}</div>
-                    <div class="news-meta"><span class="news-source">${srcLabel}</span> · ${date}</div>`;
+                            : srcLabel;
+    // Feed/JSON text is untrusted — build with textContent, never innerHTML
+    const t = document.createElement('div');
+    t.className = 'news-title';
+    t.textContent = decodeEntities(it.title).slice(0, 140);
+    const meta = document.createElement('div');
+    meta.className = 'news-meta';
+    const s = document.createElement('span');
+    s.className = 'news-source';
+    s.textContent = srcLabel;
+    meta.append(s, ` · ${date}`);
+    li.append(t, meta);
     ul.appendChild(li);
   });
+}
+
+// Bumped on every updateNews() call; a slow RSS fallback from an older call
+// must not overwrite what a newer call (e.g. after JSON loads) has rendered.
+let newsGen = 0;
+
+async function updateIndustryNews(gen) {
+  const fromJson = (CONFIG.industryNews || []);
+  if (fromJson.length) {
+    renderNews('industry-news', fromJson.map(n => ({
+      title: n.title,
+      pubDate: n.date || null,
+      source: n.source || 'Industry'
+    })), 'Industry');
+    return;
+  }
+  // FALLBACK: try live RSS (may fail on Fire Stick due to CORS)
+  let items;
+  try {
+    items = await fetchRss('https://www.tsnn.com/rss.xml', 5);
+  } catch {
+    items = [
+      { title: 'Global B2B events market on track to surpass $40B by 2027', pubDate: new Date(), source: 'IBISWorld' },
+      { title: 'Face-to-face events continue to outperform digital channels for lead quality in B2B', pubDate: new Date(), source: 'UFI Global' },
+      { title: 'Sustainability requirements now standard in >60% of major trade show RFPs', pubDate: new Date(), source: 'IAEE' }
+    ];
+  }
+  if (gen === newsGen) renderNews('industry-news', items, 'TSNN');
+}
+
+async function updateKmNews(gen) {
+  const fromJson = (CONFIG.kmNews || []);
+  if (fromJson.length) {
+    renderNews('km-news', fromJson.map(n => ({
+      title: n.title,
+      pubDate: n.date || null,
+      source: n.source || 'Koelnmesse'
+    })), 'Koelnmesse');
+    return;
+  }
+  // FALLBACK: try live Google News RSS
+  let items, src = 'Google News';
+  try {
+    const googleNewsRss = 'https://news.google.com/rss/search?q=Koelnmesse&hl=en-US&gl=US&ceid=US:en';
+    const raw = await fetchRss(googleNewsRss, 6);
+    if (raw.length === 0) throw new Error();
+    items = raw.map(it => {
+      const m = (it.title || '').match(/^(.+?)\s+-\s+([^-]+)$/);
+      return m
+        ? { title: m[1].trim(), pubDate: it.pubDate, source: m[2].trim() }
+        : { title: it.title,    pubDate: it.pubDate, source: 'Google News' };
+    });
+  } catch {
+    src = 'Koelnmesse';
+    items = CONFIG.kmNewsBaseline.map(n => ({ title: n.title, pubDate: null, source: n.source }));
+  }
+  if (gen === newsGen) renderNews('km-news', items, src);
 }
 
 async function updateNews() {
   // PRIMARY SOURCE: dashboard-data.json (populated by the 6am/noon sync
   // pulling fresh headlines from TSNN + Trade Show Executive + Koelnmesse
   // press office). This bypasses client-side RSS quotas and CORS entirely.
-  const industryFromJson = (CONFIG.industryNews || []);
-  const kmFromJson       = (CONFIG.kmNews || []);
-
-  if (industryFromJson.length) {
-    renderNews('industry-news', industryFromJson.map(n => ({
-      title: n.title,
-      pubDate: n.date || null,
-      source: n.source || 'Industry'
-    })), 'Industry');
-  } else {
-    // FALLBACK: try live RSS (may fail on Fire Stick due to CORS)
-    try {
-      const items = await fetchRss('https://www.tsnn.com/rss.xml', 5);
-      renderNews('industry-news', items, 'TSNN');
-    } catch {
-      renderNews('industry-news', [
-        { title: 'Global B2B events market on track to surpass $40B by 2027', pubDate: new Date(), source: 'IBISWorld' },
-        { title: 'Face-to-face events continue to outperform digital channels for lead quality in B2B', pubDate: new Date(), source: 'UFI Global' },
-        { title: 'Sustainability requirements now standard in >60% of major trade show RFPs', pubDate: new Date(), source: 'IAEE' }
-      ], 'Industry');
-    }
-  }
-
-  if (kmFromJson.length) {
-    renderNews('km-news', kmFromJson.map(n => ({
-      title: n.title,
-      pubDate: n.date || null,
-      source: n.source || 'Koelnmesse'
-    })), 'Koelnmesse');
-  } else {
-    // FALLBACK: try live Google News RSS
-    try {
-      const googleNewsRss = 'https://news.google.com/rss/search?q=Koelnmesse&hl=en-US&gl=US&ceid=US:en';
-      const items = await fetchRss(googleNewsRss, 6);
-      if (!items || items.length === 0) throw new Error();
-      const cleaned = items.map(it => {
-        const m = (it.title || '').match(/^(.+?)\s+-\s+([^-]+)$/);
-        return m
-          ? { title: m[1].trim(), pubDate: it.pubDate, source: m[2].trim() }
-          : { title: it.title,    pubDate: it.pubDate, source: 'Google News' };
-      });
-      renderNews('km-news', cleaned, 'Google News');
-    } catch {
-      renderNews('km-news', CONFIG.kmNewsBaseline.map(n => ({
-        title: n.title,
-        pubDate: null,
-        source: n.source
-      })), 'Koelnmesse');
-    }
-  }
+  // The two panels are independent, so load them in parallel.
+  const gen = ++newsGen;
+  await Promise.all([updateIndustryNews(gen), updateKmNews(gen)]);
 }
 
 /* ===========================================================
@@ -2875,7 +2911,7 @@ async function init() {
   updateClocks();
   updateWeather();
   updateFx();
-  updateNews();
+  // updateNews() runs after loadDynamicData() below — calling it here raced the JSON render
   renderShows();
   initGlobe();          // v3.0: init globe backdrop before first spotlight cycle
   renderSpotlight();
@@ -2928,7 +2964,7 @@ async function init() {
 
   setInterval(updateClocks,        CONFIG.refreshIntervals.clock);
   setInterval(updateWeather,       CONFIG.refreshIntervals.weather);
-  setInterval(updateNews,          CONFIG.refreshIntervals.news);
+  // News refresh rides the 30-min dynamic-data interval above (same cadence as refreshIntervals.news)
   setInterval(updateFx,            CONFIG.refreshIntervals.fx);
   setInterval(renderShows,         CONFIG.refreshIntervals.shows);
   setInterval(updateStaffCalendar, 60 * 60 * 1000);   // hourly
