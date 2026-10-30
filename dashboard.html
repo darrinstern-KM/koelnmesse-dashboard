@@ -1995,11 +1995,14 @@ function scheduleDailyFx() {
    NEWS
    =========================================================== */
 async function fetchRss(url, max=5) {
-  const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=${max}`;
+  // No &count= — rss2json returns 422 for it without an API key; trim client-side
+  const api = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`;
   const r = await fetch(api);
   const d = await r.json();
-  if (d.status !== 'ok') throw new Error();
-  return d.items;
+  if (d.status !== 'ok' || !Array.isArray(d.items)) throw new Error();
+  // Some feeds (TSNN) double-encode entities; decode one level so innerHTML shows "&" not "&amp;"
+  const ta = document.createElement('textarea');
+  return d.items.slice(0, max).map(it => { ta.innerHTML = it.title || ''; return { ...it, title: ta.value }; });
 }
 function renderNews(elId, items, src) {
   const ul = document.getElementById(elId);
