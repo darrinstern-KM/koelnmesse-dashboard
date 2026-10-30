@@ -1,34 +1,31 @@
 {
-  "lastUpdated": "2026-10-29T15:57:00-05:00",
-  "dailyBrief": "2 out today (Kate through 11/6) · Orgatec Cologne runs through Fri · Informa to close $2.97B Clarion deal in Dec · h+h americas Fall Edition (Houston) in TSE spotlight",
+  "lastUpdated": "2026-10-30T08:22:38-05:00",
+  "dailyBrief": "2 out today, George joins Kate Sat for ISM ME · Informa-Clarion $2.97B deal closes Dec · Bears land Jeffery Simmons, at Seattle Mon · Russia hits Ukraine rail hub",
   "ooo": [
-    {"name":"Cathy","status":"Vacation","until":"2026-10-29"},
-    {"name":"Cathy","status":"OOO","until":"2026-10-30"},
-    {"name":"Kate","status":"Vacation","until":"2026-11-06"},
-    {"name":"George","status":"ISM ME","until":"2026-11-06"},
-    {"name":"Cathy","status":"OOO","until":"2026-11-06"},
-    {"name":"George","status":"OOO","until":"2026-11-09"},
-    {"name":"Cathy","status":"OOO","until":"2026-11-13"},
-    {"name":"Cathy","status":"OOO","until":"2026-11-20"},
-    {"name":"VW","status":"Vacation","until":"2026-11-25"},
-    {"name":"George","status":"OOO","until":"2026-11-25"},
-    {"name":"Kate","status":"Vacation","until":"2026-11-27"},
-    {"name":"George","status":"OOO","until":"2026-11-27"},
-    {"name":"Cathy","status":"OOO","until":"2026-11-27"},
-    {"name":"Leslie","status":"Vacation","until":"2026-12-01"}
+    { "name": "Cathy", "status": "OOO", "until": "2026-10-30" },
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-06" },
+    { "name": "George", "status": "ISM ME", "until": "2026-11-06" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-06" },
+    { "name": "George", "status": "OOO", "until": "2026-11-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-13" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-20" },
+    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
+    { "name": "George", "status": "OOO", "until": "2026-11-25" },
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "George", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Leslie", "status": "Vacation", "until": "2026-12-01" }
   ],
   "topNews": {
-    "world": {"headline":"Informa confirms $2.97B Clarion Events acquisition will close in December","source":"TSNN","time":"Oct 27"},
-    "germany": {"headline":"Left Party grapples with Middle East conflict before vote to join Berlin government","source":"The Local Germany","time":"Today"},
-    "chicago": {"headline":"Chicago is about to elect its first-ever school board president","source":"CBS Chicago","time":"Today"},
-    "sports": {"headline":"Bears top Falcons 31-23","source":"CBS Chicago","time":"Yesterday"}
+    "world": { "headline": "Russian drone attack on Ukrainian train station kills at least 14, officials say", "source": "BBC", "time": "Yesterday" },
+    "germany": { "headline": "Left Party grapples with Middle East conflict before vote to join Berlin government", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "City launches childhood lead testing program bringing testing to the South Side", "source": "WBEZ", "time": "Yesterday" },
+    "sports": { "headline": "Bears (5-2) trade for Titans DL Jeffery Simmons; next at Seattle Monday night", "source": "WBEZ / ESPN", "time": "Yesterday" }
   },
   "industryNews": [
-    {"title":"Trading Update: Informa Reports 6.5% Underlying Revenue Growth Through Nine Months, Confirms Clarion Deal to Close in December","source":"TSNN","date":"2026-10-27"},
-    {"title":"Forge Acquires Kisaco Research","source":"Trade Show Executive","date":"2026-10-28"},
-    {"title":"TSNN Announces Finalists for 2026 Awards, Winners to Be Revealed at Celebration on Nov. 16","source":"TSNN","date":"2026-10-28"}
+    { "title": "CloserStill Media Acquires ROAR B2B, Adding Five Event Brands to Global Portfolio", "source": "TSNN", "date": "2026-10-29" },
+    { "title": "Forge Acquires Kisaco Research", "source": "Trade Show Executive", "date": "2026-10-28" },
+    { "title": "Informa Reports 6.5% Underlying Revenue Growth Through Nine Months, Confirms Clarion Deal to Close in December", "source": "TSNN", "date": "2026-10-27" }
   ],
-  "kmNews": [
-    {"title":"What h+h americas Fall Edition Can Teach Organizers","source":"Trade Show Executive","date":"2026-10-26"}
-  ]
+  "kmNews": []
 }
