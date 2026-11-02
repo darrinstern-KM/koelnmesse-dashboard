@@ -54,6 +54,15 @@
     /* Subtle drift (~30 min cycle) to prevent burn-in on 75" panel */
     animation: pixelDrift 1800s ease-in-out infinite alternate;
   }
+  /* Pin each section to its row. A display:none child (the live-show ribbon when
+     no show is running) gives up its grid cell, so auto-placement would shift
+     every later section up one track and collapse the main panels into 34px. */
+  .dashboard > .header           { grid-row: 1; }
+  .dashboard > .live-show-ribbon { grid-row: 2; }
+  .dashboard > .daily-brief      { grid-row: 3; }
+  .dashboard > .main             { grid-row: 4; }
+  .dashboard > .bottom-area      { grid-row: 5; }
+  .dashboard > .ticker           { grid-row: 6; }
   @keyframes pixelDrift {
     0%   { transform: translate(0, 0); }
     25%  { transform: translate(-2px, 1px); }
