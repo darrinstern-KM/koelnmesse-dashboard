@@ -1813,6 +1813,17 @@ function updateVersionStamp() {
   }
 }
 
+// Save a good value and return it; given null, return the last saved value (or null).
+function lastGood(key, value) {
+  const k = 'km-dash:lastGood:' + key;
+  try {
+    if (value) { localStorage.setItem(k, JSON.stringify(value)); return value; }
+    const saved = localStorage.getItem(k);
+    if (saved) { console.warn(`dashboard-data.json missing ${key} — using last good copy`); return JSON.parse(saved); }
+  } catch (e) { /* storage blocked — fall through */ }
+  return value;
+}
+
 async function loadDynamicData() {
   try {
     const res = await fetch(CONFIG.dataUrl, { cache: 'no-store' });
@@ -1837,13 +1848,13 @@ async function loadDynamicData() {
     if (data.industryNews) CONFIG.industryNews = data.industryNews;
     if (typeof data.dailyBrief === 'string') CONFIG.dailyBrief = data.dailyBrief;
     // v3.1: show list moved to JSON — overrides hardcoded CONFIG.upcomingShows if present
-    if (Array.isArray(data.upcomingShows) && data.upcomingShows.length) {
-      CONFIG.upcomingShows = data.upcomingShows;
-    }
+    // v4.1: a sync that drops upcomingShows/salesReport must not blank the TV on its
+    // next reload — fall back to the last good copy kept in localStorage.
+    const shows = lastGood('upcomingShows', Array.isArray(data.upcomingShows) && data.upcomingShows.length >= 20 ? data.upcomingShows : null);
+    if (shows) CONFIG.upcomingShows = shows;
     // v4.0: Sales Report office overview data
-    if (data.salesReport && typeof data.salesReport === 'object') {
-      CONFIG.salesReport = data.salesReport;
-    }
+    const sales = lastGood('salesReport', data.salesReport && typeof data.salesReport === 'object' ? data.salesReport : null);
+    if (sales) CONFIG.salesReport = sales;
     if (data.kmNews)       CONFIG.kmNews       = data.kmNews;
 
     CONFIG.lastSyncStamp = data.lastUpdated || data.generatedAt || data.lastSynced || null;
@@ -2085,32 +2096,40 @@ async function updateIndustryNews(gen) {
 }
 
 async function updateKmNews(gen) {
-  const fromJson = (CONFIG.kmNews || []);
-  if (fromJson.length) {
-    renderNews('km-news', fromJson.map(n => ({
-      title: n.title,
-      pubDate: n.date || null,
-      source: n.source || 'Koelnmesse'
-    })), 'Koelnmesse');
+  const KM_NEWS_SLOTS = 3;
+  const fromJson = (CONFIG.kmNews || []).map(n => ({
+    title: n.title,
+    pubDate: n.date || null,
+    source: n.source || 'Koelnmesse'
+  }));
+  // Curated JSON items lead; when the sync supplies fewer than the panel holds,
+  // top up from live Google News, then from the static baseline.
+  if (fromJson.length >= KM_NEWS_SLOTS) {
+    renderNews('km-news', fromJson, 'Koelnmesse');
     return;
   }
-  // FALLBACK: try live Google News RSS
-  let items, src = 'Google News';
+  if (fromJson.length) renderNews('km-news', fromJson, 'Koelnmesse');   // show what we have while fetching
+  let live = [];
   try {
     const googleNewsRss = 'https://news.google.com/rss/search?q=Koelnmesse&hl=en-US&gl=US&ceid=US:en';
-    const raw = await fetchRss(googleNewsRss, 6);
-    if (raw.length === 0) throw new Error();
-    items = raw.map(it => {
+    const raw = await fetchRss(googleNewsRss, 8);
+    live = raw.map(it => {
       const m = (it.title || '').match(/^(.+?)\s+-\s+([^-]+)$/);
       return m
         ? { title: m[1].trim(), pubDate: it.pubDate, source: m[2].trim() }
         : { title: it.title,    pubDate: it.pubDate, source: 'Google News' };
     });
-  } catch {
-    src = 'Koelnmesse';
-    items = CONFIG.kmNewsBaseline.map(n => ({ title: n.title, pubDate: null, source: n.source }));
-  }
-  if (gen === newsGen) renderNews('km-news', items, src);
+  } catch { /* fall through to baseline */ }
+  const baseline = CONFIG.kmNewsBaseline.map(n => ({ title: n.title, pubDate: null, source: n.source }));
+  const seen = new Set();
+  const key = t => decodeEntities(t).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 60);
+  const items = [...fromJson, ...live, ...baseline].filter(it => {
+    const k = key(it.title);
+    if (!k || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  if (gen === newsGen) renderNews('km-news', items, 'Koelnmesse');
 }
 
 async function updateNews() {
@@ -2938,6 +2957,7 @@ async function init() {
   renderDailyBrief();    // v3.0: executive brief strip
   updateFreshnessStamps(); // v3.0: "updated Xm ago" on panel headers
   renderShows();           // v3.1: re-render show column with JSON-supplied list
+  renderSpotlight();       // v4.1: first spotlight was drawn from the hardcoded list
   renderShowWall();        // v3.1: re-render show-wall with JSON-supplied list
   renderSalesReport();     // v4.0: office-overview KPIs
   renderLiveShowRibbon();  // v4.0: "We're there now" ribbon
