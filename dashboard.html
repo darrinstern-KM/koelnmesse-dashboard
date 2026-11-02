@@ -1526,6 +1526,16 @@ const CONFIG = {
   /* Daily FX refresh anchored to 8:00 AM Chicago time. */
   dailyFxHourChicago: 8,
 
+  /* v4.1: Featured Show rotates the Chicago office's priority shows (next
+     edition of each, in date order) instead of repeating the date-sorted
+     list beside it. Names match upcomingShows[].name exactly, ignoring case,
+     so "ISM" does not pull in "ISM Middle East". Optional JSON override:
+     featuredShows: ["..."] in dashboard-data.json. */
+  featuredShows: [
+    "spoga horse", "IDS", "h+h cologne", "ISM", "imm cologne",
+    "Anuga", "interzum", "h+h americas", "FSB"
+  ],
+
   /* -----------------------------------------------------------
      Koelnmesse Trade Fair Calendar — verified dates
      ----------------------------------------------------------- */
@@ -1856,6 +1866,7 @@ async function loadDynamicData() {
     const sales = lastGood('salesReport', data.salesReport && typeof data.salesReport === 'object' ? data.salesReport : null);
     if (sales) CONFIG.salesReport = sales;
     if (data.kmNews)       CONFIG.kmNews       = data.kmNews;
+    if (Array.isArray(data.featuredShows) && data.featuredShows.length) CONFIG.featuredShows = data.featuredShows;
 
     CONFIG.lastSyncStamp = data.lastUpdated || data.generatedAt || data.lastSynced || null;
     updateVersionStamp();
@@ -2715,10 +2726,19 @@ function updateFreshnessStamps() {
 let spotlightIndex = 0;
 function renderSpotlight() {
   const now = new Date();
-  const upcoming = CONFIG.upcomingShows
+  const future = CONFIG.upcomingShows
     .filter(s => new Date(s.end) >= now)
-    .sort((a, b) => new Date(a.start) - new Date(b.start))
-    .slice(0, 5);
+    .sort((a, b) => new Date(a.start) - new Date(b.start));
+  // Next edition of each priority show; if none match, fall back to the next 5 shows
+  const wanted = new Set((CONFIG.featuredShows || []).map(n => n.trim().toLowerCase()));
+  const seen = new Set();
+  const priority = future.filter(s => {
+    const k = (s.name || '').trim().toLowerCase();
+    if (!wanted.has(k) || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  const upcoming = priority.length ? priority : future.slice(0, 5);
 
   if (!upcoming.length) return;
 
