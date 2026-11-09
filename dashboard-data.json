@@ -1,1 +1,28 @@
-{"lastUpdated":"2026-11-07T13:05:00-06:00","dailyBrief":"George out Mon · 10 OOO blocks through Dec 4 · Winter Meeting Dec 7 · Skift: Gulf event war insurance drying up","ooo":[{"name":"George","status":"OOO","until":"2026-11-09"},{"name":"Cathy","status":"OOO","until":"2026-11-13"},{"name":"Cathy","status":"OOO","until":"2026-11-20"},{"name":"VW","status":"Vacation","until":"2026-11-25"},{"name":"George","status":"OOO","until":"2026-11-25"},{"name":"Kate","status":"Vacation","until":"2026-11-27"},{"name":"George","status":"OOO","until":"2026-11-27"},{"name":"Cathy","status":"OOO","until":"2026-11-27"},{"name":"Leslie","status":"OOO","until":"2026-12-01"},{"name":"Cathy","status":"OOO","until":"2026-12-04"}],"topNews":{"world":{"headline":"Oil holds above $90 as US-Iran tensions persist despite peace-talk hopes","source":"CNBC / FXStreet","time":"Yesterday"},"germany":{"headline":"Bavaria's Aigner tipped to become Germany's first woman president","source":"The Local Germany","time":"Today"},"chicago":{"headline":"How Chicago businesses are bracing for the state's hemp ban","source":"Chicago Sun-Times","time":"Today"},"sports":{"headline":"Bears DC Dennis Allen's big question: To blitz or not to blitz?","source":"Chicago Sun-Times","time":"Today"}},"industryNews":[{"title":"Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening","source":"Skift Meetings","date":"2026-11-05"},{"title":"New Research: Trade Shows Are Delivering Efficiency, but Education Isn't Pulling Its Weight","source":"Skift Meetings","date":"2026-11-06"},{"title":"GES Acquires CSG Creative from National Trade Productions","source":"TSNN","date":"2026-11-05"}],"kmNews":[]}
+{
+  "lastUpdated": "2026-11-09T06:40:00-06:00",
+  "dailyBrief": "George out today · 5 out Thanksgiving week · GES buys CSG Creative · watch: Gulf event war insurance drying up on Iran conflict",
+  "ooo": [
+    {"name": "George", "status": "OOO", "until": "2026-11-09"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
+    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
+    {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "George", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Leslie", "status": "Vacation", "until": "2026-12-01"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"}
+  ],
+  "topNews": {
+    "world": {"headline": "War insurance dries up for Gulf events as U.S.-Iran conflict continues", "source": "Skift", "time": "This week"},
+    "germany": {"headline": "Acid spill in North Rhine-Westphalia disrupts traffic and closes schools", "source": "The Local Germany", "time": "This week"},
+    "chicago": {"headline": "Editorial: Springfield's Bears scramble is no way to run a state", "source": "Chicago Business", "time": "This week"},
+    "sports": {"headline": "Bears cling to 27-24 win over Tampa Bay as Caleb Williams struggles", "source": "NBC Chicago", "time": "Yesterday"}
+  },
+  "industryNews": [
+    {"title": "Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening", "source": "Skift Meetings", "date": "2026-11-05"},
+    {"title": "GES Acquires CSG Creative from National Trade Productions", "source": "TSNN", "date": "2026-11-05"},
+    {"title": "New Research: Trade Shows Are Delivering Efficiency, but Education Isn't Pulling Its Weight", "source": "Skift Meetings", "date": "2026-11-06"}
+  ],
+  "kmNews": []
+}
