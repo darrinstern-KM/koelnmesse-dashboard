@@ -1,28 +1,29 @@
 {
-  "lastUpdated": "2026-11-09T06:40:00-06:00",
-  "dailyBrief": "George out today · 5 out Thanksgiving week · GES buys CSG Creative · watch: Gulf event war insurance drying up on Iran conflict",
+  "lastUpdated": "2026-11-09T08:15:00-06:00",
+  "dailyBrief": "George out today, Cathy Fri · Bears beat Bucs 27-24 · Trump-Xi summit to cover Iran war · KM press quiet since Oct 2 (Imaging World)",
   "ooo": [
-    {"name": "George", "status": "OOO", "until": "2026-11-09"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
-    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
-    {"name": "George", "status": "OOO", "until": "2026-11-25"},
-    {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
-    {"name": "George", "status": "OOO", "until": "2026-11-27"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
-    {"name": "Leslie", "status": "Vacation", "until": "2026-12-01"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"}
+    { "name": "George", "status": "OOO", "until": "2026-11-09" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-13" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-20" },
+    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
+    { "name": "George", "status": "OOO", "until": "2026-11-25" },
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "George", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Leslie", "status": "OOO", "until": "2026-12-01" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-04" }
   ],
   "topNews": {
-    "world": {"headline": "War insurance dries up for Gulf events as U.S.-Iran conflict continues", "source": "Skift", "time": "This week"},
-    "germany": {"headline": "Acid spill in North Rhine-Westphalia disrupts traffic and closes schools", "source": "The Local Germany", "time": "This week"},
-    "chicago": {"headline": "Editorial: Springfield's Bears scramble is no way to run a state", "source": "Chicago Business", "time": "This week"},
-    "sports": {"headline": "Bears cling to 27-24 win over Tampa Bay as Caleb Williams struggles", "source": "NBC Chicago", "time": "Yesterday"}
+    "world": { "headline": "Trump says he expects to talk to Xi, Putin about Iran war at China summit", "source": "Al Jazeera", "time": "Today" },
+    "germany": { "headline": "'Last generation': Kristallnacht survivor, 94, bears witness", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "After Democrats won big in midterms, Chicago supporters rally for 'productive change'", "source": "Chicago Sun-Times", "time": "Yesterday" },
+    "sports": { "headline": "Bears beat Buccaneers 27-24 on Cairo Santos' late field goal despite 4 Williams INTs", "source": "Chicago Sun-Times", "time": "Yesterday" }
   },
   "industryNews": [
-    {"title": "Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening", "source": "Skift Meetings", "date": "2026-11-05"},
-    {"title": "GES Acquires CSG Creative from National Trade Productions", "source": "TSNN", "date": "2026-11-05"},
-    {"title": "New Research: Trade Shows Are Delivering Efficiency, but Education Isn't Pulling Its Weight", "source": "Skift Meetings", "date": "2026-11-06"}
+    { "title": "AI Won't Replace Face-to-Face Meetings: Caesars' Michael Massari", "source": "TSNN", "date": "2026-11-09" },
+    { "title": "Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening", "source": "Skift Meetings", "date": "2026-11-05" },
+    { "title": "GES Acquires CSG Creative", "source": "Trade Show Executive", "date": "2026-11-05" }
   ],
   "kmNews": []
 }
