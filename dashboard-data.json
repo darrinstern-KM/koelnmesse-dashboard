@@ -1,29 +1,29 @@
 {
-  "lastUpdated": "2026-11-09T08:15:00-06:00",
-  "dailyBrief": "George out today, Cathy Fri · Bears beat Bucs 27-24 · Trump-Xi summit to cover Iran war · KM press quiet since Oct 2 (Imaging World)",
+  "lastUpdated": "2026-11-10T10:35:00-06:00",
+  "dailyBrief": "Office full today · Cathy out Fri, Thanksgiving week thin (VW, George, Kate, Kasia, Kym) · Winter Meeting Dec 7-9 · watch: Gulf war insurance drying up for events",
   "ooo": [
-    { "name": "George", "status": "OOO", "until": "2026-11-09" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-13" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-20" },
-    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
-    { "name": "George", "status": "OOO", "until": "2026-11-25" },
-    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "George", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Leslie", "status": "OOO", "until": "2026-12-01" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-12-04" }
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
+    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
+    {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
+    {"name": "George", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Leslie", "status": "OOO", "until": "2026-12-01"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"}
   ],
   "topNews": {
-    "world": { "headline": "Trump says he expects to talk to Xi, Putin about Iran war at China summit", "source": "Al Jazeera", "time": "Today" },
-    "germany": { "headline": "'Last generation': Kristallnacht survivor, 94, bears witness", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "After Democrats won big in midterms, Chicago supporters rally for 'productive change'", "source": "Chicago Sun-Times", "time": "Yesterday" },
-    "sports": { "headline": "Bears beat Buccaneers 27-24 on Cairo Santos' late field goal despite 4 Williams INTs", "source": "Chicago Sun-Times", "time": "Yesterday" }
+    "world": {"headline": "US-Iran conflict continues; war insurance dries up for Gulf events", "source": "Skift", "time": "This week"},
+    "germany": {"headline": "German exports beat forecasts as EU demand grows", "source": "The Local Germany", "time": "Yesterday"},
+    "chicago": {"headline": "Morgan Park fires football coach Chris James", "source": "Chicago Sun-Times", "time": "Yesterday"},
+    "sports": {"headline": "Bears' Ben Johnson on trade deadline: 'We'll see if there is another move or two to be made'", "source": "Chicago Sun-Times", "time": "Yesterday"}
   },
   "industryNews": [
-    { "title": "AI Won't Replace Face-to-Face Meetings: Caesars' Michael Massari", "source": "TSNN", "date": "2026-11-09" },
-    { "title": "Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening", "source": "Skift Meetings", "date": "2026-11-05" },
-    { "title": "GES Acquires CSG Creative", "source": "Trade Show Executive", "date": "2026-11-05" }
+    {"title": "New Research: Trade Shows Are Delivering Efficiency, but Education Isn't Pulling Its Weight", "source": "Skift Meetings", "date": "2026-11-06"},
+    {"title": "Healthcare Association Files for Bankruptcy, Cancels Conference 8 Days Before Opening", "source": "Skift Meetings", "date": "2026-11-05"},
+    {"title": "GES Acquires CSG Creative", "source": "Trade Show Executive", "date": "2026-11-05"}
   ],
   "kmNews": []
 }
