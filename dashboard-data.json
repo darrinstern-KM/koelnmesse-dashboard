@@ -1,30 +1,33 @@
 {
-  "lastUpdated": "2026-11-11T08:09:41-06:00",
-  "dailyBrief": "Full team in today · Cathy out Fri · 7 out Thanksgiving week · PLMA Private Label Show Rosemont Mon · Winter Meeting Dec 7 · no new KM press in 7 days",
+  "lastUpdated": "2026-11-12T14:45:49-06:00",
+  "dailyBrief": "Cathy out thru Fri · 7 out Thanksgiving week · ART COLOGNE drew 47K visitors · Bears 7-2 atop NFC North · OOO carried from 11/11, Outlook sync down",
   "ooo": [
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-13" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-20" },
-    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
-    { "name": "George", "status": "OOO", "until": "2026-11-25" },
-    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "Kym", "status": "OOO", "until": "2026-11-27" },
-    { "name": "George", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Leslie", "status": "OOO", "until": "2026-12-01" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-12-04" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-12-11" }
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
+    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
+    {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
+    {"name": "George", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Leslie", "status": "OOO", "until": "2026-12-01"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
   ],
   "topNews": {
-    "world":   { "headline": "World leaders gather in Turkey as COP31 climate summit opens", "source": "Euronews", "time": "Today" },
-    "germany": { "headline": "Germany set to raise electric car subsidies by €917 million in 2027", "source": "The Local Germany", "time": "Today" },
-    "chicago": { "headline": "Mayor upends Chicago's gunshot-detection plan", "source": "Chicago Sun-Times", "time": "Yesterday" },
-    "sports":  { "headline": "Bears edge Bucs on game-ending field goal, extend win streak to four", "source": "ChicagoBears.com", "time": "Sunday" }
+    "world": {"headline": "Thailand urges return to multilateralism as \"nobody can go it alone\"", "source": "Euronews", "time": "Today"},
+    "germany": {"headline": "Electricity and gas bills in Germany expected to rise in early 2027", "source": "The Local Germany", "time": "Yesterday"},
+    "chicago": {"headline": "Report warns city must shake up sluggish O'Hare terminal project or risk more traveler ire", "source": "WBEZ", "time": "Yesterday"},
+    "sports": {"headline": "Spurs top Bulls 124-119; rookie Wilson leaves with right hand injury", "source": "ESPN", "time": "Yesterday"}
   },
   "industryNews": [
-    { "title": "Why One of the Oldest Meetings Agencies Decided to \"Burn Down the Building\"", "source": "Skift Meetings", "date": "2026-11-10" },
-    { "title": "Exclusive: UFI Global Congress Keynote and Interview with Informa CEO Stephen Carter", "source": "TSNN", "date": "2026-11-10" },
-    { "title": "GES Acquires CSG Creative", "source": "Trade Show Executive", "date": "2026-11-05" }
+    {"title": "One Contact, Multiple Hotels: MGM's New Approach to Meetings", "source": "TSNN", "date": "2026-11-12"},
+    {"title": "Terramar Bucks the Trend and Goes Independent. Will Other DMCs Follow?", "source": "Skift Meetings", "date": "2026-11-11"},
+    {"title": "Not Your Father's Dine-Around: Immigration Is Creating New Opportunities for Exhibitor Entertaining", "source": "Trade Show Executive", "date": "2026-11-10"}
   ],
-  "kmNews": []
+  "kmNews": [
+    {"title": "ART COLOGNE 2026: Vibrant cultural hub, around 47,000 visitors and 165 galleries from 22 countries", "source": "Koelnmesse / ART COLOGNE", "date": "2026-11-08"},
+    {"title": "Minister of State for Culture Weimer Opens ART COLOGNE 2026", "source": "Koelnmesse / ART COLOGNE", "date": "2026-11-06"}
+  ]
 }
