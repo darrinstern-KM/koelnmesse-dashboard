@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-12T14:45:49-06:00",
-  "dailyBrief": "Cathy out thru Fri · 7 out Thanksgiving week · ART COLOGNE drew 47K visitors · Bears 7-2 atop NFC North · OOO carried from 11/11, Outlook sync down",
+  "lastUpdated": "2026-11-13T08:40:49-06:00",
+  "dailyBrief": "Cathy out today · 7 out Thanksgiving week · KM pauses imm cologne 2027 · Mercedes freezes German plant investment · Winter Meeting Dec 7",
   "ooo": [
     {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
     {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
@@ -16,18 +16,18 @@
     {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
   ],
   "topNews": {
-    "world": {"headline": "Thailand urges return to multilateralism as \"nobody can go it alone\"", "source": "Euronews", "time": "Today"},
-    "germany": {"headline": "Electricity and gas bills in Germany expected to rise in early 2027", "source": "The Local Germany", "time": "Yesterday"},
-    "chicago": {"headline": "Report warns city must shake up sluggish O'Hare terminal project or risk more traveler ire", "source": "WBEZ", "time": "Yesterday"},
-    "sports": {"headline": "Spurs top Bulls 124-119; rookie Wilson leaves with right hand injury", "source": "ESPN", "time": "Yesterday"}
+    "world": {"headline": "Bessent relocates to military base after Iranian threats as Iran war funding fight looms before Dec 11", "source": "Democracy Now", "time": "Yesterday"},
+    "germany": {"headline": "Mercedes-Benz freezes new investment at German sites, warns plants could close without cost cuts", "source": "The Local Germany", "time": "Today"},
+    "chicago": {"headline": "Chicago mayoral candidates make their pitches and take aim at Brandon Johnson", "source": "Chicago Sun-Times", "time": "Today"},
+    "sports": {"headline": "Blackhawks edge Sabres 3-2 in OT on Donato winner, snapping six-game skid", "source": "NHL.com", "time": "Yesterday"}
   },
   "industryNews": [
-    {"title": "One Contact, Multiple Hotels: MGM's New Approach to Meetings", "source": "TSNN", "date": "2026-11-12"},
-    {"title": "Terramar Bucks the Trend and Goes Independent. Will Other DMCs Follow?", "source": "Skift Meetings", "date": "2026-11-11"},
-    {"title": "Not Your Father's Dine-Around: Immigration Is Creating New Opportunities for Exhibitor Entertaining", "source": "Trade Show Executive", "date": "2026-11-10"}
+    {"title": "On Site at the 2026 UFI Global Congress: Keynote by RX CEO Hugh Jones", "source": "TSNN", "date": "2026-11-13"},
+    {"title": "Amex GBT Reveals Top Meetings Destinations for 2027: Orlando, Barcelona and Buenos Aires Top Rankings", "source": "Trade Show Executive", "date": "2026-11-12"},
+    {"title": "India and Africa Are the Event Industry's Next Growth Markets. Can Venues Keep Up?", "source": "Skift Meetings", "date": "2026-11-11"}
   ],
   "kmNews": [
-    {"title": "ART COLOGNE 2026: Vibrant cultural hub, around 47,000 visitors and 165 galleries from 22 countries", "source": "Koelnmesse / ART COLOGNE", "date": "2026-11-08"},
-    {"title": "Minister of State for Culture Weimer Opens ART COLOGNE 2026", "source": "Koelnmesse / ART COLOGNE", "date": "2026-11-06"}
+    {"title": "Koelnmesse calls off imm cologne 2027, CEO Oliver Frese cites weak furniture market", "source": "BlachReport", "date": "2026-11-13"},
+    {"title": "imm cologne pauses for 2027; idd cologne, ORGATEC and interzum continue as planned", "source": "koelner.de", "date": "2026-11-11"}
   ]
 }
