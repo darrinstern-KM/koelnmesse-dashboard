@@ -1,11 +1,10 @@
 {
-  "lastUpdated": "2026-11-13T08:40:49-06:00",
-  "dailyBrief": "Cathy out today · 7 out Thanksgiving week · KM pauses imm cologne 2027 · Mercedes freezes German plant investment · Winter Meeting Dec 7",
+  "lastUpdated": "2026-11-14T08:06:47-06:00",
+  "dailyBrief": "1 out next week (Cathy Fri) · PMRExpo Cologne in 10 days · Berlin locks record €560.9B budget · watch: Hormuz mine strike, Trump-Xi-Putin summit",
   "ooo": [
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-13"},
     {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
-    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
     {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
     {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
     {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
     {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
@@ -16,18 +15,18 @@
     {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
   ],
   "topNews": {
-    "world": {"headline": "Bessent relocates to military base after Iranian threats as Iran war funding fight looms before Dec 11", "source": "Democracy Now", "time": "Yesterday"},
-    "germany": {"headline": "Mercedes-Benz freezes new investment at German sites, warns plants could close without cost cuts", "source": "The Local Germany", "time": "Today"},
-    "chicago": {"headline": "Chicago mayoral candidates make their pitches and take aim at Brandon Johnson", "source": "Chicago Sun-Times", "time": "Today"},
-    "sports": {"headline": "Blackhawks edge Sabres 3-2 in OT on Donato winner, snapping six-game skid", "source": "NHL.com", "time": "Yesterday"}
+    "world": {"headline": "Trump, Xi and Putin to hold first three-way summit in China next week, with the Iran war on the agenda", "source": "Al Jazeera", "time": "Today"},
+    "germany": {"headline": "German government reaches agreement on record €560.9 billion budget", "source": "The Local Germany", "time": "Yesterday"},
+    "chicago": {"headline": "Mayor Johnson's CFO abruptly resigns, the third city CFO to quit in a year", "source": "Chicago Sun-Times", "time": "Yesterday"},
+    "sports": {"headline": "Bears sit 7-2 atop the NFC North; Saints up next on Nov. 22", "source": "ESPN", "time": "Today"}
   },
   "industryNews": [
-    {"title": "On Site at the 2026 UFI Global Congress: Keynote by RX CEO Hugh Jones", "source": "TSNN", "date": "2026-11-13"},
-    {"title": "Amex GBT Reveals Top Meetings Destinations for 2027: Orlando, Barcelona and Buenos Aires Top Rankings", "source": "Trade Show Executive", "date": "2026-11-12"},
-    {"title": "India and Africa Are the Event Industry's Next Growth Markets. Can Venues Keep Up?", "source": "Skift Meetings", "date": "2026-11-11"}
+    {"title": "Doug Emslie and David Larkin team up to launch new B2B exhibition with AFM in 2027", "source": "TSNN", "date": "2026-11-13"},
+    {"title": "Amex GBT reveals top meetings destinations for 2027: Orlando, Barcelona and Buenos Aires lead", "source": "Trade Show Executive", "date": "2026-11-12"},
+    {"title": "India and Africa are the event industry's next growth markets. Can venues keep up?", "source": "Skift Meetings", "date": "2026-11-11"}
   ],
   "kmNews": [
-    {"title": "Koelnmesse calls off imm cologne 2027, CEO Oliver Frese cites weak furniture market", "source": "BlachReport", "date": "2026-11-13"},
-    {"title": "imm cologne pauses for 2027; idd cologne, ORGATEC and interzum continue as planned", "source": "koelner.de", "date": "2026-11-11"}
+    {"title": "DMEXCO: The End of Marketing Generalists?", "source": "DMEXCO (Koelnmesse)", "date": "2026-11-12"},
+    {"title": "DMEXCO Social Media Schau: Episode 33", "source": "DMEXCO (Koelnmesse)", "date": "2026-11-10"}
   ]
 }
