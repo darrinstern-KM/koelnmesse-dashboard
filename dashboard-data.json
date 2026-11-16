@@ -1,1 +1,29 @@
-{"lastUpdated": "2026-11-15T08:07:10-06:00", "dailyBrief": "Cathy the only one out this week · 7 out Thanksgiving week · Winter Meeting in 22 days · Berlin locks record €560.9B budget · FAA ground stop fallout hits meetings", "ooo": [{"name": "Cathy", "status": "OOO", "until": "2026-11-20"}, {"name": "VW", "status": "Vacation", "until": "2026-11-25"}, {"name": "George", "status": "OOO", "until": "2026-11-25"}, {"name": "Kate", "status": "Vacation", "until": "2026-11-27"}, {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"}, {"name": "Kym", "status": "OOO", "until": "2026-11-27"}, {"name": "George", "status": "OOO", "until": "2026-11-27"}, {"name": "Cathy", "status": "OOO", "until": "2026-11-27"}, {"name": "Leslie", "status": "OOO", "until": "2026-12-01"}, {"name": "Cathy", "status": "OOO", "until": "2026-12-04"}, {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}], "topNews": {"world": {"headline": "Trump to hold trilateral talks with Xi and Putin in China next week, White House says", "source": "Anadolu Agency", "time": "Yesterday"}, "germany": {"headline": "German government reaches agreement on record €560.9 billion budget", "source": "The Local Germany", "time": "Yesterday"}, "chicago": {"headline": "28 alders tell Mayor Johnson his $17.6B 2027 budget is a non-starter as $882M gap looms", "source": "CBS News Chicago", "time": "Yesterday"}, "sports": {"headline": "Bears (7-2) on bye after 27-24 win over Tampa Bay; host Saints Sunday Nov 22", "source": "ESPN", "time": "Today"}}, "industryNews": [{"title": "Nationwide FAA Ground Stop Lifted, but Lingering Issues May Still Impact Major Meetings", "source": "Skift Meetings", "date": "2026-11-13"}, {"title": "M&A: Finelight Group Acquires Business Show Media in Largest Deal to Date", "source": "TSNN", "date": "2026-11-13"}, {"title": "Amex GBT Reveals Top Meetings Destinations for 2027: Orlando, Barcelona and Buenos Aires Top Rankings", "source": "Trade Show Executive", "date": "2026-11-12"}], "kmNews": []}
+{
+  "lastUpdated": "2026-11-16T08:07:00-06:00",
+  "dailyBrief": "Cathy out Fri, 7 out Thanksgiving week · Chicago hotel strike spreads to 3 more · no new KM releases since Oct 2 · watch: Iran-Bahrain strikes, Red Sea risk",
+  "ooo": [
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
+    {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
+    {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
+    {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
+    {"name": "George", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Leslie", "status": "OOO", "until": "2026-12-01"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"},
+    {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
+  ],
+  "topNews": {
+    "world": {"headline": "Trump-Xi talks overshadowed by report of Chinese spying targeting Nvidia CEO Jensen Huang", "source": "New York Times", "time": "Yesterday"},
+    "germany": {"headline": "German government reaches agreement on record €560.9 billion budget", "source": "The Local Germany", "time": "Friday"},
+    "chicago": {"headline": "Workers at 3 more Chicago hotels join strike for better wages, benefits", "source": "Chicago Sun-Times", "time": "Yesterday"},
+    "sports": {"headline": "Bears rest on bye as NFC North rivals win; Chicago slips four spots in NFC playoff picture", "source": "Chicago Sun-Times", "time": "Yesterday"}
+  },
+  "industryNews": [
+    {"title": "M&A: Finelight Group Acquires Business Show Media in Largest Deal to Date", "source": "TSNN", "date": "2026-11-13"},
+    {"title": "Nationwide FAA Ground Stop Lifted, but Lingering Issues May Still Impact Major Meetings", "source": "Skift Meetings", "date": "2026-11-13"},
+    {"title": "India and Africa Are the Event Industry's Next Growth Markets. Can Venues Keep Up?", "source": "Skift Meetings", "date": "2026-11-11"}
+  ],
+  "kmNews": []
+}
