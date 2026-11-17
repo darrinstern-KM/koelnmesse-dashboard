@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T08:07:00-06:00",
-  "dailyBrief": "Cathy out Fri, 7 out Thanksgiving week · Chicago hotel strike spreads to 3 more · no new KM releases since Oct 2 · watch: Iran-Bahrain strikes, Red Sea risk",
+  "lastUpdated": "2026-11-17T08:30:00-06:00",
+  "dailyBrief": "Team in today · 7 out Fri 11/27 for Thanksgiving, Leslie out 11/24-12/1 · Winter Meeting Dec 7-9 · Xi-Trump-Putin summit confirmed · no new KM press this week",
   "ooo": [
     {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
     {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
@@ -9,21 +9,22 @@
     {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
     {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
     {"name": "George", "status": "OOO", "until": "2026-11-27"},
+    {"name": "Courtney M", "status": "OOO", "until": "2026-11-27"},
     {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
     {"name": "Leslie", "status": "OOO", "until": "2026-12-01"},
     {"name": "Cathy", "status": "OOO", "until": "2026-12-04"},
     {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
   ],
   "topNews": {
-    "world": {"headline": "Trump-Xi talks overshadowed by report of Chinese spying targeting Nvidia CEO Jensen Huang", "source": "New York Times", "time": "Yesterday"},
-    "germany": {"headline": "German government reaches agreement on record €560.9 billion budget", "source": "The Local Germany", "time": "Friday"},
-    "chicago": {"headline": "Workers at 3 more Chicago hotels join strike for better wages, benefits", "source": "Chicago Sun-Times", "time": "Yesterday"},
-    "sports": {"headline": "Bears rest on bye as NFC North rivals win; Chicago slips four spots in NFC playoff picture", "source": "Chicago Sun-Times", "time": "Yesterday"}
+    "world": {"headline": "China confirms historic Xi-Trump-Putin summit; Ukraine, nuclear arms and tariffs expected on the agenda", "source": "CNBC", "time": "Yesterday"},
+    "germany": {"headline": "EU clears UniCredit takeover of Germany's Commerzbank", "source": "The Local Germany", "time": "Yesterday"},
+    "chicago": {"headline": "After Mayor Johnson's CFO jumps ship, aldermanic foes seek outside review of city's finances", "source": "Chicago Sun-Times", "time": "Yesterday"},
+    "sports": {"headline": "Ben Johnson needs to find explosive run plays, and Kyle Monangai will help", "source": "Chicago Sun-Times", "time": "Yesterday"}
   },
   "industryNews": [
+    {"title": "Construction Delays and Exits Force Hotel Giants to Cut Room Growth Forecasts", "source": "Skift", "date": "2026-11-17"},
     {"title": "M&A: Finelight Group Acquires Business Show Media in Largest Deal to Date", "source": "TSNN", "date": "2026-11-13"},
-    {"title": "Nationwide FAA Ground Stop Lifted, but Lingering Issues May Still Impact Major Meetings", "source": "Skift Meetings", "date": "2026-11-13"},
-    {"title": "India and Africa Are the Event Industry's Next Growth Markets. Can Venues Keep Up?", "source": "Skift Meetings", "date": "2026-11-11"}
+    {"title": "Nationwide FAA Ground Stop Lifted, but Lingering Issues May Still Impact Major Meetings", "source": "Skift Meetings", "date": "2026-11-13"}
   ],
   "kmNews": []
 }
