@@ -1,30 +1,33 @@
 {
-  "lastUpdated": "2026-11-17T08:30:00-06:00",
-  "dailyBrief": "Team in today · 7 out Fri 11/27 for Thanksgiving, Leslie out 11/24-12/1 · Winter Meeting Dec 7-9 · Xi-Trump-Putin summit confirmed · no new KM press this week",
+  "lastUpdated": "2026-11-18T08:08:44-06:00",
+  "dailyBrief": "Cathy out Fri, 8 out Thanksgiving week · Iran-US Gulf strikes rattle markets · Chicago budget stalls after CFO exit · KM consolidates ISM leadership",
   "ooo": [
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-20"},
+    {"name": "Cathy", "status": "Out of Office", "until": "2026-11-20"},
     {"name": "VW", "status": "Vacation", "until": "2026-11-25"},
-    {"name": "George", "status": "OOO", "until": "2026-11-25"},
+    {"name": "George", "status": "Out of Office", "until": "2026-11-25"},
     {"name": "Kate", "status": "Vacation", "until": "2026-11-27"},
     {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"},
-    {"name": "Kym", "status": "OOO", "until": "2026-11-27"},
-    {"name": "George", "status": "OOO", "until": "2026-11-27"},
-    {"name": "Courtney M", "status": "OOO", "until": "2026-11-27"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-11-27"},
-    {"name": "Leslie", "status": "OOO", "until": "2026-12-01"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-12-04"},
-    {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}
+    {"name": "Kym", "status": "Out of Office", "until": "2026-11-27"},
+    {"name": "George", "status": "Out of Office", "until": "2026-11-27"},
+    {"name": "Courtney M", "status": "Out of Office", "until": "2026-11-27"},
+    {"name": "Cathy", "status": "Out of Office", "until": "2026-11-27"},
+    {"name": "Leslie", "status": "Out of Office", "until": "2026-12-01"},
+    {"name": "Cathy", "status": "Out of Office", "until": "2026-12-04"},
+    {"name": "Cathy", "status": "Out of Office", "until": "2026-12-11"},
+    {"name": "Cathy", "status": "Out of Office", "until": "2026-12-18"}
   ],
   "topNews": {
-    "world": {"headline": "China confirms historic Xi-Trump-Putin summit; Ukraine, nuclear arms and tariffs expected on the agenda", "source": "CNBC", "time": "Yesterday"},
-    "germany": {"headline": "EU clears UniCredit takeover of Germany's Commerzbank", "source": "The Local Germany", "time": "Yesterday"},
-    "chicago": {"headline": "After Mayor Johnson's CFO jumps ship, aldermanic foes seek outside review of city's finances", "source": "Chicago Sun-Times", "time": "Yesterday"},
-    "sports": {"headline": "Ben Johnson needs to find explosive run plays, and Kyle Monangai will help", "source": "Chicago Sun-Times", "time": "Yesterday"}
+    "world": {"headline": "Iran strikes Kuwait and Bahrain after new US attacks near Hormuz; oil and markets on edge", "source": "KSL / Sinclair", "time": "This morning"},
+    "germany": {"headline": "Tesla makes major investment to expand its German factory", "source": "The Local Germany", "time": "Yesterday"},
+    "chicago": {"headline": "Interim CFO defends Johnson budget amid calls for probe after Gabrysch's abrupt exit", "source": "Crain's Chicago Business", "time": "Today"},
+    "sports": {"headline": "Bears (7-2) return from bye to face Saints Sunday as double-digit favorites", "source": "Bleacher Report", "time": "Today"}
   },
   "industryNews": [
-    {"title": "Construction Delays and Exits Force Hotel Giants to Cut Room Growth Forecasts", "source": "Skift", "date": "2026-11-17"},
-    {"title": "M&A: Finelight Group Acquires Business Show Media in Largest Deal to Date", "source": "TSNN", "date": "2026-11-13"},
-    {"title": "Nationwide FAA Ground Stop Lifted, but Lingering Issues May Still Impact Major Meetings", "source": "Skift Meetings", "date": "2026-11-13"}
+    {"title": "TSNN Reveals 2026 Award Winners at Industry Celebration in Milwaukee", "source": "TSNN", "date": "2026-11-17"},
+    {"title": "What Happened When FICP's Annual Meeting Collided With the Longest FAA Ground Stop in 25 Years", "source": "Skift Meetings", "date": "2026-11-17"},
+    {"title": "Diversified Acquires MDBriefCase Group Inc.", "source": "Trade Show Executive", "date": "2026-11-16"}
   ],
-  "kmNews": []
+  "kmNews": [
+    {"title": "Koelnmesse consolidates management of ISM brand family", "source": "Snack Food & Wholesale Bakery", "date": "2026-11-17"}
+  ]
 }
