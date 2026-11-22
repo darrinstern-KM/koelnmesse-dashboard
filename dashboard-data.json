@@ -1,1 +1,33 @@
-{"lastUpdated": "2026-11-21T12:51:48-06:00", "dailyBrief": "Thanksgiving week: 7 team out by Fri · PMR Expo + CAIHE Uzbekistan Tue-Thu · Hentschke takes KM's ISM portfolio · Winter Meeting Dec 7", "ooo": [{"name": "George", "status": "1/2 day PM", "until": "2026-11-24"}, {"name": "VW", "status": "Vacation", "until": "2026-11-25"}, {"name": "George", "status": "OOO", "until": "2026-11-25"}, {"name": "Kate", "status": "Vacation", "until": "2026-11-27"}, {"name": "Kym", "status": "OOO", "until": "2026-11-27"}, {"name": "Kasia", "status": "Vacation", "until": "2026-11-27"}, {"name": "George", "status": "OOO", "until": "2026-11-27"}, {"name": "Courtney M", "status": "OOO", "until": "2026-11-27"}, {"name": "Cathy", "status": "OOO", "until": "2026-11-27"}, {"name": "George", "status": "OOO", "until": "2026-12-02"}, {"name": "George", "status": "OOO", "until": "2026-12-04"}, {"name": "Cathy", "status": "OOO", "until": "2026-12-04"}, {"name": "George", "status": "OOO", "until": "2026-12-11"}, {"name": "Cathy", "status": "OOO", "until": "2026-12-11"}, {"name": "Kym", "status": "1/2 day", "until": "2026-12-11"}], "topNews": {"world": {"headline": "US, China and Russia issue joint declaration after Shenzhen summit; no binding nuclear arms-reduction deal", "source": "Reuters", "time": "Yesterday"}, "germany": {"headline": "Gen Z protests set for cities across Germany on Friday", "source": "The Local Germany", "time": "Yesterday"}, "chicago": {"headline": "Magnificent Mile Lights Festival returns today for its 35th year", "source": "ABC7 Chicago", "time": "Today"}, "sports": {"headline": "Bears head to Detroit to open Thanksgiving Day slate vs. Lions on Thursday", "source": "NFL.com", "time": "Today"}}, "industryNews": [{"title": "Events Industry Convenes in Brew City for Expo! Expo! IAEE's Annual Meeting & Exhibition 2026", "source": "Trade Show Executive", "date": "2026-11-20"}, {"title": "The Moscone Leak Closed Microsoft Ignite's Expo Floor for a Day. Who Pays?", "source": "Skift Meetings", "date": "2026-11-19"}, {"title": "Maritz Names Holly Francois CEO as David Peckinpaugh Prepares to Retire", "source": "TSNN", "date": "2026-11-19"}], "kmNews": [{"title": "Koelnmesse Appoints Guido Hentschke to Lead ISM Trade Fair Portfolio", "source": "World Bakers", "date": "2026-11-17"}]}
+{
+  "lastUpdated": "2026-11-22T08:15:00-06:00",
+  "dailyBrief": "7 out this week, office closed Thu for Thanksgiving · PMR EXPO opens Tue · Winter Meeting Dec 7 · watch: Hormuz tanker strikes, IG Metall walkouts",
+  "ooo": [
+    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
+    { "name": "George", "status": "OOO (half day Tue PM)", "until": "2026-11-27" },
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "Kym", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "Courtney M", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
+    { "name": "George", "status": "OOO", "until": "2026-12-02" },
+    { "name": "George", "status": "OOO", "until": "2026-12-04" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-04" },
+    { "name": "George", "status": "OOO", "until": "2026-12-11" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-11" },
+    { "name": "Kym", "status": "Half day", "until": "2026-12-11" },
+    { "name": "George", "status": "OOO", "until": "2026-12-18" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-18" }
+  ],
+  "topNews": {
+    "world":   { "headline": "Tankers struck near Strait of Hormuz as Saudi Arabia intercepts Houthi missiles aimed at Riyadh", "source": "Open Chronicle", "time": "Yesterday" },
+    "germany": { "headline": "IG Metall stages first 24-hour warning strikes in eight years; Gen Z protests hit 73 German cities", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "Stalemate and controversy deepen Chicago's budget crisis after CFO's abrupt resignation", "source": "Daily Herald", "time": "Yesterday" },
+    "sports":  { "headline": "Bears (7-2) host Saints at Soldier Field tonight ahead of Thanksgiving clash with Lions", "source": "Fox Sports", "time": "Today" }
+  },
+  "industryNews": [
+    { "title": "Events Industry Convenes in Brew City for Expo! Expo! IAEE's Annual Meeting & Exhibition 2026", "source": "Trade Show Executive", "date": "2026-11-20" },
+    { "title": "The Moscone Leak Closed Microsoft Ignite's Expo Floor for a Day. Who Pays?", "source": "Skift Meetings", "date": "2026-11-19" },
+    { "title": "Diversified Acquires MDBriefCase Group Inc.", "source": "Trade Show Executive", "date": "2026-11-16" }
+  ],
+  "kmNews": []
+}
