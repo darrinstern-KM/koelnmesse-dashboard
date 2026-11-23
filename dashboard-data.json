@@ -1,8 +1,7 @@
 {
-  "lastUpdated": "2026-11-22T08:15:00-06:00",
-  "dailyBrief": "7 out this week, office closed Thu for Thanksgiving · PMR EXPO opens Tue · Winter Meeting Dec 7 · watch: Hormuz tanker strikes, IG Metall walkouts",
+  "lastUpdated": "2026-11-23T12:25:00-06:00",
+  "dailyBrief": "6 out this week, office closed Thu for Thanksgiving · PMR EXPO + CAIHE Uzbekistan open Tue · Winter Meeting in 14 days · watch: Hormuz oil flows",
   "ooo": [
-    { "name": "VW", "status": "Vacation", "until": "2026-11-25" },
     { "name": "George", "status": "OOO (half day Tue PM)", "until": "2026-11-27" },
     { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
     { "name": "Kym", "status": "OOO", "until": "2026-11-27" },
@@ -16,18 +15,19 @@
     { "name": "Cathy", "status": "OOO", "until": "2026-12-11" },
     { "name": "Kym", "status": "Half day", "until": "2026-12-11" },
     { "name": "George", "status": "OOO", "until": "2026-12-18" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-12-18" }
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-18" },
+    { "name": "George", "status": "OOO", "until": "2026-12-24" }
   ],
   "topNews": {
-    "world":   { "headline": "Tankers struck near Strait of Hormuz as Saudi Arabia intercepts Houthi missiles aimed at Riyadh", "source": "Open Chronicle", "time": "Yesterday" },
-    "germany": { "headline": "IG Metall stages first 24-hour warning strikes in eight years; Gen Z protests hit 73 German cities", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "Stalemate and controversy deepen Chicago's budget crisis after CFO's abrupt resignation", "source": "Daily Herald", "time": "Yesterday" },
-    "sports":  { "headline": "Bears (7-2) host Saints at Soldier Field tonight ahead of Thanksgiving clash with Lions", "source": "Fox Sports", "time": "Today" }
+    "world":   { "headline": "Oil prices slip as Strait of Hormuz transit slows and Houthi attacks widen; UAE steps up efforts to shuttle crude", "source": "IranWire", "time": "Today" },
+    "germany": { "headline": "Opposition attacks Economy Minister Reiche's fuel price cap over motorway petrol station exemption", "source": "The Local Germany", "time": "This morning" },
+    "chicago": { "headline": "City Council coalition says Mayor Johnson's 2027 budget with corporate head tax lacks the votes to pass", "source": "ABC7 Chicago", "time": "Yesterday" },
+    "sports":  { "headline": "Bears beat Saints 21-13 behind six-sack defense; Lions up next on Thanksgiving", "source": "ESPN", "time": "Yesterday" }
   },
   "industryNews": [
+    { "title": "Exclusive: UFI Global Congress Keynote and Interview with RX Global CEO Hugh Jones", "source": "TSNN", "date": "2026-11-23" },
     { "title": "Events Industry Convenes in Brew City for Expo! Expo! IAEE's Annual Meeting & Exhibition 2026", "source": "Trade Show Executive", "date": "2026-11-20" },
-    { "title": "The Moscone Leak Closed Microsoft Ignite's Expo Floor for a Day. Who Pays?", "source": "Skift Meetings", "date": "2026-11-19" },
-    { "title": "Diversified Acquires MDBriefCase Group Inc.", "source": "Trade Show Executive", "date": "2026-11-16" }
+    { "title": "The Moscone Leak Closed Microsoft Ignite's Expo Floor for a Day. Who Pays?", "source": "Skift Meetings", "date": "2026-11-19" }
   ],
   "kmNews": []
 }
