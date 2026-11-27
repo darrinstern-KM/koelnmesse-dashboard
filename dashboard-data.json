@@ -1,1 +1,36 @@
-{"lastUpdated":"2026-11-26T08:07:24-06:00","dailyBrief":"Office closed for Thanksgiving · 11 out Fri, Leslie back Dec 2 · Winter Meeting Dec 7-9 · US tariffs target EU and 13 others · Bears at Lions noon CT","ooo":[{"name":"Kate","status":"Vacation","until":"2026-11-27"},{"name":"Kym","status":"OOO","until":"2026-11-27"},{"name":"Kasia","status":"Vacation","until":"2026-11-27"},{"name":"Robin","status":"OOO","until":"2026-11-27"},{"name":"Jessica","status":"OOO","until":"2026-11-27"},{"name":"George","status":"OOO","until":"2026-11-27"},{"name":"Courtney M","status":"OOO","until":"2026-11-27"},{"name":"Laura","status":"OOO","until":"2026-11-27"},{"name":"Cathy","status":"OOO","until":"2026-11-27"},{"name":"Leslie","status":"OOO","until":"2026-12-01"},{"name":"Pavina","status":"OOO","until":"2026-12-01"},{"name":"George","status":"OOO","until":"2026-12-02"},{"name":"Robin","status":"Until 9:30am ET","until":"2026-12-03"},{"name":"George","status":"OOO","until":"2026-12-04"},{"name":"Robin","status":"Until 10am ET","until":"2026-12-04"}],"topNews":{"world":{"headline":"US proposes new tariffs on 14 major trading partners, the EU included","source":"Euronews","time":"Yesterday"},"germany":{"headline":"Merz defends budget cuts and warns against waning support for Ukraine","source":"The Local Germany","time":"Yesterday"},"chicago":{"headline":"Ballot petition challenges loom over Mayor Johnson's candidacy as budget fight continues","source":"Chicago Sun-Times","time":"Yesterday"},"sports":{"headline":"Bears visit Lions on Thanksgiving: noon CT kickoff on CBS in pivotal NFC North clash","source":"ChicagoBears.com","time":"Today"}},"industryNews":[{"title":"Houthi Attacks Gut Riyadh's Peak Season","source":"Skift","date":"2026-11-26"},{"title":"12 Hotel Openings That Could Change Where Conventions Go Through 2030","source":"Skift Meetings","date":"2026-11-25"},{"title":"Meadowlands Convention Center Project Moves Forward After Assessment Reveals High Demand","source":"Trade Show Executive","date":"2026-11-25"}],"kmNews":[{"title":"PMRExpo 2026 runs Nov 24-26 in Cologne: the trade fair for secure critical communications","source":"Koelnmesse","date":"2026-11-24"}]}
+{
+  "lastUpdated": "2026-11-27T10:45:00-06:00",
+  "dailyBrief": "11 out today, full team back Mon · Winter Meeting Dec 7-9 · Informa buys Clarion for $2.97B · ISM 2027 exhibitor news ramping · Bears top Lions 39-35",
+  "ooo": [
+    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "Kym", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
+    { "name": "Robin", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Jessica", "status": "OOO", "until": "2026-11-27" },
+    { "name": "George", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Courtney M", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Laura", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
+    { "name": "Leslie", "status": "OOO", "until": "2026-12-01" },
+    { "name": "Pavina", "status": "OOO", "until": "2026-12-01" },
+    { "name": "George", "status": "OOO", "until": "2026-12-02" },
+    { "name": "Robin", "status": "Until 9:30am ET", "until": "2026-12-03" },
+    { "name": "George", "status": "OOO", "until": "2026-12-04" },
+    { "name": "Robin", "status": "Until 10am ET", "until": "2026-12-04" }
+  ],
+  "topNews": {
+    "world":   { "headline": "European leaders pick Pablo Hernandez de Cos to succeed Lagarde as ECB president", "source": "10 Things Global News", "time": "Today" },
+    "germany": { "headline": "Why did North Rhine-Westphalia ban face veils in schools?", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "New FAA rules could affect takeoffs at O'Hare and Midway over the busy Thanksgiving travel weekend", "source": "Chicago Sun-Times", "time": "Yesterday" },
+    "sports":  { "headline": "Caleb Williams finds Odunze with 3 seconds left as Bears stun Lions 39-35, take sole NFC North lead", "source": "Bleacher Nation", "time": "Yesterday" }
+  },
+  "industryNews": [
+    { "title": "Clarion CEO Lisa Hannant: Informa Acquisition Marks Incredibly Exciting Next Chapter After 20+ Years Under PE", "source": "TSNN", "date": "2026-11-25" },
+    { "title": "12 Hotel Openings That Could Change Where Conventions Go Through 2030", "source": "Skift Meetings", "date": "2026-11-25" },
+    { "title": "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis", "source": "Skift", "date": "2026-11-27" }
+  ],
+  "kmNews": [
+    { "title": "PMRExpo 2026 runs Nov 24-26 in Cologne: the trade fair for secure critical communications", "source": "Koelnmesse", "date": "2026-11-24" },
+    { "title": "ISM 2027 exhibitor previews roll in: LENG-D'OR to showcase latest snack pellet innovations", "source": "ISM Cologne", "date": "2026-11-26" }
+  ]
+}
