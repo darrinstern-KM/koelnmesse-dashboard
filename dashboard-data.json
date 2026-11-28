@@ -1,36 +1,33 @@
 {
-  "lastUpdated": "2026-11-27T10:45:00-06:00",
-  "dailyBrief": "11 out today, full team back Mon · Winter Meeting Dec 7-9 · Informa buys Clarion for $2.97B · ISM 2027 exhibitor news ramping · Bears top Lions 39-35",
+  "lastUpdated": "2026-11-28T08:06:59-06:00",
+  "dailyBrief": "2 out Mon (Leslie, Pavina) · Winter Meeting in 9 days · Informa buys Clarion, organizer field consolidates · Bears 39-35 over Lions · watch: Hormuz tensions",
   "ooo": [
-    { "name": "Kate", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "Kym", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Kasia", "status": "Vacation", "until": "2026-11-27" },
-    { "name": "Robin", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Jessica", "status": "OOO", "until": "2026-11-27" },
-    { "name": "George", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Courtney M", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Laura", "status": "OOO", "until": "2026-11-27" },
-    { "name": "Cathy", "status": "OOO", "until": "2026-11-27" },
     { "name": "Leslie", "status": "OOO", "until": "2026-12-01" },
     { "name": "Pavina", "status": "OOO", "until": "2026-12-01" },
     { "name": "George", "status": "OOO", "until": "2026-12-02" },
-    { "name": "Robin", "status": "Until 9:30am ET", "until": "2026-12-03" },
+    { "name": "Robin", "status": "OOO until 9:30am EST", "until": "2026-12-03" },
+    { "name": "Robin", "status": "OOO until 10am EST", "until": "2026-12-04" },
     { "name": "George", "status": "OOO", "until": "2026-12-04" },
-    { "name": "Robin", "status": "Until 10am ET", "until": "2026-12-04" }
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-04" },
+    { "name": "George", "status": "OOO", "until": "2026-12-11" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-11" },
+    { "name": "Kym", "status": "Half day OOO", "until": "2026-12-11" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-18" },
+    { "name": "George", "status": "OOO", "until": "2026-12-18" },
+    { "name": "George", "status": "OOO", "until": "2026-12-24" },
+    { "name": "Kasia", "status": "Vacation", "until": "2026-12-24" },
+    { "name": "Cathy", "status": "OOO", "until": "2026-12-25" }
   ],
   "topNews": {
-    "world":   { "headline": "European leaders pick Pablo Hernandez de Cos to succeed Lagarde as ECB president", "source": "10 Things Global News", "time": "Today" },
-    "germany": { "headline": "Why did North Rhine-Westphalia ban face veils in schools?", "source": "The Local Germany", "time": "Yesterday" },
-    "chicago": { "headline": "New FAA rules could affect takeoffs at O'Hare and Midway over the busy Thanksgiving travel weekend", "source": "Chicago Sun-Times", "time": "Yesterday" },
-    "sports":  { "headline": "Caleb Williams finds Odunze with 3 seconds left as Bears stun Lions 39-35, take sole NFC North lead", "source": "Bleacher Nation", "time": "Yesterday" }
+    "world":   { "headline": "Drone strike in Kuwait kills two Italian Rheinmetall technicians; Iran denies role as Gulf shipping tensions rise", "source": "10 Things Global News", "time": "Yesterday" },
+    "germany": { "headline": "Bundestag passes Germany's 2027 federal budget with record borrowing and an electricity tax U-turn", "source": "The Local Germany", "time": "Yesterday" },
+    "chicago": { "headline": "New FAA rules could limit takeoffs at O'Hare and Midway during the busy Thanksgiving travel weekend", "source": "Chicago Sun-Times", "time": "This week" },
+    "sports":  { "headline": "Bears rally past Lions 39-35 on Thanksgiving to take sole possession of first in the NFC North", "source": "Shaw Local", "time": "Yesterday" }
   },
   "industryNews": [
-    { "title": "Clarion CEO Lisa Hannant: Informa Acquisition Marks Incredibly Exciting Next Chapter After 20+ Years Under PE", "source": "TSNN", "date": "2026-11-25" },
-    { "title": "12 Hotel Openings That Could Change Where Conventions Go Through 2030", "source": "Skift Meetings", "date": "2026-11-25" },
-    { "title": "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis", "source": "Skift", "date": "2026-11-27" }
+    { "title": "Clarion CEO Lisa Hannant: Informa acquisition marks 'incredibly exciting' next chapter after 20+ years under PE", "source": "TSNN", "date": "2026-11-25" },
+    { "title": "Meadowlands Convention Center project moves forward after assessment reveals high demand", "source": "Trade Show Executive", "date": "2026-11-25" },
+    { "title": "12 hotel openings that could change where conventions go through 2030", "source": "Skift Meetings", "date": "2026-11-25" }
   ],
-  "kmNews": [
-    { "title": "PMRExpo 2026 runs Nov 24-26 in Cologne: the trade fair for secure critical communications", "source": "Koelnmesse", "date": "2026-11-24" },
-    { "title": "ISM 2027 exhibitor previews roll in: LENG-D'OR to showcase latest snack pellet innovations", "source": "ISM Cologne", "date": "2026-11-26" }
-  ]
+  "kmNews": []
 }
